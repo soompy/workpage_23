@@ -1,0 +1,50 @@
+@charset "utf-8";
+// ============================================================ 
+// _variables.scss 
+// 공통 사용 변수
+// ============================================================ 
+
+// font use : font-family:#{$roboto}; / font-family:#{$noto};
+$noto : 'Noto Sans Korean';
+$RobotoLight : "Roboto-Light";
+$robotoRegular : "Roboto-Regular";
+$robotoBold : "Roboto-Bold";
+
+// Breakpoints
+// $breakpoint-min-pc : 1200px;
+// $breakpoint-max-pc : 1600px;
+
+$breakpoint-pc : 832px;
+$breakpoint-tablet : 1024px;
+$breakpoint-mobile : 396px;
+
+@mixin pc {
+    @media (min-width: #{$breakpoint-pc}) {
+      @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: #{$breakpoint-tablet}) {
+      @content;
+    }
+}
+  
+@mixin mo {
+    @media (min-width: #{$breakpoint-mobile}) {
+      @content;
+    }
+}
+
+
+// @mixin minPc {
+//   @media (min-width: #{$breakpoint-min-pc}) and (max-width:#{$breakpoint-max-pc}) {
+//     @content;
+//   }
+// }
+
+// @mixin maxPc {
+//   @media (min-width: #{$breakpoint-max-pc}) {
+//     @content;
+//   }
+// }
