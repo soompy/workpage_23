@@ -1,22 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <title>메인</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css" rel="stylesheet" />
 </head>
+
 <body>
   <div id="wrap">
     <!-- Header -->
     @@include('./_include/header.html')
     <!-- Header -->
-    <div class="container">
-      container
+    <section class="visual">
+      <div class="inner">
+
+      </div>
+    </section>
+
+    <div class="content">
+      <section class="area-common section-01">
+        <div class="inner">
+          
+        </div>
+      </section>
+
+      <section class="area-common section-02">
+        <div class="inner">          
+          <div class="sticky">
+            <div class="swiper-container" id="scroll-tags">
+              <ul class="swiper-wrapper">
+                <a alt="0" class="swiper-slide FirstNavItem" href="#firstID">First</a>
+                <a alt="1" class="swiper-slide SecondNavItem" href="#secondID">Second</a>
+                <a alt="2" class="swiper-slide ThirdNavItem" href="#thirdID">Third</a>
+                <a alt="3" class="swiper-slide FourthNavItem" href="#fourthID">Fourth</a>
+                <a alt="4" class="swiper-slide FifthNavItem" href="#fifthID">Fifth</a>
+                <a alt="5" class="swiper-slide SixtNavItem" href="#sixtID">Sixt</a>
+              </ul>
+            </div>
+          </div>
+          <div style="height: 500vh">
+            <section class="horizontal-area firstClass" id="firstID">
+              <h1>
+                First
+              </h1>
+            </section>
+            <section class="horizontal-area secondClass" id="secondID">
+              <h1>
+                Second
+              </h1>
+            </section>
+            <section class="horizontal-area thirdClass" id="thirdID">
+              <h1>
+                Third
+              </h1>
+            </section>
+            <section class="horizontal-area fourthClass" id="fourthID">
+              <h1>
+                Fourth
+              </h1>
+            </section>
+            <section class="horizontal-area fifthClass" id="fifthID">
+              <h1>
+                Fifth
+              </h1>
+            </section>
+            <section class="horizontal-area sixtClass" id="sixtID">
+              <h1>
+                Sixt
+              </h1>
+            </section>
+            <!-- <section>
+
+            </section> -->
+
+          </div>
+      </section>
     </div>
     <!-- footer -->
     @@include('./_include/footer.html')
     <!-- footer -->
   </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+  <script src="../js/index.js"></script>
 </body>
+
 </html>

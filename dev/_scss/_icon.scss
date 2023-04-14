@@ -1,0 +1,123 @@
+@function icon($iconName, $color:666666) {
+    $iconList: ( 
+        ic_share: "%0A%3Csvg width='30' height='30' viewBox='0 0 32 35' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='26.1611' cy='6.64806' r='4.47286' stroke='%23#{$color}' stroke-width='2.7359'/%3E%3Ccircle cx='5.84081' cy='18.4152' r='4.47286' stroke='%23#{$color}' stroke-width='2.7359'/%3E%3Ccircle cx='26.1611' cy='28.3519' r='4.47286' stroke='%23#{$color}' stroke-width='2.7359'/%3E%3Cpath d='M9.8996 14.8202L21.7088 7.91118L23.1049 10.1846L11.2957 17.0935L9.8996 14.8202Z' fill='%23#{$color}'/%3E%3Cpath d='M22.8008 25.6947L11.4293 19.4726L10.0332 21.746L21.4047 27.9681L22.8008 25.6947Z' fill='%23#{$color}'/%3E%3C/svg%3E%0A",
+        ic_share_2: "%0A%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.5 10C8.5 10.2761 8.72386 10.5 9 10.5C9.27614 10.5 9.5 10.2761 9.5 10H8.5ZM9.35355 2.64645C9.15829 2.45118 8.84171 2.45118 8.64645 2.64645L5.46447 5.82843C5.2692 6.02369 5.2692 6.34027 5.46447 6.53553C5.65973 6.7308 5.97631 6.7308 6.17157 6.53553L9 3.70711L11.8284 6.53553C12.0237 6.7308 12.3403 6.7308 12.5355 6.53553C12.7308 6.34027 12.7308 6.02369 12.5355 5.82843L9.35355 2.64645ZM9.5 10V3H8.5V10H9.5Z' fill='%23#{$color}'/%3E%3Cpath d='M3 10V13C3 14.1046 3.89543 15 5 15H13C14.1046 15 15 14.1046 15 13V10' stroke='%23#{$color}' stroke-linecap='round'/%3E%3C/svg%3E%0A",
+        ic_url: "%0A%3Csvg width='18' height='19' viewBox='0 0 18 19' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.04688 6.02584L9 2.93848L11.9531 6.02584' stroke='%23#{$color}' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9 12.0228V2.94043' stroke='%23#{$color}' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M15.75 9.99707V15.2897C15.75 15.4456 15.6907 15.5952 15.5852 15.7055C15.4798 15.8158 15.3367 15.8778 15.1875 15.8778H2.8125C2.66332 15.8778 2.52024 15.8158 2.41475 15.7055C2.30926 15.5952 2.25 15.4456 2.25 15.2897V9.99707' stroke='%23#{$color}' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A",        
+        ic_call: "%0A%3Csvg width='21' height='20' viewBox='0 0 21 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M17.4757 13.2858L14.7986 11.2136C14.6694 11.1138 14.5081 11.0646 14.3452 11.0751C14.1822 11.0856 14.0286 11.1552 13.9132 11.2708L12.4923 12.6924C12.3865 12.7993 12.2477 12.8673 12.0983 12.8855C11.949 12.9037 11.7979 12.871 11.6695 12.7926C11.212 12.5121 10.4464 11.9684 9.48831 11.0097C8.53026 10.0523 7.98664 9.28604 7.70609 8.82921C7.62762 8.70091 7.59488 8.54982 7.6132 8.40054C7.63153 8.25126 7.69983 8.11258 7.80701 8.00706L9.22794 6.58546C9.34368 6.47014 9.4133 6.3165 9.42371 6.15345C9.43411 5.9904 9.38459 5.82916 9.28445 5.70007L7.21293 3.02236C6.74198 2.41483 5.8539 2.31862 5.2753 2.82658C4.51303 3.49533 3.59736 4.49712 3.33094 5.62135C2.84855 7.64645 3.61082 10.1876 6.96131 13.5381C10.3118 16.8879 12.8529 17.6508 14.8774 17.1691C16.0016 16.9013 17.004 15.985 17.6728 15.2234C18.1801 14.6448 18.0839 13.7567 17.4757 13.2858Z' fill='%23#{$color}'/%3E%3C/svg%3E%0A",
+        ic_calling: "%0A%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M1.30772 2.49071C1.50639 2.16113 2.60167 0.964681 3.38217 1.0008C3.61568 1.0208 3.82209 1.1614 3.98981 1.32523H3.99045C4.3749 1.7019 5.47792 3.12344 5.53984 3.42271C5.69272 4.15671 4.8174 4.57982 5.08509 5.31961C5.76754 6.98947 6.94346 8.16528 8.61412 8.84703C9.35334 9.11534 9.77649 8.24074 10.5105 8.39296C10.8098 8.45552 12.2322 9.5578 12.6082 9.94286C12.7714 10.1099 12.9133 10.3169 12.9327 10.5504C12.9617 11.3728 11.691 12.4828 11.4433 12.6247C10.8589 13.0433 10.0964 13.0356 9.16692 12.6034C6.5732 11.5244 2.42816 7.45773 1.329 4.76622C0.908434 3.84195 0.880053 3.07442 1.30772 2.49071Z' fill='%23#{$color}' stroke='%23#{$color}' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M8.57788 1.15723C10.903 1.41536 12.7388 3.2493 13.0001 5.57376' stroke='%23#{$color}' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M8.57788 3.38184C9.68955 3.59852 10.5582 4.46713 10.7748 5.5788' stroke='%23#{$color}' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A",
+        ic_search: "%0A%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.4'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12.3226 12.3223C12.5007 12.1442 12.7896 12.1442 12.9677 12.3223L15.8581 15.2127C16.0363 15.3909 16.0363 15.6797 15.8581 15.8578C15.68 16.036 15.3912 16.036 15.213 15.8578L12.3226 12.9674C12.1445 12.7893 12.1445 12.5004 12.3226 12.3223Z' fill='%23#{$color}' stroke='%23#{$color}' stroke-width='0.4'/%3E%3Ccircle cx='8.09' cy='8.09' r='6.09' stroke='%23#{$color}'/%3E%3C/g%3E%3C/svg%3E%0A",
+        ic_arrow_right: "%0A%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.0998 11.6569L9.47153 16.2852L10.5 17.3137L16.1569 11.6569L15.1284 10.6284L10.5 6.00004L9.47144 7.02856L14.0998 11.6569Z' fill='%23#{$color}'/%3E%3C/svg%3E%0A",
+        ic_arrow_down: "%0A%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.00028 9.35665L3.37199 4.72836L2.34352 5.75684L8.00037 11.4137L9.02885 10.3852L13.6572 5.75679L12.6287 4.72827L8.00028 9.35665Z' fill='%23#{$color}'/%3E%3C/svg%3E%0A",                
+        ic_selfcheckin: "%0A%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.47284 11.4921C4.09606 10.9536 4.11941 10.3464 4.5 10C5.29923 9.39639 5.85816 9.68768 6.65321 10.6788L7.41875 11.655V10.6788V4.63248C7.41875 4.17635 7.845 3.80595 8.3664 3.80595C8.89161 3.80595 9.31406 4.17635 9.31406 4.63248V8.85258V3.82653C9.31406 3.37039 9.74032 3 10.2617 3C10.7869 3 11.2094 3.37039 11.2094 3.82653V8.80457V4.76623C11.2094 4.3101 11.6356 3.93971 12.157 3.93971C12.6822 3.93971 13.1047 4.3101 13.1047 4.76623V9.68768V6.47074C13.1047 6.0146 13.5309 5.64421 14.0523 5.64421C14.5776 5.64421 15 6.0146 15 6.47074V12.6634C15 14.7006 13.017 17 10.6802 17C8.34339 17 7 15.5 6 14L4.47284 11.4921Z' stroke='%23#{$color}' stroke-width='1.2' stroke-miterlimit='10' stroke-linejoin='round'/%3E%3Cpath d='M2.5 16.541C2.5 16.2649 2.27614 16.041 2 16.041C1.72386 16.041 1.5 16.2649 1.5 16.541H2.5ZM2 17.9194H1.5C1.5 18.1955 1.72386 18.4194 2 18.4194V17.9194ZM3.37838 18.4194C3.65452 18.4194 3.87838 18.1955 3.87838 17.9194C3.87838 17.6433 3.65452 17.4194 3.37838 17.4194V18.4194ZM1.5 16.541V17.9194H2.5V16.541H1.5ZM2 18.4194H3.37838V17.4194H2V18.4194Z' fill='%23#{$color}'/%3E%3Cpath d='M16.6216 17.4189C16.3454 17.4189 16.1216 17.6428 16.1216 17.9189C16.1216 18.1951 16.3454 18.4189 16.6216 18.4189L16.6216 17.4189ZM18 17.9189L18 18.4189C18.2761 18.4189 18.5 18.1951 18.5 17.9189L18 17.9189ZM18.5 16.5406C18.5 16.2644 18.2761 16.0406 18 16.0406C17.7238 16.0406 17.5 16.2644 17.5 16.5406L18.5 16.5406ZM16.6216 18.4189L18 18.4189L18 17.4189L16.6216 17.4189L16.6216 18.4189ZM18.5 17.9189L18.5 16.5406L17.5 16.5406L17.5 17.9189L18.5 17.9189Z' fill='%23#{$color}'/%3E%3Cpath d='M17.5 3.37891C17.5 3.65505 17.7239 3.87891 18 3.87891C18.2761 3.87891 18.5 3.65505 18.5 3.37891L17.5 3.37891ZM18 2.00053L18.5 2.00053C18.5 1.72439 18.2761 1.50053 18 1.50053L18 2.00053ZM16.6216 1.50053C16.3455 1.50053 16.1216 1.72439 16.1216 2.00053C16.1216 2.27667 16.3455 2.50053 16.6216 2.50053L16.6216 1.50053ZM18.5 3.37891L18.5 2.00053L17.5 2.00053L17.5 3.37891L18.5 3.37891ZM18 1.50053L16.6216 1.50053L16.6216 2.50053L18 2.50053L18 1.50053Z' fill='%23#{$color}'/%3E%3Cpath d='M3.37842 2.5C3.65456 2.5 3.87842 2.27614 3.87842 2C3.87842 1.72386 3.65456 1.5 3.37842 1.5L3.37842 2.5ZM2.00004 2L2.00004 1.5C1.7239 1.5 1.50004 1.72386 1.50004 2L2.00004 2ZM1.50004 3.37838C1.50004 3.65452 1.7239 3.87838 2.00004 3.87838C2.27618 3.87838 2.50004 3.65452 2.50004 3.37838L1.50004 3.37838ZM3.37842 1.5L2.00004 1.5L2.00004 2.5L3.37842 2.5L3.37842 1.5ZM1.50004 2L1.50004 3.37838L2.50004 3.37838L2.50004 2L1.50004 2Z' fill='%23#{$color}'/%3E%3C/svg%3E%0A",
+        ic_refresh: "%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.04179 15.0987C4.32826 19.8999 9.2633 22.7492 14.0645 21.4627C18.8657 20.1762 21.7149 15.2412 20.4285 10.44C19.142 5.63879 14.2069 2.78955 9.40575 4.07603C8.20664 4.39733 7.12929 4.94621 6.20771 5.66375M6.20771 5.66375L7.75201 0.591266M6.20771 5.66375L11.0285 7.68132' stroke='%23#{$color}'/%3E%3C/svg%3E%0A",
+        ic_close: "%0A%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L19 19' stroke='%23#{$color}'/%3E%3Cpath d='M1 19L19 0.999999' stroke='%23#{$color}'/%3E%3C/svg%3E%0A",
+        ic_calendar: "%0A%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='2.9002' y='3.41875' width='14.195' height='13.0811' rx='0.765812' stroke='%23#{$color}' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M3.73145 7.21256H16.2632' stroke='%23#{$color}' stroke-width='1.4' stroke-linecap='round'/%3E%3Cpath d='M6.6556 2.19995V4.98478' stroke='%23#{$color}' stroke-width='1.4' stroke-linecap='round'/%3E%3Cpath d='M13.3392 2.19995V4.98478' stroke='%23#{$color}' stroke-width='1.4' stroke-linecap='round'/%3E%3C/svg%3E%0A",        
+    );
+  $icon: map-get($iconList, $iconName);
+  @return url("data:image/svg+xml;charset=utf8,#{$icon}");
+}
+
+/*
+    [color class name]
+    grey #666666
+    light-grey #999999
+    grey-2 #C2C9D6
+    grey-3 #393F48
+    yellow #FFE500
+    white #ffffff
+    black #000000
+*/
+
+.icon {
+    display: inline-block;
+    background-size: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    &.ic_share {
+        background-image: icon(ic_share);        
+        &.grey {
+            background-image: icon(ic_share, '666666');
+        }
+        &.yellow {
+            background-image: icon(ic_share, 'FFE500');
+        }
+    }
+    &.ic_share_2 {
+        background-image: icon(ic_share_2);
+        &.black {
+            background-image: icon(ic_share_2, '000000');
+        }
+        &.white {
+            background-image: icon(ic_share_2, 'ffffff');
+        }
+        &.brown {
+            background-image: icon(ic_share_2, '4E3510');
+        }
+    }
+    &.ic_url {
+        background-image: icon(ic_url);
+        &.yellow {
+            background-image: icon(ic_url, 'FFE500');
+        }
+    }
+    &.ic_call {
+        background-image: icon(ic_call);
+        &.grey-3 {
+            background-image: icon(ic_call, '393F48');
+        }
+    }
+    &.ic_calling {
+        background-image: icon(ic_calling);
+        &.white {
+            background-image: icon(ic_calling, 'ffffff');
+        }
+    }
+    &.ic_search {
+        background-image: icon(ic_search);
+        &.black {
+            background-image: icon(ic_search, '000000');
+        }
+    }
+    &.ic_arrow_right {
+        background-image: icon(ic_arrow_right);
+        &.white {
+            background-image: icon(ic_arrow_right, 'ffffff');
+        }
+        &.light-grey {
+            background-image: icon(ic_arrow_right, '999999');
+        }
+    }
+    &.ic_arrow_down {
+        background-image: icon(ic_arrow_down);
+        &.light-grey {
+            background-image: icon(ic_arrow_down, '999999');
+        }
+    }
+    &.ic_selfcheckin {
+        background-image: icon(ic_selfcheckin);
+        &.black {
+            background-image: icon(ic_selfcheckin, '000000');
+        }
+    }
+    &.ic_refresh {
+        background-image: icon(ic_refresh);
+        &.black {
+            background-image: icon(ic_refresh, '000000');
+        }
+    }
+    &.ic_close {
+        background-image: icon(ic_close);
+        &.black {
+            background-image: icon(ic_close, '000000');
+        }
+        &.grey-2 {
+            background-image: icon(ic_close, 'C2C9D6');
+        }
+    }
+    &.ic_calendar {
+        background-image: icon(ic_calendar);
+        &.grey-2 {
+            background-image: icon(ic_calendar, 'C2C9D6');
+        }
+    }
+}

@@ -48,3 +48,30 @@ $breakpoint-mobile : 396px;
 //     @content;
 //   }
 // }
+
+
+
+// 컬러 시스템
+$imt : unquote('!important');
+
+// item length
+$itemLength : 200;
+
+// primary
+$color-primary: #034f36; 
+$color-black: #000000;
+$color-grey: #5D5F66;
+$color-light-grey: #eeeeee;
+$color-white: #FFFFFF;
+
+$colors: () !default;
+$colors: map-merge(
+    (
+      "primary-yellow": $color-primary,      
+      "black": $color-black,      
+      "grey": $color-grey,
+      "light-grey": $color-light-grey,
+      "white": $color-white
+    ),
+    $colors
+);
