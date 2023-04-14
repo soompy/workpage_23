@@ -1155,32 +1155,16 @@ header .inner .head_title h2 {
 * LIGHT MODE STYLES
 **********/
 [data-theme=light] {
-	--clr-basic: #ffffff;
-	--clr-reversal: #333333;
-	--clr-surface--200: #f2f2f2;
-	--clr-surface--400: #cccac4;
-	--clr-white: #ffffff;
-	--clr-white: #e6e6e6;
+	--clr-primary: #034f36;
+	--clr-black: #333333;
+	--clr-light-grey: #929292;
 	--clr-grey: #666666;
-	--clr-grey: #5f6366;
-	--clr-grey: #2f3133;
-	--clr-primary--400: #f2f2f2;
-	--clr-primary--600: #929292;
-	--clr-secondary--400: #e52e2e;
-	--clr-secondary--600: #921c1c;
-	--clr-primary: #f5eb51;
-}
-
-[data-theme=light] #dump {
-	color: var(--clr-grey);
-}
-
-[data-theme=light] #state {
-	color: var(--clr-secondary--600);
+	--clr-white: #ffffff;
+	--clr-secondary: #002c1d;
 }
 
 [data-theme=light] body {
-	background-color: var(--clr-basic);
+	background-color: var(--clr-white);
 }
 
 [data-theme=light] button {
@@ -1192,11 +1176,11 @@ header .inner .head_title h2 {
 }
 
 [data-theme=light] #header h1 {
-	color: var(--clr-surface--400);
+	color: var(--clr-white);
 }
 
 [data-theme=light] .theme-controls h4 {
-	color: var(--clr-surface--400);
+	color: var(--clr-white);
 }
 
 [data-theme=light] .theme-switcher .theme-switcher__background {
@@ -1204,11 +1188,11 @@ header .inner .head_title h2 {
 }
 
 [data-theme=light] .theme-switcher .active label {
-	color: var(--clr-secondary--400);
+	color: var(--clr-secondary);
 }
 
 [data-theme=light] .theme-switcher label {
-	color: var(--clr-surface--400);
+	color: var(--clr-white);
 }
 
 [data-theme=light] .theme-switcher input {
@@ -1216,135 +1200,23 @@ header .inner .head_title h2 {
 }
 
 [data-theme=light] .theme-switcher input:checked {
-	background-color: var(--clr-secondary--400);
-}
-
-[data-theme=light] .output {
-	background-color: var(--clr-surface--400);
-}
-
-[data-theme=light] .output h2 {
-	color: var(--clr-grey);
-}
-
-[data-theme=light] .buttons {
-	background-color: var(--clr-surface--400);
-}
-
-/**********
-* CONTRAST MODE STYLES
-**********/
-[data-theme=contrast] {
-	--clr-basic: #474747;
-	--clr-surface--200: #5a5f64;
-	--clr-surface--400: #2f3133;
-	--clr-white: #ffffff;
-	--clr-white: #e6e6e6;
-	--clr-grey: #9b9b9b;
-	--clr-grey: #5f6366;
-	--clr-grey: #2f3133;
-	--clr-primary--400: #ff4b82;
-	--clr-primary--600: #b3345a;
-	--clr-secondary--400: #19f9d8;
-	--clr-secondary--600: #0fa891;
-	--clr-primary: #f6e718;
-}
-
-[data-theme=contrast] #dump {
-	color: var(--clr-white);
-}
-
-[data-theme=contrast] #state {
-	color: var(--clr-secondary--400);
-}
-
-[data-theme=contrast] body {
-	background-color: var(--clr-basic);
-}
-
-[data-theme=contrast] button {
-	background: transparent;
-}
-
-[data-theme=contrast] #header {
-	background: var(--clr-primary);
-}
-
-[data-theme=contrast] #header h1 {
-	color: var(--clr-grey);
-}
-
-[data-theme=contrast] .theme-controls h4 {
-	color: var(--clr-grey);
-}
-
-[data-theme=contrast] .theme-switcher .theme-switcher__background {
-	background-color: var(--clr-surface--200);
-}
-
-[data-theme=contrast] .theme-switcher .active label {
-	color: var(--clr-secondary--400);
-}
-
-[data-theme=contrast] .theme-switcher label {
-	color: var(--clr-grey);
-}
-
-[data-theme=contrast] .theme-switcher input {
-	background-color: var(--clr-white);
-}
-
-[data-theme=contrast] .theme-switcher input:checked {
-	background-color: var(--clr-secondary--400);
-}
-
-[data-theme=contrast] .output {
-	background-color: var(--clr-surface--400);
-}
-
-[data-theme=contrast] .output h2 {
-	color: var(--clr-white);
-}
-
-[data-theme=contrast] .buttons {
-	background-color: var(--clr-surface--400);
+	background-color: var(--clr-secondary);
 }
 
 /**********
 * DARK MODE STYLES
 **********/
 [data-theme=dark] {
-	--clr-basic: #222629;
-	--clr-reversal: #ffffff;
-	--clr-surface--200: #5a5f64;
-	--clr-surface--400: #2f3133;
-	--clr-white: #ffffff;
-	--clr-white: #e2e2e2;
-	--clr-grey: #443850;
-	--clr-grey: #5f6366;
-	--clr-grey: #2f3133;
-	--clr-onsurface--900: #0e0c11;
-	--clr-primary--400: #826d99;
-	--clr-primary--600: #bc9edd;
-	--clr-secondary--400: #f7b83d;
-	--clr-secondary--600: #a57829;
-	--clr-primary: #35342d;
-}
-
-[data-theme=dark] #dump {
-	color: var(--clr-white);
-}
-
-[data-theme=dark] #state {
-	color: var(--clr-secondary--400);
+	--clr-primary: #034f36;
+	--clr-white: #333333;
+	--clr-grey: #929292;
+	--clr-light-grey: #666666;
+	--clr-black: #ffffff;
+	--clr-secondary: #002c1d;
 }
 
 [data-theme=dark] body {
-	background-color: var(--clr-basic);
-}
-
-[data-theme=dark] button {
-	background: transparent;
+	background-color: var(--clr-white);
 }
 
 [data-theme=dark] #header {
@@ -1352,41 +1224,29 @@ header .inner .head_title h2 {
 }
 
 [data-theme=dark] #header h1 {
-	color: var(--clr-surface--200);
-}
-
-[data-theme=dark] .theme-controls h4 {
-	color: var(--clr-surface--200);
-}
-
-[data-theme=dark] .theme-switcher .theme-switcher__background {
-	background-color: var(--clr-surface--200);
-}
-
-[data-theme=dark] .theme-switcher .active label {
-	color: var(--clr-secondary--400);
-}
-
-[data-theme=dark] .theme-switcher label {
-	color: var(--clr-surface--200);
-}
-
-[data-theme=dark] .theme-switcher input {
-	background-color: var(--clr-white);
-}
-
-[data-theme=dark] .theme-switcher input:checked {
-	background-color: var(--clr-secondary--400);
-}
-
-[data-theme=dark] .output {
-	background-color: var(--clr-surface--400);
-}
-
-[data-theme=dark] .output h2 {
 	color: var(--clr-white);
 }
 
-[data-theme=dark] .buttons {
-	background-color: var(--clr-surface--400);
+[data-theme=dark] .theme-controls h4 {
+	color: var(--clr-white);
+}
+
+[data-theme=dark] .theme-switcher .theme-switcher__background {
+	background-color: var(--clr-white);
+}
+
+[data-theme=dark] .theme-switcher .active label {
+	color: var(--clr-secondary);
+}
+
+[data-theme=dark] .theme-switcher label {
+	color: var(--clr-white);
+}
+
+[data-theme=dark] .theme-switcher input {
+	background-color: var(--clr-grey);
+}
+
+[data-theme=dark] .theme-switcher input:checked {
+	background-color: var(--clr-secondary);
 }
