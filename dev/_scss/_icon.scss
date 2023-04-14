@@ -77,6 +77,9 @@
         &.black {
             background-image: icon(ic_search, '000000');
         }
+        &.white {
+            background-image: icon(ic_search, 'ffffff');
+        }
     }
     &.ic_arrow_right {
         background-image: icon(ic_arrow_right);

@@ -63,15 +63,17 @@ $color-black: #000000;
 $color-grey: #5D5F66;
 $color-light-grey: #eeeeee;
 $color-white: #FFFFFF;
+$color-secondary: #002c1d;
 
 $colors: () !default;
 $colors: map-merge(
     (
-      "primary-yellow": $color-primary,      
+      "primary": $color-primary,      
       "black": $color-black,      
       "grey": $color-grey,
       "light-grey": $color-light-grey,
-      "white": $color-white
+      "white": $color-white,
+      "secondary": $color-secondary
     ),
     $colors
 );

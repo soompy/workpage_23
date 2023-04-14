@@ -904,6 +904,10 @@ header .inner .head_title h2 {
 	background-image: url("data:image/svg+xml;charset=utf8,%0A%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.4'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12.3226 12.3223C12.5007 12.1442 12.7896 12.1442 12.9677 12.3223L15.8581 15.2127C16.0363 15.3909 16.0363 15.6797 15.8581 15.8578C15.68 16.036 15.3912 16.036 15.213 15.8578L12.3226 12.9674C12.1445 12.7893 12.1445 12.5004 12.3226 12.3223Z' fill='%23000000' stroke='%23000000' stroke-width='0.4'/%3E%3Ccircle cx='8.09' cy='8.09' r='6.09' stroke='%23000000'/%3E%3C/g%3E%3C/svg%3E%0A");
 }
 
+.icon.ic_search.white {
+	background-image: url("data:image/svg+xml;charset=utf8,%0A%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.4'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12.3226 12.3223C12.5007 12.1442 12.7896 12.1442 12.9677 12.3223L15.8581 15.2127C16.0363 15.3909 16.0363 15.6797 15.8581 15.8578C15.68 16.036 15.3912 16.036 15.213 15.8578L12.3226 12.9674C12.1445 12.7893 12.1445 12.5004 12.3226 12.3223Z' fill='%23ffffff' stroke='%23ffffff' stroke-width='0.4'/%3E%3Ccircle cx='8.09' cy='8.09' r='6.09' stroke='%23ffffff'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+
 .icon.ic_arrow_right {
 	background-image: url("data:image/svg+xml;charset=utf8,%0A%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.0998 11.6569L9.47153 16.2852L10.5 17.3137L16.1569 11.6569L15.1284 10.6284L10.5 6.00004L9.47144 7.02856L14.0998 11.6569Z' fill='%23666666'/%3E%3C/svg%3E%0A");
 }
@@ -1078,15 +1082,60 @@ header .inner .head_title h2 {
 	font-size: 14px;
 }
 
+#header .inner .rightBtn {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-moz-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-ms-flex-negative: 0;
+	flex-shrink: 0;
+}
+
 #header .inner .rightBtn button {
+	position: relative;
+	-ms-flex-negative: 0;
+	flex-shrink: 0;
 	width: 24px;
 	height: 24px;
 	margin-left: 8px;
 	-moz-border-radius: 50%;
 	border-radius: 50%;
-	-webkit-box-shadow: 0.3rem 0.3rem 0.6rem #eeeeee, -0.2rem -0.2rem 0.5rem #FFFFFF;
-	-moz-box-shadow: 0.3rem 0.3rem 0.6rem #eeeeee, -0.2rem -0.2rem 0.5rem #FFFFFF;
-	box-shadow: 0.3rem 0.3rem 0.6rem #eeeeee, -0.2rem -0.2rem 0.5rem #FFFFFF;
+	-webkit-box-shadow: 1px 1px 2px #eeeeee, -0.8px -0.8px -2px #FFFFFF;
+	-moz-box-shadow: 1px 1px 2px #eeeeee, -0.8px -0.8px -2px #FFFFFF;
+	box-shadow: 1px 1px 2px #eeeeee, -0.8px -0.8px -2px #FFFFFF;
+	-webkit-box-shadow: 10px 11px 24px -10px rgba(64, 59, 59, 0.75);
+	-moz-box-shadow: 10px 11px 24px -10px rgba(64, 59, 59, 0.75);
+	box-shadow: 10px 11px 24px -10px rgba(64, 59, 59, 0.75);
+	background: #FFFFFF;
+}
+
+#header .inner .rightBtn button.btn-theme {
+	background: url("../images/icon/ic_moon.svg") center center no-repeat;
+	-moz-background-size: cover;
+	background-size: cover;
+}
+
+#header .inner .rightBtn button.btn-theme.off-dark {
+	background: url("../images/icon/ic_light.svg") center center no-repeat;
+}
+
+#header .inner .rightBtn button.btn-search .icon {
+	width: 100%;
+	height: 100%;
+}
+
+#header .inner .rightBtn button .icon {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+#header .inner .rightBtn button:last-of-type {
+	margin-left: 0;
 }
 
 .visual {
@@ -1100,4 +1149,244 @@ header .inner .head_title h2 {
 	position: relative;
 	width: 100%;
 	height: 50vh;
+}
+
+/**********
+* LIGHT MODE STYLES
+**********/
+[data-theme=light] {
+	--clr-basic: #ffffff;
+	--clr-reversal: #333333;
+	--clr-surface--200: #f2f2f2;
+	--clr-surface--400: #cccac4;
+	--clr-white: #ffffff;
+	--clr-white: #e6e6e6;
+	--clr-grey: #666666;
+	--clr-grey: #5f6366;
+	--clr-grey: #2f3133;
+	--clr-primary--400: #f2f2f2;
+	--clr-primary--600: #929292;
+	--clr-secondary--400: #e52e2e;
+	--clr-secondary--600: #921c1c;
+	--clr-primary: #f5eb51;
+}
+
+[data-theme=light] #dump {
+	color: var(--clr-grey);
+}
+
+[data-theme=light] #state {
+	color: var(--clr-secondary--600);
+}
+
+[data-theme=light] body {
+	background-color: var(--clr-basic);
+}
+
+[data-theme=light] button {
+	background: transparent;
+}
+
+[data-theme=light] #header {
+	background: var(--clr-primary);
+}
+
+[data-theme=light] #header h1 {
+	color: var(--clr-surface--400);
+}
+
+[data-theme=light] .theme-controls h4 {
+	color: var(--clr-surface--400);
+}
+
+[data-theme=light] .theme-switcher .theme-switcher__background {
+	background-color: var(--clr-white);
+}
+
+[data-theme=light] .theme-switcher .active label {
+	color: var(--clr-secondary--400);
+}
+
+[data-theme=light] .theme-switcher label {
+	color: var(--clr-surface--400);
+}
+
+[data-theme=light] .theme-switcher input {
+	background-color: var(--clr-grey);
+}
+
+[data-theme=light] .theme-switcher input:checked {
+	background-color: var(--clr-secondary--400);
+}
+
+[data-theme=light] .output {
+	background-color: var(--clr-surface--400);
+}
+
+[data-theme=light] .output h2 {
+	color: var(--clr-grey);
+}
+
+[data-theme=light] .buttons {
+	background-color: var(--clr-surface--400);
+}
+
+/**********
+* CONTRAST MODE STYLES
+**********/
+[data-theme=contrast] {
+	--clr-basic: #474747;
+	--clr-surface--200: #5a5f64;
+	--clr-surface--400: #2f3133;
+	--clr-white: #ffffff;
+	--clr-white: #e6e6e6;
+	--clr-grey: #9b9b9b;
+	--clr-grey: #5f6366;
+	--clr-grey: #2f3133;
+	--clr-primary--400: #ff4b82;
+	--clr-primary--600: #b3345a;
+	--clr-secondary--400: #19f9d8;
+	--clr-secondary--600: #0fa891;
+	--clr-primary: #f6e718;
+}
+
+[data-theme=contrast] #dump {
+	color: var(--clr-white);
+}
+
+[data-theme=contrast] #state {
+	color: var(--clr-secondary--400);
+}
+
+[data-theme=contrast] body {
+	background-color: var(--clr-basic);
+}
+
+[data-theme=contrast] button {
+	background: transparent;
+}
+
+[data-theme=contrast] #header {
+	background: var(--clr-primary);
+}
+
+[data-theme=contrast] #header h1 {
+	color: var(--clr-grey);
+}
+
+[data-theme=contrast] .theme-controls h4 {
+	color: var(--clr-grey);
+}
+
+[data-theme=contrast] .theme-switcher .theme-switcher__background {
+	background-color: var(--clr-surface--200);
+}
+
+[data-theme=contrast] .theme-switcher .active label {
+	color: var(--clr-secondary--400);
+}
+
+[data-theme=contrast] .theme-switcher label {
+	color: var(--clr-grey);
+}
+
+[data-theme=contrast] .theme-switcher input {
+	background-color: var(--clr-white);
+}
+
+[data-theme=contrast] .theme-switcher input:checked {
+	background-color: var(--clr-secondary--400);
+}
+
+[data-theme=contrast] .output {
+	background-color: var(--clr-surface--400);
+}
+
+[data-theme=contrast] .output h2 {
+	color: var(--clr-white);
+}
+
+[data-theme=contrast] .buttons {
+	background-color: var(--clr-surface--400);
+}
+
+/**********
+* DARK MODE STYLES
+**********/
+[data-theme=dark] {
+	--clr-basic: #222629;
+	--clr-reversal: #ffffff;
+	--clr-surface--200: #5a5f64;
+	--clr-surface--400: #2f3133;
+	--clr-white: #ffffff;
+	--clr-white: #e2e2e2;
+	--clr-grey: #443850;
+	--clr-grey: #5f6366;
+	--clr-grey: #2f3133;
+	--clr-onsurface--900: #0e0c11;
+	--clr-primary--400: #826d99;
+	--clr-primary--600: #bc9edd;
+	--clr-secondary--400: #f7b83d;
+	--clr-secondary--600: #a57829;
+	--clr-primary: #35342d;
+}
+
+[data-theme=dark] #dump {
+	color: var(--clr-white);
+}
+
+[data-theme=dark] #state {
+	color: var(--clr-secondary--400);
+}
+
+[data-theme=dark] body {
+	background-color: var(--clr-basic);
+}
+
+[data-theme=dark] button {
+	background: transparent;
+}
+
+[data-theme=dark] #header {
+	background: var(--clr-primary);
+}
+
+[data-theme=dark] #header h1 {
+	color: var(--clr-surface--200);
+}
+
+[data-theme=dark] .theme-controls h4 {
+	color: var(--clr-surface--200);
+}
+
+[data-theme=dark] .theme-switcher .theme-switcher__background {
+	background-color: var(--clr-surface--200);
+}
+
+[data-theme=dark] .theme-switcher .active label {
+	color: var(--clr-secondary--400);
+}
+
+[data-theme=dark] .theme-switcher label {
+	color: var(--clr-surface--200);
+}
+
+[data-theme=dark] .theme-switcher input {
+	background-color: var(--clr-white);
+}
+
+[data-theme=dark] .theme-switcher input:checked {
+	background-color: var(--clr-secondary--400);
+}
+
+[data-theme=dark] .output {
+	background-color: var(--clr-surface--400);
+}
+
+[data-theme=dark] .output h2 {
+	color: var(--clr-white);
+}
+
+[data-theme=dark] .buttons {
+	background-color: var(--clr-surface--400);
 }

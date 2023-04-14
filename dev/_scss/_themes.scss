@@ -1,0 +1,210 @@
+/**********
+* LIGHT MODE STYLES
+**********/
+[data-theme="light"] {    
+    --clr-primary: #034f36;
+    --clr-black: #333333;
+    --clr-light-grey: #929292;
+    --clr-grey: #666666;  
+    --clr-white: #ffffff;  
+    --clr-secondary: #002c1d;
+  }
+  #state {
+    color: var(--clr-secondary);
+  }
+
+  body {
+    background-color: var(--clr-basic);
+  }
+
+  button {
+    background: transparent;
+  }
+
+  #header {
+    background: var(--clr-primary);
+    h1 {
+      color: var(--clr-white);
+    }
+  }
+
+  .theme-controls {
+    h4 {
+      color: var(--clr-white)
+    }
+  }
+
+  .theme-switcher {
+    .theme-switcher__background {
+      background-color: var(--clr-white);
+    }
+
+    .active label {
+      color: var(--clr-secondary);
+    }
+
+    label {
+      color: var(--clr-white);
+    }
+
+    input {
+      background-color: var(--clr-grey);
+
+      &:checked {
+        background-color: var(--clr-secondary);
+      }
+    }
+  }
+
+    background-color: var(--c
+    }
+  }
+
+  .buttons {
+    background-color: var(--clr-white);
+  }
+}
+
+/**********
+* CONTRAST MODE STYLES
+**********/
+
+[d--clr-white: #ffffff;  ata-theme="contrast"] {
+  --clr-basic: #474747;
+  
+  --clr-grey: #9b9b9b;  
+  --clr-grey: #b3345a;
+  --clr-secondary: #19f9d8;
+  --clr-secondary: #0fa891;
+  --clr-primary: #f6e718;
+
+  #dump {
+    color: var(--clr-white);
+  }
+  #state {
+    color: var(--clr-secondary);
+  }
+
+  body {
+    background-color: var(--clr-basic);
+  }
+
+  button {
+    background: transparent;
+  }
+
+  #header {
+    background: var(--clr-primary);
+    h1 {
+      color: var(--clr-grey);
+    }
+  }
+
+  .theme-controls {
+    h4 {
+      color: var(--clr-grey)
+    }
+  }
+
+  .theme-switcher {
+    .theme-switcher__background {
+      
+    .active label {
+      color: var(--clr-secondary);
+    }
+
+    label {
+      color: var(--clr-grey);
+    }
+
+    input {
+      background-color: var(--clr-white);
+
+      &:checked {
+        background-color: var(--clr-secondary);
+      }
+    }
+  }
+
+  .output {
+    background-color: var(--clr-white);
+    h2 {
+      color: var(--clr-white);
+    }
+  }
+
+  .buttons {
+    background-color: var(--clr-white);
+  }
+}
+
+/**********
+* DARK MODE STYLES
+**********/
+[data-theme="dark"] {
+  
+
+  --clr-grey: #443850;--clr-black: #ffffff;
+  --clr-white: #ffffff;  
+  
+  --clr-onsurface--900: #0e0c11;  
+  --clr-grey: #bc9edd;
+  --clr-secondary: #f7b83d;
+  --clr-secondary: #a57829;
+  --clr-primary: #35342d;
+
+  #dump {
+    color: var(--clr-white);
+  }
+  #state {
+    color: var(--clr-secondary);
+  }
+
+  body {
+    background-color: var(--clr-basic);
+  }
+
+  button {
+    background: transparent;
+  }
+
+  #header {
+    background: var(--clr-primary);
+    h1 {
+      
+
+  .theme-controls {
+    h4 {
+      
+
+  .theme-switcher {
+    .theme-switcher__background {
+      
+    .active label {
+      color: var(--clr-secondary);
+    }
+
+    label {
+      
+    input {
+      background-color: var(--clr-white);
+
+      &:checked {
+        background-color: var(--clr-secondary);
+      }
+    }
+  }
+
+  .output {
+    background-color: var(--clr-white);
+    h2 {
+      color: var(--clr-white);
+    }
+  }
+
+  .buttons {
+    background-color: var(--clr-white);
+  }
+}
+
+
