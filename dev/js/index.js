@@ -1,68 +1,92 @@
+// 마우스 휠 가로스크롤 js
 var swiper = new Swiper(".swiper-container", {
     slidesPerView: "auto",
     freeMode: {
-      enabled: true,
-      sticky: true,
+        enabled: true,
+        sticky: true,
     },
-  
+
     spaceBetween: 10,
     mousewheel: true
-  });
-  //
-  function selectElementByClass(className) {
+});
+//
+function selectElementByClass(className) {
     return document.querySelector(`.${className}`);
-  }
-  
-  const sections = [
+}
+
+const sections = [
     selectElementByClass("firstClass"),
     selectElementByClass("secondClass"),
     selectElementByClass("thirdClass"),
     selectElementByClass("fourthClass"),
     selectElementByClass("fifthClass"),
     selectElementByClass("sixtClass")
-  ];
-  
-  const navItems = {
+];
+
+const navItems = {
     firstID: selectElementByClass("FirstNavItem"),
     secondID: selectElementByClass("SecondNavItem"),
     thirdID: selectElementByClass("ThirdNavItem"),
     fourthID: selectElementByClass("FourthNavItem"),
     fifthID: selectElementByClass("FifthNavItem"),
     sixtID: selectElementByClass("SixtNavItem")
-  };
-  
-  // intersection observer setup
-  const observerOptions = {
+};
+
+// intersection observer setup
+const observerOptions = {
     root: null,
     rootMargin: "0px",
     threshold: 0.7
-  };
-  
-  function observerCallback(entries, observer) {
+};
+
+function observerCallback(entries, observer) {
     entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        // get the nav item corresponding to the id of the section
-        // that is currently in view
-        const navItem = navItems[entry.target.id];
-        //get the "alt" tag of section in view
-        // alt tag equals slide index of swiper
-        const navItemAlt = navItem.getAttribute("alt");
-        // tell swiper to slide to the slide with index of "alt"
-        swiper.slideTo(navItemAlt, 300, true)
-        // add 'active' class on the navItem
-        navItem.classList.add("swiper-slide-active2");
-        // remove 'active' class from any navItem that is not
-        // same as 'navItem' defined above
-        Object.values(navItems).forEach((item) => {
-          if (item != navItem) {
-            item.classList.remove("swiper-slide-active2");
-          }
-        });
-      }
+        if (entry.isIntersecting) {
+            // get the nav item corresponding to the id of the section
+            // that is currently in view
+            const navItem = navItems[entry.target.id];
+            //get the "alt" tag of section in view
+            // alt tag equals slide index of swiper
+            const navItemAlt = navItem.getAttribute("alt");
+            // tell swiper to slide to the slide with index of "alt"
+            swiper.slideTo(navItemAlt, 300, true)
+            // add 'active' class on the navItem
+            navItem.classList.add("swiper-slide-active2");
+            // remove 'active' class from any navItem that is not
+            // same as 'navItem' defined above
+            Object.values(navItems).forEach((item) => {
+                if (item != navItem) {
+                    item.classList.remove("swiper-slide-active2");
+                }
+            });
+        }
     });
-  }
-  
-  const observer = new IntersectionObserver(observerCallback, observerOptions);
-  
-  sections.forEach((sec) => observer.observe(sec));
-  
+}
+
+const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+sections.forEach((sec) => observer.observe(sec));
+
+
+
+//   테마
+const themeSwitcher = () => {
+    let modeText = document.querySelector(".mode-text");
+
+    window.addEventListener('load', function () {
+        document.documentElement.setAttribute('data-theme', 'light');
+        modeText.innerHTML = "라이트 <br> 모드"
+    });
+
+    document.querySelector('#setMode').addEventListener('change', function (event) {
+        if (event.target.checked) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            modeText.innerHTML = "다크 <br> 모드"
+        } else {
+            document.documentElement.setAttribute('data-theme', 'light');
+            modeText.innerHTML = "라이트 <br> 모드"
+        }
+    })
+}
+
+themeSwitcher();

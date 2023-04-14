@@ -1151,6 +1151,60 @@ header .inner .head_title h2 {
 	height: 50vh;
 }
 
+.change-theme .theme-mode {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-moz-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
+.change-theme .theme-mode input {
+	position: relative;
+	border: 1px solid gray;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+	width: 20px;
+	height: 12px;
+	background: transparent;
+}
+
+.change-theme .theme-mode input:before {
+	position: absolute;
+	left: 0;
+	width: 10px;
+	height: 10px;
+	content: "";
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	-webkit-transform: scale(0.8);
+	-moz-transform: scale(0.8);
+	transform: scale(0.8);
+	background-color: gray;
+	-webkit-transition: left 250ms linear;
+	-moz-transition: left 250ms linear;
+	transition: left 250ms linear;
+}
+
+.change-theme .theme-mode input:checked {
+	background: gray;
+}
+
+.change-theme .theme-mode input:checked:before {
+	left: 8px;
+	background: #ffffff;
+}
+
+.change-theme .theme-mode .mode-text {
+	font-size: 12px;
+	line-height: 12px;
+	text-align: center;
+	padding-left: 5px;
+}
+
 /**********
 * LIGHT MODE STYLES
 **********/
