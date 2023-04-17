@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/style.css" />
   <title>메인</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css" rel="stylesheet" />  
 </head>
 
 <body>
@@ -15,6 +14,28 @@
     <!-- Header -->
     <header id="header">
     <div class="inner">
+
+        <!-- m-menu에 active 클래스 추가 -->
+        <div class="m-menu">
+            <div class="bar">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="m-menu-container">
+                <button class="m-menu-close"><i class="icon ic_close white"></i></button>
+                <div class="rightBtn">                                            
+                    <div class="search-box">
+                        <input type="search">
+                    </div>
+                </div>                
+                <ul class="m-gnb">
+                    <li class="m-menu-item"><a href="javascript:;">1</a></li>
+                    <li class="m-menu-item"><a href="javascript:;">2</a></li>
+                    <li class="m-menu-item"><a href="javascript:;">3</a></li>
+                </ul>
+            </div>
+        </div>
         <h1 class="logo">home</h1>
         <ul class="gnb">
             <li class="menu-item"><a href="javascript:;">1</a></li>
@@ -22,9 +43,7 @@
             <li class="menu-item"><a href="javascript:;">3</a></li>
         </ul>
         <div class="rightBtn">
-            <button class="btn-theme off-dark">
-                
-            </button>
+            <button class="btn-theme off-dark"></button>
             <button class="btn-search">
                 <i class="icon ic_search black"></i>
             </button>
@@ -35,14 +54,30 @@
                     <input id="setMode" role="switch" type="checkbox" name="theme" />        
                 </label>
             </div>
-        </div>
+        </div>                
     </div>    
 </header>
-    <!-- Header -->
-    <section class="visual">
-      <div class="inner">
+    <!-- Header -->   
 
-      </div>
+    <section class="visual" data-scroll-container>
+      <section class="vi-section vi-01" data-scroll-section>
+        <div class="inner">
+          <h3 class="vi-text" data-scroll data-scroll-speed="1">텍스트1 텍스트1 텍스트1 텍스트1 텍스트1</h3>
+          <span class="vi-img" data-scroll data-scroll-speed="2"><img src="../images/choonsik_hi.png" alt=""></span>
+        </div>        
+      </section>
+      <section class="vi-section vi-02" data-scroll-section>
+        <div class="inner">
+          <h3 class="vi-text" data-scroll data-scroll-speed="1">텍스트2 텍스트2 텍스트2 텍스트2 텍스트2</h3>
+          <span class="vi-img" data-scroll data-scroll-speed="2"><img src="" alt=""></span>
+        </div>        
+      </section>
+      <section class="vi-section vi-03" data-scroll-section>
+        <div class="inner">
+          <h3 class="vi-text" data-scroll data-scroll-speed="1">텍스트3 텍스트3 텍스트3 텍스트3 텍스트3</h3>
+          <span class="vi-img" data-scroll data-scroll-speed="2"><img src="" alt=""></span>
+        </div>        
+      </section>
     </section>
 
     <div class="content">
@@ -52,7 +87,7 @@
         </div>
       </section>
 
-      <section class="area-common section-02">
+      <section class="area-common section-02" style="display: none;">
         <div class="inner">          
           <div class="sticky">
             <div class="swiper-container" id="scroll-tags">
@@ -103,6 +138,12 @@
 
           </div>
       </section>
+
+      <section class="area-common section-03">
+        <div class="inner">
+          
+        </div>
+      </section>
     </div>
     <!-- footer -->
     <footer>
@@ -112,7 +153,13 @@
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
-  <script src="../js/index.js"></script>
+  <script src="../js/index.js"></script>  
+  <script src="../js/locomotive-scroll.min.js"></script>
+  <script>
+      (function () {
+          var scroll = new LocomotiveScroll();
+      })();
+  </script>
 </body>
 
 </html>

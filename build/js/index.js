@@ -67,6 +67,18 @@ const observer = new IntersectionObserver(observerCallback, observerOptions);
 
 sections.forEach((sec) => observer.observe(sec));
 
+// 모바일 메뉴 열기 닫기 버튼
+const mobileMenu =  document.querySelector(".m-menu");
+const mobileOpenMenu = document.querySelector(".m-menu .bar");
+const mobileCloseMenu = document.querySelector(".m-menu-close");
+
+mobileOpenMenu.addEventListener("click", () => {
+    mobileMenu.classList.add("active");
+})
+
+mobileCloseMenu.addEventListener("click", () => {
+    mobileMenu.classList.remove("active");
+})
 
 
 //   테마
