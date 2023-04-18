@@ -1125,16 +1125,82 @@ html.has-scroll-dragging {
 	bottom: 0;
 }
 
+.area-common.section-01 {
+	background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrz-yhKecW4sVT7_KcmV3sP6gvXXk9KaPsuxJnwWSNwQ&s") center center no-repeat;
+	background-attachment: fixed;
+	-moz-background-size: cover;
+	background-size: cover;
+}
+
 .area-common.section-01 .photo-gallery {
+	overflow: hidden;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-gap: 10px;
 	width: 100%;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;
 }
 
 .area-common.section-01 .photo-gallery .gallery-item {
 	height: 40vh;
 	border: 1px solid #ccc;
+	cursor: pointer;
+}
+
+.area-common.section-01 .photo-gallery .gallery-item:hover {
+	-webkit-transform: translateZ(-10px) scale(2);
+	-moz-transform: translateZ(-10px) scale(2);
+	transform: translateZ(-10px) scale(2);
+}
+
+.area-common.section-03 .achievement-box {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 0;
+}
+
+.area-common.section-03 .achievement-box .achievement-item {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-moz-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-transition: all 0.7s ease-in-out;
+	-moz-transition: all 0.7s ease-in-out;
+	transition: all 0.7s ease-in-out;
+}
+
+.area-common.section-03 .achievement-box .achievement-item .achievement-image {
+	position: relative;
+	width: 100%;
+	-webkit-transition: all 0.7s ease-in-out;
+	-moz-transition: all 0.7s ease-in-out;
+	transition: all 0.7s ease-in-out;
+}
+
+.area-common.section-03 .achievement-box .achievement-item .achievement-image img {
+	-o-object-fit: cover;
+	object-fit: cover;
+}
+
+.area-common.section-03 .achievement-box .achievement-item .hidden-text {
+	display: none;
+	visibility: hidden;
+	font-size: 20px;
+}
+
+.area-common.section-03 .achievement-box .achievement-item:hover .achievement-image {
+	width: 0;
+}
+
+.area-common.section-03 .achievement-box .achievement-item:hover .hidden-text {
+	display: block;
+	visibility: visible;
 }
 
 * {
