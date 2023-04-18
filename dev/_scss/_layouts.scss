@@ -14,6 +14,7 @@ img {
     .inner {
         max-width: 1400px;
         width: 100%;
+        margin: auto;
     }
 }
 
@@ -85,6 +86,7 @@ img {
         }
 
         .m-menu {
+            display: none;
             position: relative;
             margin-right: auto;
             .bar {
@@ -152,17 +154,11 @@ img {
     }
 }
 
-.visual {
-    overflow: hidden;
-    position: relative;    
-    width: 100%;
-    height: 100vh;    
-    .vi-section {                
-        width: 100%;
-        height: 100%;
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
+.visual {    
+    position: relative;      
+    .vi-section {        
+        width: 100%;            
+        height: 100vh;
         .inner {
             display: flex;
             align-items: center;
@@ -174,7 +170,24 @@ img {
             margin: auto;
         }
         .vi-text {
-            font-size: 30px;
+            position: relative;            
+            z-index: 1;
+            width: 100%;
+            font-size: 70px;
+            font-weight: 900;
+            text-align: center;            
+            margin-bottom: 40px;
+            .vi-text-sub {
+                position: absolute;
+                left: 0;
+                top: -4px; 
+                z-index: -1;               
+                width: 100%;
+                font-size: 60px;
+                color: orangered;
+                transform: scale(1.1);
+                letter-spacing: -0.4rem;
+            }
         }
         .vi-img {
             display: block;
@@ -230,6 +243,7 @@ img {
                 &:before {
                     left: 8px;
                     background: #ffffff;
+                    border-radius: 12px;
                 }
             }
         }
@@ -247,11 +261,19 @@ img {
 // 반응형
 @media screen and (max-width: 1400px) {
     #header {
-        height: 60px;
+        height: 80px;
         font-size: 14px;
         .inner {
             align-items: center;
-            padding: 0 20px;
+            padding: 0 20px;            
+        }
+    }
+}
+
+@media screen and (max-width: 760px) {
+    #header {
+        height: 60px;
+        .inner {
             .logo {
                 margin: auto;
             }

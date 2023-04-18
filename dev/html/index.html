@@ -15,35 +15,54 @@
     @@include('./_include/header.html')
     <!-- Header -->   
 
+
     <section class="visual" data-scroll-container>
       <section class="vi-section vi-01" data-scroll-section>
         <div class="inner">
-          <h3 class="vi-text" data-scroll data-scroll-speed="1">텍스트1 텍스트1 텍스트1 텍스트1 텍스트1</h3>
+          <h3 class="vi-text" data-scroll data-scroll-speed="1">
+            텍스트1 텍스트1 
+            <p class="vi-text-sub">텍스트1 텍스트1 </p>
+          </h3>
           <span class="vi-img" data-scroll data-scroll-speed="2"><img src="../images/choonsik_hi.png" alt=""></span>
         </div>        
       </section>
       <section class="vi-section vi-02" data-scroll-section>
         <div class="inner">
-          <h3 class="vi-text" data-scroll data-scroll-speed="1">텍스트2 텍스트2 텍스트2 텍스트2 텍스트2</h3>
+          <h3 class="vi-text" data-scroll data-scroll-speed="1">
+            텍스트2
+            <p class="vi-text-sub">텍스트2</p>
+          </h3>
           <span class="vi-img" data-scroll data-scroll-speed="2"><img src="" alt=""></span>
         </div>        
       </section>
       <section class="vi-section vi-03" data-scroll-section>
         <div class="inner">
-          <h3 class="vi-text" data-scroll data-scroll-speed="1">텍스트3 텍스트3 텍스트3 텍스트3 텍스트3</h3>
+          <h3 class="vi-text" data-scroll data-scroll-speed="1">
+            텍스트3 텍스트3 텍스트3
+            <p class="vi-text-sub">텍스트3 텍스트3 텍스트3</p>
+          </h3>
           <span class="vi-img" data-scroll data-scroll-speed="2"><img src="" alt=""></span>
         </div>        
       </section>
     </section>
 
+
     <div class="content">
       <section class="area-common section-01">
         <div class="inner">
-          
+          <div class="photo-gallery">
+            <div class="gallery-item"></div>
+            <div class="gallery-item"></div>
+            <div class="gallery-item"></div>
+            <div class="gallery-item"></div>
+            <div class="gallery-item"></div>
+            <div class="gallery-item"></div>
+          </div>
         </div>
       </section>
 
-      <section class="area-common section-02" style="display: none;">
+
+      <section class="area-common section-02">
         <div class="inner">          
           <div class="sticky">
             <div class="swiper-container" id="scroll-tags">
@@ -53,7 +72,7 @@
                 <a alt="2" class="swiper-slide ThirdNavItem" href="#thirdID">Third</a>
                 <a alt="3" class="swiper-slide FourthNavItem" href="#fourthID">Fourth</a>
                 <a alt="4" class="swiper-slide FifthNavItem" href="#fifthID">Fifth</a>
-                <a alt="5" class="swiper-slide SixtNavItem" href="#sixtID">Sixt</a>
+                <a alt="5" class="swiper-slide SixtNavItem" href="#sixtID">Sixth</a>
               </ul>
             </div>
           </div>
@@ -88,12 +107,9 @@
                 Sixt
               </h1>
             </section>
-            <!-- <section>
-
-            </section> -->
-
           </div>
       </section>
+
 
       <section class="area-common section-03">
         <div class="inner">
@@ -101,14 +117,17 @@
         </div>
       </section>
     </div>
+
+
     <!-- footer -->
     @@include('./_include/footer.html')
     <!-- footer -->
   </div>
 
+  <script src="../js/locomotive-scroll.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
   <script src="../js/index.js"></script>  
-  <script src="../js/locomotive-scroll.min.js"></script>
+  
   <script>
       (function () {
           var scroll = new LocomotiveScroll();
