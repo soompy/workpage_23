@@ -59,6 +59,121 @@
 }
 
 
+@font-face {
+    font-family: "Kakao-Lt";
+    font-style: normal;
+    font-weight: 300;
+    src: url("../fonts/Kakao-Lt.eot");
+    src: url("../fonts/Kakao-Lt.eot?#iefix") format("embedded-opentype"), url("../fonts/Kakao-Lt.woff") format("woff"), url("../fonts/Kakao-Lt.woff2") format("woff2");
+  }
+  
+  @font-face {
+    font-family: "Kakao-Rg";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../fonts/Kakao-Rg.eot");
+    src: url("../fonts/Kakao-Rg.eot?#iefix") format("embedded-opentype"), url("../fonts/Kakao-Rg.woff") format("woff"), url("../fonts/Kakao-Rg.woff2") format("woff2");
+  }
+  
+  @font-face {
+    font-family: "Kakao-Bd";
+    font-style: normal;
+    font-weight: 700;
+    src: url("../fonts/Kakao-Bd.eot");
+    src: url("../fonts/Kakao-Bd.eot?#iefix") format("embedded-opentype"), url("../fonts/Kakao-Bd.woff") format("woff"), url("../fonts/Kakao-Bd.woff2") format("woff2");
+  }
+  
+  @font-face {
+    font-family: "Spoqa Han Sans Neo";
+    font-style: normal;
+    font-weight: 200;
+    src: url("../fonts/SpoqaHanSansNeo-Thin.eot");
+    src: url("../fonts/SpoqaHanSansNeo-Thin.eot?#iefix") format("embedded-opentype"), url("../fonts/SpoqaHanSansNeo-Thin.woff") format("woff"), url("../fonts/SpoqaHanSansNeo-Thin.woff2") format("woff2");
+  }
+  
+  @font-face {
+    font-family: "Spoqa Han Sans Neo";
+    font-style: normal;
+    font-weight: 300;
+    src: url("../fonts/SpoqaHanSansNeo-Light.eot");
+    src: url("../fonts/SpoqaHanSansNeo-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/SpoqaHanSansNeo-Light.woff") format("woff"), url("../fonts/SpoqaHanSansNeo-Light.woff2") format("woff2");
+  }
+  
+  @font-face {
+    font-family: "Spoqa Han Sans Neo";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../fonts/SpoqaHanSansNeo-Regular.eot");
+    src: url("../fonts/SpoqaHanSansNeo-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/SpoqaHanSansNeo-Regular.woff") format("woff"), url("../fonts/SpoqaHanSansNeo-Regular.woff2") format("woff2");
+  }
+  
+  @font-face {
+    font-family: "Spoqa Han Sans Neo";
+    font-style: normal;
+    font-weight: 600;
+    src: url("../fonts/SpoqaHanSansNeo-Medium.eot");
+    src: url("../fonts/SpoqaHanSansNeo-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/SpoqaHanSansNeo-Medium.woff") format("woff"), url("../fonts/SpoqaHanSansNeo-Medium.woff2") format("woff2");
+  }
+  
+  @font-face {
+    font-family: "Spoqa Han Sans Neo";
+    font-style: normal;
+    font-weight: 700;
+    src: url("../fonts/SpoqaHanSansNeo-Bold.eot");
+    src: url("../fonts/SpoqaHanSansNeo-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/SpoqaHanSansNeo-Bold.woff") format("woff"), url("../fonts/SpoqaHanSansNeo-Bold.woff2") format("woff2");
+  }
+  
+  @font-face {
+    font-family: "CookieRun Bold";
+    font-style: normal;
+    font-weight: 700;
+    src: url("../fonts/CookieRun-Bold.eot");
+    src: url("../fonts/CookieRun-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/CookieRun-Bold.woff") format("woff"), url("../fonts/CookieRun-Boldd.woff2") format("woff2");
+  }
+  
+  @font-face {
+    font-family: 'kakaoSansSmall';
+    font-style: normal;
+    font-weight: 300;
+    src: url("../fonts/kakaoSans/KakaoSmall-Light.otf") format("opentype"), url("../fonts/kakaoSans/KakaoSmall-Light.woff") format("woff"), url("../fonts/kakaoSans/KakaoSmall-Light.woff2") format("woff2");
+  }
+  
+  @font-face {
+    font-family: 'kakaoSansSmall';
+    font-style: normal;
+    font-weight: 400;
+    src: url("../fonts/kakaoSans/KakaoSmall.otf") format("opentype"), url("../fonts/kakaoSans/KakaoSmall.woff") format("woff"), url("../fonts/kakaoSans/KakaoSmall.woff2") format("woff2");
+  }
+  
+  @font-face {
+    font-family: 'kakaoSansSmall';
+    font-style: normal;
+    font-weight: 700;
+    src: url("../fonts/kakaoSans/KakaoSmall-Bold.otf") format("opentype"), url("../fonts/kakaoSans/KakaoSmall-Bold.woff") format("woff"), url("../fonts/kakaoSans/KakaoSmall-Bold.woff2") format("woff2");
+  }
+  
+  @font-face {
+    font-family: 'kakaoSansBig';
+    font-style: normal;
+    font-weight: 400;
+    src: url("../fonts/kakaoSans/KakaoBig.otf") format("opentype"), url("../fonts/kakaoSans/KakaoBig.woff") format("woff"), url("../fonts/kakaoSans/KakaoBig.woff2") format("woff2");
+  }
+  
+  @font-face {
+    font-family: 'kakaoSansBig';
+    font-style: normal;
+    font-weight: 700;
+    src: url("../fonts/kakaoSans/KakaoBig-Bold.otf") format("opentype"), url("../fonts/kakaoSans/KakaoBig-Bold.woff") format("woff"), url("../fonts/kakaoSans/KakaoBig-Bold.woff2") format("woff2");
+  }
+  
+  @font-face {
+    font-family: 'kakaoSansBig';
+    font-style: normal;
+    font-weight: 900;
+    src: url("../fonts/kakaoSans/KakaoBig-ExtraBold.otf") format("opentype"), url("../fonts/kakaoSans/KakaoBig-ExtraBold.woff") format("woff"), url("../fonts/kakaoSans/KakaoBig-ExtraBold.woff2") format("woff2");
+  }
+  
+
 
 // Fonts
 
