@@ -1,0 +1,132 @@
+$pc-size: 1400;
+
+@function vw($target) {
+    @if type-of($target)==number {
+        @return (($target * 100) / $pc-size) * 1vw;
+    }
+
+    @else if type-of($target)==list {
+        $vw: ();
+
+        @each $value in $target {
+            @if type-of($value)==number {
+                $vw: append($vw, (($value * 100) / $pc-size) * 1vw);
+            }
+
+            @else if type-of($value)==string {
+                $vw: append($vw, $value);
+            }
+        }
+
+        @return $vw;
+    }
+
+    @else {
+        @return $target;
+    }
+}
+
+.content {
+    &.product {
+        .area-common {
+            &.section-01 {
+                .sample-box {                    
+                    width: vw(500);
+                    .sample-wrapper {
+                        position: relative;
+                        font-family: "CookieRun Bold";
+                        .mobile {
+                            position: relative;
+                            display: block;
+                            width: 70%;
+                            margin-left: auto;
+                            .mobile-bg {
+                                
+                            }
+                            .value-wrapper {
+                                display: block;
+                                position: absolute;
+                                bottom: vw(16);
+                                left: vw(22);
+                                width: calc(100% - 3.19vw);
+                                height: 50%;
+                                background: #f1ff5b;                                
+                                border-bottom-left-radius: vw(28);
+                                border-bottom-right-radius: vw(38);
+                                .value-box {
+                                    display: block;
+                                    font-size: vw(20);
+                                    font-family: "CookieRun Bold";                        
+                                    text-align: center;
+                                    padding: vw(20) 0;
+                                }
+                            }
+                            &:after {
+                                display: block;
+                                clear: both;
+                                content: '';
+                                position: absolute;
+                                left: 0;
+                                bottom: 0;
+                                width: 100%;
+                                height: vw(30);
+                                background: linear-gradient(0deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 100%);
+                            }
+                        }
+                        .range-bar {
+                            position: absolute;
+                            right: vw(50);
+                            top: 50%;
+                            width: vw(6);
+                            height: 80%;
+                            background: #eeeeee;                            
+                            transform: translateY(-50%);
+                            border-radius: vw(4);                            
+                            .range-step {
+                                position: absolute;                                
+                                left: 50%;
+                                bottom: 80%;
+                                z-index: 1;
+                                width: vw(20);
+                                height: vw(40);                                
+                                border-radius: vw(20);
+                                background: #cccccc;
+                                transform: translateX(-50%);
+                            }
+                            .progress-bar {
+                                position: absolute;
+                                left: 50%;
+                                bottom: 0;
+                                width: vw(6);
+                                height: 80%;
+                                border-radius: vw(20);
+                                background: #9e8b8b;
+                                transform: translateX(-50%);
+                            }
+                        }
+                    }
+                }
+                .text-box {
+                    flex: 1;
+                    padding-left: vw(20);
+                    h3 {
+                        font-size: vw(30);                        
+                    }
+                    p {
+                        font-size: vw(16);
+                    }
+                }                                             
+            }
+            &.section-02 {
+                                                
+            }
+            &.section-03 {
+                                                
+            }
+            .inner {
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
+}

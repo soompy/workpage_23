@@ -133,68 +133,71 @@ html.has-scroll-dragging {
     bottom: 0;
 }
 
-.area-common {
-    &.section-01 {       
-        background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrz-yhKecW4sVT7_KcmV3sP6gvXXk9KaPsuxJnwWSNwQ&s') center center no-repeat;
-        background-attachment: fixed; 
-        background-size: cover;
-        .photo-gallery {
-            overflow: hidden;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-gap: 10px;            
-            width: 100%;
-            transform-style: preserve-3d;
-            .gallery-item {
-                height: 40vh;
-                border: 1px solid #ccc;    
-                cursor: pointer;     
-                &:hover {
-                    transform: translateZ(-10px) scale(2);
-                }                       
+.main {
+    .area-common {
+        &.section-01 {       
+            background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrz-yhKecW4sVT7_KcmV3sP6gvXXk9KaPsuxJnwWSNwQ&s') center center no-repeat;
+            background-attachment: fixed; 
+            background-size: cover;
+            .photo-gallery {
+                overflow: hidden;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-gap: 10px;            
+                width: 100%;
+                transform-style: preserve-3d;
+                .gallery-item {
+                    height: 40vh;
+                    border: 1px solid #ccc;    
+                    cursor: pointer;     
+                    &:hover {
+                        transform: translateZ(-10px) scale(2);
+                    }                       
+                }
             }
         }
-    }
-
-    &.section-02 {
-
-    }
-
-    &.section-03 {
-        .achievement-box {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-gap: 0;
-            .achievement-item {
-                display: flex;
-                align-items: center;
-                transition: all 0.7s ease-in-out;
-                .achievement-image {
-                    position: relative;
-                    width: 100%;
+    
+        &.section-02 {
+    
+        }
+    
+        &.section-03 {
+            .achievement-box {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-gap: 0;
+                .achievement-item {
+                    display: flex;
+                    align-items: center;
                     transition: all 0.7s ease-in-out;
-                    img {
-                        object-fit: cover;
-                    }
-                }
-                .hidden-text {
-                    display: none;
-                    visibility: hidden;
-                    font-size: 20px;
-                }
-                &:hover {
                     .achievement-image {
-                        width: 0;
+                        position: relative;
+                        width: 100%;
+                        transition: all 0.7s ease-in-out;
+                        img {
+                            object-fit: cover;
+                        }
                     }
                     .hidden-text {
-                        display: block;
-                        visibility: visible;                     
-                    }   
+                        display: none;
+                        visibility: hidden;
+                        font-size: 20px;
+                    }
+                    &:hover {
+                        .achievement-image {
+                            width: 0;
+                        }
+                        .hidden-text {
+                            display: block;
+                            visibility: visible;                     
+                        }   
+                    }
                 }
             }
         }
     }
 }
+
 
 @media screen and (max-width: 1400px) {
 

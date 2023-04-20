@@ -1239,14 +1239,14 @@ html.has-scroll-dragging {
 	bottom: 0;
 }
 
-.area-common.section-01 {
+.main .area-common.section-01 {
 	background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrz-yhKecW4sVT7_KcmV3sP6gvXXk9KaPsuxJnwWSNwQ&s") center center no-repeat;
 	background-attachment: fixed;
 	-moz-background-size: cover;
 	background-size: cover;
 }
 
-.area-common.section-01 .photo-gallery {
+.main .area-common.section-01 .photo-gallery {
 	overflow: hidden;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
@@ -1257,25 +1257,25 @@ html.has-scroll-dragging {
 	transform-style: preserve-3d;
 }
 
-.area-common.section-01 .photo-gallery .gallery-item {
+.main .area-common.section-01 .photo-gallery .gallery-item {
 	height: 40vh;
 	border: 1px solid #ccc;
 	cursor: pointer;
 }
 
-.area-common.section-01 .photo-gallery .gallery-item:hover {
+.main .area-common.section-01 .photo-gallery .gallery-item:hover {
 	-webkit-transform: translateZ(-10px) scale(2);
 	-moz-transform: translateZ(-10px) scale(2);
 	transform: translateZ(-10px) scale(2);
 }
 
-.area-common.section-03 .achievement-box {
+.main .area-common.section-03 .achievement-box {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	grid-gap: 0;
 }
 
-.area-common.section-03 .achievement-box .achievement-item {
+.main .area-common.section-03 .achievement-box .achievement-item {
 	display: -webkit-box;
 	display: -moz-box;
 	display: -ms-flexbox;
@@ -1289,7 +1289,7 @@ html.has-scroll-dragging {
 	transition: all 0.7s ease-in-out;
 }
 
-.area-common.section-03 .achievement-box .achievement-item .achievement-image {
+.main .area-common.section-03 .achievement-box .achievement-item .achievement-image {
 	position: relative;
 	width: 100%;
 	-webkit-transition: all 0.7s ease-in-out;
@@ -1297,22 +1297,22 @@ html.has-scroll-dragging {
 	transition: all 0.7s ease-in-out;
 }
 
-.area-common.section-03 .achievement-box .achievement-item .achievement-image img {
+.main .area-common.section-03 .achievement-box .achievement-item .achievement-image img {
 	-o-object-fit: cover;
 	object-fit: cover;
 }
 
-.area-common.section-03 .achievement-box .achievement-item .hidden-text {
+.main .area-common.section-03 .achievement-box .achievement-item .hidden-text {
 	display: none;
 	visibility: hidden;
 	font-size: 20px;
 }
 
-.area-common.section-03 .achievement-box .achievement-item:hover .achievement-image {
+.main .area-common.section-03 .achievement-box .achievement-item:hover .achievement-image {
 	width: 0;
 }
 
-.area-common.section-03 .achievement-box .achievement-item:hover .hidden-text {
+.main .area-common.section-03 .achievement-box .achievement-item:hover .hidden-text {
 	display: block;
 	visibility: visible;
 }
@@ -2799,6 +2799,129 @@ input::-webkit-input-placeholder, input:-ms-input-placeholder {
 
 .notice_wrapper .notice_container .notice_contents.on {
 	display: block;
+}
+
+.content.product .area-common.section-01 .sample-box {
+	width: 35.7142857143vw;
+}
+
+.content.product .area-common.section-01 .sample-box .sample-wrapper {
+	position: relative;
+	font-family: "CookieRun Bold";
+}
+
+.content.product .area-common.section-01 .sample-box .sample-wrapper .mobile {
+	position: relative;
+	display: block;
+	width: 70%;
+	margin-left: auto;
+}
+
+.content.product .area-common.section-01 .sample-box .sample-wrapper .mobile .value-wrapper {
+	display: block;
+	position: absolute;
+	bottom: 1.1428571429vw;
+	left: 1.5714285714vw;
+	width: -moz-calc(100% - 3.19vw);
+	width: calc(100% - 3.19vw);
+	height: 50%;
+	background: #f1ff5b;
+	-moz-border-radius-bottomleft: 2vw;
+	border-bottom-left-radius: 2vw;
+	-moz-border-radius-bottomright: 2.7142857143vw;
+	border-bottom-right-radius: 2.7142857143vw;
+}
+
+.content.product .area-common.section-01 .sample-box .sample-wrapper .mobile .value-wrapper .value-box {
+	display: block;
+	font-size: 1.4285714286vw;
+	font-family: "CookieRun Bold";
+	text-align: center;
+	padding: 1.4285714286vw 0;
+}
+
+.content.product .area-common.section-01 .sample-box .sample-wrapper .mobile:after {
+	display: block;
+	clear: both;
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 2.1428571429vw;
+	background: -webkit-gradient(linear, left bottom, left top, from(rgba(255, 255, 255, 0.9)), to(rgba(255, 255, 255, 0)));
+	background: -moz-linear-gradient(bottom, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 100%);
+	background: linear-gradient(0deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.content.product .area-common.section-01 .sample-box .sample-wrapper .range-bar {
+	position: absolute;
+	right: 3.5714285714vw;
+	top: 50%;
+	width: 0.4285714286vw;
+	height: 80%;
+	background: #eeeeee;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	transform: translateY(-50%);
+	-moz-border-radius: 0.2857142857vw;
+	border-radius: 0.2857142857vw;
+}
+
+.content.product .area-common.section-01 .sample-box .sample-wrapper .range-bar .range-step {
+	position: absolute;
+	left: 50%;
+	bottom: 80%;
+	z-index: 1;
+	width: 1.4285714286vw;
+	height: 2.8571428571vw;
+	-moz-border-radius: 1.4285714286vw;
+	border-radius: 1.4285714286vw;
+	background: #cccccc;
+	-webkit-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	transform: translateX(-50%);
+}
+
+.content.product .area-common.section-01 .sample-box .sample-wrapper .range-bar .progress-bar {
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	width: 0.4285714286vw;
+	height: 80%;
+	-moz-border-radius: 1.4285714286vw;
+	border-radius: 1.4285714286vw;
+	background: #9e8b8b;
+	-webkit-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	transform: translateX(-50%);
+}
+
+.content.product .area-common.section-01 .text-box {
+	-webkit-box-flex: 1;
+	-moz-box-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+	padding-left: 1.4285714286vw;
+}
+
+.content.product .area-common.section-01 .text-box h3 {
+	font-size: 2.1428571429vw;
+}
+
+.content.product .area-common.section-01 .text-box p {
+	font-size: 1.1428571429vw;
+}
+
+.content.product .area-common .inner {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-moz-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
 }
 
 * {
