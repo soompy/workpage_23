@@ -3240,6 +3240,7 @@ img {
 
 .visual {
 	position: relative;
+	height: 300vh;
 }
 
 .visual .vi-section {
@@ -3279,7 +3280,6 @@ img {
 	font-size: 70px;
 	font-weight: 900;
 	text-align: center;
-	margin-bottom: 40px;
 }
 
 .visual .vi-section .vi-text .vi-text-sub {

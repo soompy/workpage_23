@@ -14,7 +14,7 @@
     <meta property="og:description" content="이수민">
     <title>메인</title>
     <link rel="stylesheet" type="text/css" href="../css/style.css" />
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"> 
     <script src="../js/jquery-3.6.1.min.js"></script>
 </head>
 
@@ -69,34 +69,34 @@
     </div>    
 </header>
     <!-- Header -->
-
-
+    
+    <div id="locomotiveStart"></div>
     <section class="visual" data-scroll-section>
-      <section class="vi-section vi-01">
+      <section class="vi-section vi-01" data-scroll data-scroll-speed="-8" data-scroll-position="top" data-scroll-target="#locomotiveStart" data-scroll-repeat>
         <div class="inner">
-          <h3 class="vi-text" data-scroll data-scroll-speed="1">
+          <h3 class="vi-text">
             텍스트1 텍스트1
             <p class="vi-text-sub">텍스트1 텍스트1 </p>
           </h3>
-          <span class="vi-img" data-scroll data-scroll-speed="2"><img src="../images/choonsik_hi.png" alt=""></span>
+          <span class="vi-img" data-scroll data-scroll-direction="horizontal" data-scroll-speed="2" data-scroll-position="top" data-scroll-target="#locomotiveStart"><img src="../images/choonsik_hi.png" alt=""></span>
         </div>
       </section>
-      <section class="vi-section vi-02">
+      <section class="vi-section vi-02" data-scroll data-scroll-speed="-8" data-scroll-position="top" data-scroll-target="#locomotiveStart" data-scroll-repeat>
         <div class="inner">
-          <h3 class="vi-text" data-scroll data-scroll-speed="1">
+          <h3 class="vi-text">
             텍스트2
             <p class="vi-text-sub">텍스트2</p>
           </h3>
-          <span class="vi-img" data-scroll data-scroll-speed="2"><img src="" alt=""></span>
+          <span class="vi-img" data-scroll data-scroll-direction="horizontal" data-scroll-speed="2" data-scroll-position="top" data-scroll-target="#locomotiveStart"><img src="../images/choonsik_hi.png" alt=""></span>
         </div>
       </section>
-      <section class="vi-section vi-03">
+      <section class="vi-section vi-03" data-scroll data-scroll-speed="-8" data-scroll-position="top" data-scroll-target="#locomotiveStart" data-scroll-repeat>
         <div class="inner">
-          <h3 class="vi-text" data-scroll data-scroll-speed="1">
+          <h3 class="vi-text">
             텍스트3 텍스트3 텍스트3
             <p class="vi-text-sub">텍스트3 텍스트3 텍스트3</p>
           </h3>
-          <span class="vi-img" data-scroll data-scroll-speed="2"><img src="" alt=""></span>
+          <span class="vi-img" data-scroll data-scroll-direction="horizontal" data-scroll-speed="2" data-scroll-position="top" data-scroll-target="#locomotiveStart"><img src="../images/choonsik_hi.png" alt=""></span>
         </div>
       </section>
     </section>
@@ -212,50 +212,21 @@
     <!-- footer -->
   </div>
 
-  <!-- <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>   -->
+  
+  
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>  
+  <script nomodule src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.6.0/polyfill.min.js" crossorigin="anonymous"></script>
+  <script nomodule src="https://polyfill.io/v3/polyfill.min.js?features=Object.assign%2CElement.prototype.append%2CNodeList.prototype.forEach%2CCustomEvent%2Csmoothscroll" crossorigin="anonymous"></script>  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
   <script src="../js/index.js"></script>
-  <script src="../js/horizontal.js"></script>
-  <script src="../js/detector.js"></script>
-
-  
+  <script src="../js/horizontal.js"></script>  
   <script>
-    const scroller = new LocomotiveScroll({
-      el: document.querySelector('[data-scroll-container]'),
-      smooth: true
-    });
-
-    var sd = new ScrollDetector();
-    var scrollParallaxTriggerTop = $('#scrollParallaxTrigger').offset().top
-    var scrollParallaxTriggerEndTop = $('#scrollParallaxEnd').offset().top + 200
-    var scrollParallaxStart = scrollParallaxTriggerTop - window.innerHeight
-
-    var maxRatio = scrollParallaxTriggerEndTop - scrollParallaxStart;
-
-    sd.add(document.getElementById('scrollParallaxTrigger'), function () {
-        $("#scrollArea").addClass("ani_active")
-    }, { actionType: "in" })
-    
-    sd.add(document.body, function (scrollTop) {
-        if (
-            (scrollTop + window.innerHeight > scrollParallaxTriggerTop) &&
-            (scrollTop < scrollParallaxTriggerEndTop)
-        ) {
-
-            var duration = (scrollTop - scrollParallaxStart) / maxRatio;
-            var accelamount = duration * 320;
-            var style = {
-                'transform': 'translateY(' + accelamount + 'px) ',
-            }
-
-            $('.obj_01').css(style)
-            $('.obj_02').css(style)
-            $('.obj_03').css(style)
-            $('.obj_04').css(style)
-        }
-
-    }, { actionType: 'custom' })
+    (function () {
+      var scroll = new LocomotiveScroll();
+    })();
   </script>
+  
+  
 </body>
 
 </html>
