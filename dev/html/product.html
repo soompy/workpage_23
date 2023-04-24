@@ -22,14 +22,19 @@
         @@include('./_include/header.html')
 
         <div class="product content">
+            <section class="area-common section-00" style="height: 100vh; background: #ccc;">
+
+            </section>
             <section class="area-common section-01">
+                <div id="scrollParallaxTrigger"></div>
                 <div class="inner">
-                    <div class="sample-box">
+                    <div class="sample-box" id="scrollArea">
                         <div class="sample-wrapper">
                             <span class="mobile">
                                 <img class="mobile-bg" src="../images/product/mobile_mockup.png" alt="모바일 화면">
                                 <span class="value-wrapper">
                                     <strong class="value-box">10,000</strong>
+                                    원
                                 </span>                                
                             </span>
                             <div class="range-bar">
@@ -44,6 +49,7 @@
                         <p>text text</p>
                     </div>
                 </div>
+                <div id="scrollParallaxEnd"></div>
             </section>
 
             <section class="area-common section-02">
@@ -60,9 +66,35 @@
         </div>
 
         @@include('./_include/footer.html')
-    </div>
+    </div>ㄴ
 
     <script src="../js/index.js"></script>
+    <script src="../js/detector.js"></script>
+    <script>
+        var sd = new ScrollDetector();
+        var scrollParallaxTriggerTop = $('#scrollParallaxTrigger').offset().top
+        var scrollParallaxTriggerEndTop = $('#scrollParallaxEnd').offset().top + 200
+        var scrollParallaxStart = scrollParallaxTriggerTop - window.innerHeight
+
+        var maxRatio = scrollParallaxTriggerEndTop - scrollParallaxStart;
+
+        sd.add(document.getElementById('scrollParallaxTrigger'), function () {
+            $("#scrollArea").addClass("ani_active")
+        }, { actionType: "in" })
+        
+        sd.add(document.body, function (scrollTop) {
+            if (
+                (scrollTop + window.innerHeight > scrollParallaxTriggerTop) &&
+                (scrollTop < scrollParallaxTriggerEndTop)
+            ) {
+
+                var duration = (scrollTop - scrollParallaxStart) / maxRatio;
+                var accelamount = duration * 320;
+                           
+            }
+
+        }, { actionType: 'custom' })
+    </script>
 </body>
 
 </html>

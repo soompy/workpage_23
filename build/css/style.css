@@ -2802,7 +2802,14 @@ input::-webkit-input-placeholder, input:-ms-input-placeholder {
 }
 
 .content.product .area-common.section-01 .sample-box {
+	-webkit-box-flex: 1;
+	-moz-box-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
 	width: 35.7142857143vw;
+	-webkit-transition: all 1.7s linear;
+	-moz-transition: all 1.7s linear;
+	transition: all 1.7s linear;
 }
 
 .content.product .area-common.section-01 .sample-box .sample-wrapper {
@@ -2818,26 +2825,42 @@ input::-webkit-input-placeholder, input:-ms-input-placeholder {
 }
 
 .content.product .area-common.section-01 .sample-box .sample-wrapper .mobile .value-wrapper {
-	display: block;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-moz-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-moz-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
 	position: absolute;
 	bottom: 1.1428571429vw;
-	left: 1.5714285714vw;
-	width: -moz-calc(100% - 3.19vw);
-	width: calc(100% - 3.19vw);
-	height: 50%;
-	background: #f1ff5b;
-	-moz-border-radius-bottomleft: 2vw;
-	border-bottom-left-radius: 2vw;
+	left: 2vw;
+	width: -moz-calc(100% - 4.25vw);
+	width: calc(100% - 4.25vw);
+	height: 30%;
+	font-size: 1.7142857143vw;
+	background: var(--clr-sub);
+	-moz-border-radius-bottomleft: 2.7142857143vw;
+	border-bottom-left-radius: 2.7142857143vw;
 	-moz-border-radius-bottomright: 2.7142857143vw;
 	border-bottom-right-radius: 2.7142857143vw;
+	-webkit-transition: height 1.7s linear;
+	-moz-transition: height 1.7s linear;
+	transition: height 1.7s linear;
+	padding-bottom: 3.5714285714vw;
 }
 
 .content.product .area-common.section-01 .sample-box .sample-wrapper .mobile .value-wrapper .value-box {
 	display: block;
-	font-size: 1.4285714286vw;
+	font-size: 2.8571428571vw;
 	font-family: "CookieRun Bold";
 	text-align: center;
-	padding: 1.4285714286vw 0;
+	padding-right: 0.2857142857vw;
 }
 
 .content.product .area-common.section-01 .sample-box .sample-wrapper .mobile:after {
@@ -2860,7 +2883,7 @@ input::-webkit-input-placeholder, input:-ms-input-placeholder {
 	top: 50%;
 	width: 0.4285714286vw;
 	height: 80%;
-	background: #eeeeee;
+	background: var(--clr-light-grey);
 	-webkit-transform: translateY(-50%);
 	-moz-transform: translateY(-50%);
 	transform: translateY(-50%);
@@ -2871,30 +2894,49 @@ input::-webkit-input-placeholder, input:-ms-input-placeholder {
 .content.product .area-common.section-01 .sample-box .sample-wrapper .range-bar .range-step {
 	position: absolute;
 	left: 50%;
-	bottom: 80%;
+	bottom: 24%;
 	z-index: 1;
 	width: 1.4285714286vw;
 	height: 2.8571428571vw;
 	-moz-border-radius: 1.4285714286vw;
 	border-radius: 1.4285714286vw;
-	background: #cccccc;
+	background: var(--clr-secondary);
 	-webkit-transform: translateX(-50%);
 	-moz-transform: translateX(-50%);
 	transform: translateX(-50%);
+	-webkit-transition: bottom 1.7s linear;
+	-moz-transition: bottom 1.7s linear;
+	transition: bottom 1.7s linear;
 }
 
 .content.product .area-common.section-01 .sample-box .sample-wrapper .range-bar .progress-bar {
 	position: absolute;
-	left: 50%;
+	left: 31%;
 	bottom: 0;
-	width: 0.4285714286vw;
-	height: 80%;
+	width: 0.5vw;
+	height: 30%;
 	-moz-border-radius: 1.4285714286vw;
 	border-radius: 1.4285714286vw;
-	background: #9e8b8b;
+	background: var(--clr-primary);
 	-webkit-transform: translateX(-50%);
 	-moz-transform: translateX(-50%);
 	transform: translateX(-50%);
+	-webkit-transition: height 1.7s linear;
+	-moz-transition: height 1.7s linear;
+	transition: height 1.7s linear;
+}
+
+.content.product .area-common.section-01 .sample-box.ani_active .sample-wrapper .mobile .value-wrapper {
+	height: 50%;
+	padding-bottom: 21.4285714286vw;
+}
+
+.content.product .area-common.section-01 .sample-box.ani_active .sample-wrapper .range-bar .range-step {
+	bottom: 49%;
+}
+
+.content.product .area-common.section-01 .sample-box.ani_active .sample-wrapper .range-bar .progress-bar {
+	height: 50%;
 }
 
 .content.product .area-common.section-01 .text-box {
@@ -3350,6 +3392,7 @@ img {
 **********/
 [data-theme=light] {
 	--clr-primary: #034f36;
+	--clr-sub: #FFD377;
 	--clr-black: #333333;
 	--clr-light-grey: #929292;
 	--clr-grey: #666666;
@@ -3402,6 +3445,7 @@ img {
 **********/
 [data-theme=dark] {
 	--clr-primary: #034f36;
+	--clr-sub: #fbc041;
 	--clr-white: #333333;
 	--clr-grey: #929292;
 	--clr-light-grey: #666666;
