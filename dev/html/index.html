@@ -14,6 +14,7 @@
     <meta property="og:description" content="이수민">
     <title>메인</title>
     <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">  -->
     <script src="../js/jquery-3.6.1.min.js"></script>
 </head>
 
@@ -57,6 +58,7 @@
 
     <div class="main content">
       <section class="area-common section-01">
+        <div id="scrollParallaxTrigger"></div>
         <div class="inner">
           <div class="photo-gallery">
             <div class="gallery-item"></div>
@@ -67,6 +69,7 @@
             <div class="gallery-item"></div>
           </div>
         </div>
+        <div id="scrollParallaxEnd"></div>
       </section>
 
 
@@ -153,15 +156,49 @@
     <!-- footer -->
   </div>
 
-  <script src="../js/locomotive-scroll.min.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>   -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
   <script src="../js/index.js"></script>
   <script src="../js/horizontal.js"></script>
+  <script src="../js/detector.js"></script>
 
+  
   <script>
-    (function () {
-      var scroll = new LocomotiveScroll();
-    })();
+    const scroller = new LocomotiveScroll({
+      el: document.querySelector('[data-scroll-container]'),
+      smooth: true
+    });
+
+    var sd = new ScrollDetector();
+    var scrollParallaxTriggerTop = $('#scrollParallaxTrigger').offset().top
+    var scrollParallaxTriggerEndTop = $('#scrollParallaxEnd').offset().top + 200
+    var scrollParallaxStart = scrollParallaxTriggerTop - window.innerHeight
+
+    var maxRatio = scrollParallaxTriggerEndTop - scrollParallaxStart;
+
+    sd.add(document.getElementById('scrollParallaxTrigger'), function () {
+        $("#scrollArea").addClass("ani_active")
+    }, { actionType: "in" })
+    
+    sd.add(document.body, function (scrollTop) {
+        if (
+            (scrollTop + window.innerHeight > scrollParallaxTriggerTop) &&
+            (scrollTop < scrollParallaxTriggerEndTop)
+        ) {
+
+            var duration = (scrollTop - scrollParallaxStart) / maxRatio;
+            var accelamount = duration * 320;
+            var style = {
+                'transform': 'translateY(' + accelamount + 'px) ',
+            }
+
+            $('.obj_01').css(style)
+            $('.obj_02').css(style)
+            $('.obj_03').css(style)
+            $('.obj_04').css(style)
+        }
+
+    }, { actionType: 'custom' })
   </script>
 </body>
 

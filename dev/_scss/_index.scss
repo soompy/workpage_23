@@ -135,12 +135,13 @@ html.has-scroll-dragging {
 
 .main {
     .area-common {
-        &.section-01 {       
-            background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrz-yhKecW4sVT7_KcmV3sP6gvXXk9KaPsuxJnwWSNwQ&s') center center no-repeat;
+        &.section-01 {
+            background: #e0e0e0;  
+            // background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrz-yhKecW4sVT7_KcmV3sP6gvXXk9KaPsuxJnwWSNwQ&s') center center no-repeat;
             background-attachment: fixed; 
             background-size: cover;
-            .photo-gallery {
-                overflow: hidden;
+            transition: margin 1s ease-in-out;
+            .photo-gallery {                
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
                 grid-gap: 10px;            
@@ -149,16 +150,36 @@ html.has-scroll-dragging {
                 .gallery-item {
                     height: 40vh;
                     border: 1px solid #ccc;    
-                    cursor: pointer;     
-                    &:hover {
-                        transform: translateZ(-10px) scale(2);
-                    }                       
+                    cursor: pointer;            
+                    transition: margin 1s ease-in-out;             
+                    &:nth-child(odd) {
+                        margin-bottom: 50px;                        
+                    }   
+                    &:nth-child(even) {
+                        margin-top: 50px;
+                    }                    
+                }
+            }
+            &.ani_active {
+                .photo-gallery {                
+                    .gallery-item {                        
+                        &:nth-child(odd) {
+                            margin-bottom: 0;
+                        }   
+                        &:nth-child(even) {
+                            margin-top: 0;
+                        }                    
+                    }
                 }
             }
         }
     
         &.section-02 {
-    
+            overflow-y: auto;
+            height: 100vh;    
+            &::-webkit-scrollbar {
+                display: none;
+            }
         }
     
         &.section-03 {
