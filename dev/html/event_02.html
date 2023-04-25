@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="robots" content="index,follow">
+    <meta name="author" content="이수민">
+    <meta name="keywords" content="홀인원 이벤트, 경품, 이수민, 골프, Golf">
+    <meta name="description" content="이수민">
+    <meta name="format-detection" content="telephone=no, email=no">
+    <meta name="twitter:card" content="summary">
+    <meta property="og:title" content="홀인원 이벤트">
+    <meta property="og:description" content="이수민">
+    <title>이벤트2</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <script src="../js/jquery-3.6.1.min.js"></script>
+</head>
+
+<body>
+    <div class="eventWrapper m-360">
+        <div class="middle motion-visual">
+            <section class="top-visual">
+                <div class="vi-image-box">
+                    <span class="image-a viActive"></span>
+                    <span class="image-b"></span>
+                </div>
+                <div class="vi-text-box textRolling">
+                    <div class="text-inner">
+                        <p class="text-a">빡침ㅠㅜ</p>
+                        <p class="text-b">살짝 풀림</p>
+                    </div>
+                </div>
+            </section>
+
+            <div id="scrollParallaxTrigger"></div>
+            
+            <section class="vertical-contents">
+                <div class="vertical-fixed-wrap">
+                    <div class="vertical-fixed-box">
+                        <div class="vertical-scroll-area">
+                            
+                            
+                            <div class="swiper eventSlide">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">Slide 1</div>
+                                    <div class="swiper-slide">Slide 2</div>
+                                    <div class="swiper-slide">Slide 3</div>
+                                </div>
+                
+                                <div class="swiper-pagination"></div>
+                
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-button-next"></div>
+                
+                                <div class="swiper-scrollbar"></div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </section>    
+        
+            <div id="scrollParallaxEnd"></div>
+
+            <section class="next-contents">다음콘텐츠</section>
+
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script>
+        window.addEventListener("scroll", visualScroll);
+
+        function visualScroll() {
+            const viBg = document.querySelector(".top-visual");
+            const imageA = document.querySelector(".image-a");
+            const imageB = document.querySelector(".image-b");
+            const viTextBox = document.querySelector(".vi-text-box");
+
+            if (window.scrollY >= 5) {
+                imageA.classList.remove("viActive");
+                imageB.classList.add("viActive");
+                viTextBox.classList.remove("textRolling");
+                viBg.style.background = "linear-gradient(180deg, #D7E4FF 0%, #FAFBFF 149.65%)";                
+            }
+            if (window.scrollY < 5) {
+                imageA.classList.add("viActive");
+                imageB.classList.remove("viActive");
+                viTextBox.classList.add("textRolling");
+                viBg.style.background = "linear-gradient(90deg, #FFA3A0 0%, #FFABBC 24%, #FFB0F5 72.99%, #FBA8FF 87.49%)";
+            }
+        }
+
+        /*
+            창 높이(100vh)구하기
+            특정 영역 내 스크롤시 position: sticky, 100vh 씩 콘텐츠 올라감
+        */
+        window.addEventListener('DOMContentLoaded', function() {
+            window.scrollTo(0, 0);
+        })
+
+        let scrollpos = window.scrollY;
+        const dddheight = headerElem.offsetTop;
+
+
+        //const windowH = document.clientHeight;
+        //console.log(windowH);
+
+        const swiper = new Swiper('.eventSlide', {
+            direction: 'vertical',
+            loop: true,        
+            pagination: {
+              el: '.swiper-pagination',
+            },
+          
+            navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+            },
+          
+            scrollbar: {
+              el: '.swiper-scrollbar',
+            },
+          });
+    </script>
+</body>
+
+</html>
