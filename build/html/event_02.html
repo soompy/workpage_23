@@ -34,12 +34,14 @@
             </div>
         </section>
         
-        <section class="vertical-scroll-area">
-            <div class="cont-box vertical-01">
-                <img src="../images/choonsik_hi.png" alt="인사춘식">
-            </div>
-            <div class="cont-box vertical-02">
-                <img src="../images/choonsik_mic.png" alt="마이크춘식">
+        <section class="horizontal-scroll-area">
+            <div class="horizontal-fixed">
+                <div class="cont-box vertical-01">
+                    <img src="../images/choonsik_hi.png" alt="인사춘식">
+                </div>
+                <div class="cont-box vertical-02">
+                    <img src="../images/choonsik_mic.png" alt="마이크춘식">
+                </div>            
             </div>            
         </section>
 
@@ -87,63 +89,48 @@
             }
         }
 
-        
-        // 세로 고정 스크롤
-        /*
-            스크롤이 vertical-scroll-area에 왔을때 영역이 고정되면서
-            vertical-fixed-box 내에서 세로 스크롤이 진행된다.
-        */
-        
-        /*
-        window.addEventListener('DOMContentLoaded', function() {
-            window.scrollTo(0, 0);
-        })
-        */
-
-        let scrollpos = window.scrollY;
-        
-        const verticalScrollTarget = document.querySelector(".vertical-scroll-area");    
-        const verticalScrollTargetH = verticalScrollTarget.offsetTop;
-
-        const vertical01 = document.querySelector(".vertical-01");
-
-        // scrollpos = window.scrollY;
-        
-        const vertical01Position = vertical01.clientHeight
-        console.log(vertical01Position)
-
-        const vertical02scroll = vertical01.scrollTop
-        console.log(vertical02scroll)
-        
-
-
-        window.addEventListener('scroll', function () {            
-            console.log(scrollpos)
-
-            if (scrollpos >= verticalScrollTargetH) {
-                vertical01.classList.add("op")                
-            }
-        })
-
-    
         // swiper
         const swiper = new Swiper('.eventSlide', {
             // direction: 'vertical',
             loop: true,        
             pagination: {
-              el: '.swiper-pagination',
+                el: '.swiper-pagination',
             },
-          
+            
             navigation: {
-              nextEl: '.swiper-button-next',
-              prevEl: '.swiper-button-prev',
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
             },
-          
+            
             scrollbar: {
-              el: '.swiper-scrollbar',
+                el: '.swiper-scrollbar',
             },
-          });
+        });
+    
+        const scrollElement = document.querySelector('body');
+        const horizontalScrollTarget = document.querySelector(".horizontal-scroll-area");
+        const horizontalFixed = document.querySelector(".horizontal-fixed");   
+        
+        const horizontalScrollTargetH = horizontalScrollTarget.offsetTop
+        const horizontalFixedH = horizontalFixed.offsetTop              
+
+        scrollElement.addEventListener('scroll', e => {            
+            if (e.target.scrollTop >= horizontalScrollTargetH && e.target.scrollTop <= horizontalFixedH) {
+                console.log('on >>', e.target.scrollTop)
+                // 밑에 값이 일치 하는것을 볼수 있다. 
+                console.log('on >>', e.target.scrollTop - horizontalScrollTargetH, horizontalScrollTarget.clientHeight)                          
+                horizontalFixed.scrollTop = e.target.scrollTop - horizontalScrollTargetH
+            }
+        }, false)
+
     </script>
+    <style>
+        body {
+            overflow: auto;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </body>
 
 </html>
