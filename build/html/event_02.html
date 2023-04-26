@@ -20,57 +20,47 @@
 </head>
 
 <body>
-    <div class="eventWrapper m-360">
-        <div class="middle motion-visual">
-            <section class="top-visual">
-                <div class="vi-image-box">
-                    <span class="image-a viActive"></span>
-                    <span class="image-b"></span>
+    <div class="eventWrapper m-360 motion-visual">
+        <section class="top-visual">
+            <div class="vi-image-box">
+                <span class="image-a viActive"></span>
+                <span class="image-b"></span>
+            </div>
+            <div class="vi-text-box textRolling">
+                <div class="text-inner">
+                    <p class="text-a">빡침ㅠㅜ</p>
+                    <p class="text-b">살짝 풀림</p>
                 </div>
-                <div class="vi-text-box textRolling">
-                    <div class="text-inner">
-                        <p class="text-a">빡침ㅠㅜ</p>
-                        <p class="text-b">살짝 풀림</p>
-                    </div>
-                </div>
-            </section>
-
-            <div id="scrollParallaxTrigger"></div>
-            
-            <section class="vertical-contents">
-                <div class="vertical-fixed-wrap">
-                    <div class="vertical-fixed-box">
-                        <div class="vertical-scroll-area">
-                            
-                            
-                            <div class="swiper eventSlide">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">Slide 1</div>
-                                    <div class="swiper-slide">Slide 2</div>
-                                    <div class="swiper-slide">Slide 3</div>
-                                </div>
-                
-                                <div class="swiper-pagination"></div>
-                
-                                <div class="swiper-button-prev"></div>
-                                <div class="swiper-button-next"></div>
-                
-                                <div class="swiper-scrollbar"></div>
-                            </div>
-
-
-                        </div>
-                    </div>
-                </div>
-
-            </section>    
+            </div>
+        </section>
         
-            <div id="scrollParallaxEnd"></div>
+        <section class="vertical-scroll-area">
+            <div class="cont-box vertical-01">
+                <img src="../images/choonsik_hi.png" alt="인사춘식">
+            </div>
+            <div class="cont-box vertical-02">
+                <img src="../images/choonsik_mic.png" alt="마이크춘식">
+            </div>            
+        </section>
 
-            <section class="next-contents">다음콘텐츠</section>
+        <section class="">
+             <div class="swiper eventSlide">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">Slide 1</div>
+                    <div class="swiper-slide">Slide 2</div>
+                    <div class="swiper-slide">Slide 3</div>
+                </div>
 
+                <div class="swiper-pagination"></div>
 
-        </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
+                <div class="swiper-scrollbar"></div>
+            </div>
+        </section>    
+
+        <section class="next-contents">다음콘텐츠</section>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
@@ -97,23 +87,48 @@
             }
         }
 
+        
+        // 세로 고정 스크롤
         /*
-            창 높이(100vh)구하기
-            특정 영역 내 스크롤시 position: sticky, 100vh 씩 콘텐츠 올라감
+            스크롤이 vertical-scroll-area에 왔을때 영역이 고정되면서
+            vertical-fixed-box 내에서 세로 스크롤이 진행된다.
         */
+        
+        /*
         window.addEventListener('DOMContentLoaded', function() {
             window.scrollTo(0, 0);
         })
+        */
 
         let scrollpos = window.scrollY;
-        const dddheight = headerElem.offsetTop;
+        
+        const verticalScrollTarget = document.querySelector(".vertical-scroll-area");    
+        const verticalScrollTargetH = verticalScrollTarget.offsetTop;
+
+        const vertical01 = document.querySelector(".vertical-01");
+
+        // scrollpos = window.scrollY;
+        
+        const vertical01Position = vertical01.clientHeight
+        console.log(vertical01Position)
+
+        const vertical02scroll = vertical01.scrollTop
+        console.log(vertical02scroll)
+        
 
 
-        //const windowH = document.clientHeight;
-        //console.log(windowH);
+        window.addEventListener('scroll', function () {            
+            console.log(scrollpos)
 
+            if (scrollpos >= verticalScrollTargetH) {
+                vertical01.classList.add("op")                
+            }
+        })
+
+    
+        // swiper
         const swiper = new Swiper('.eventSlide', {
-            direction: 'vertical',
+            // direction: 'vertical',
             loop: true,        
             pagination: {
               el: '.swiper-pagination',

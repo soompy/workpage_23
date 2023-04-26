@@ -13,20 +13,11 @@ input {
 }
 
 .eventWrapper {
+  position: relative;
+  width: 100%;
   margin: 0 auto;
   min-width: 320px;
   max-width: 720px;
-
-  .middle {
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-    min-width: 320px;
-    max-width: 720px;
-    margin: 0 auto;
-    background: -webkit-gradient(linear, left top, left bottom, from(#E3E3E3), color-stop(80.87%, #FFFFFF));
-    background: linear-gradient(180deg, #E3E3E3 0%, #FFFFFF 80.87%);
-  }
 
   &.m-360 {
     max-width: 360px;
@@ -130,7 +121,7 @@ input {
       top: -50px;
       width: 476px;
       height: 422px;
-      background-image: url("../images/event/obj-01.png");
+      background-image: url("../images/choonsik_hi.png");
     }
 
     &.obj-02 {
@@ -138,7 +129,7 @@ input {
       top: 470px;
       width: 486px;
       height: 552px;
-      background-image: url("../images/event/obj-02.png");
+      background-image: url("../images/choonsik_mic.png");
     }
 
     &.obj-03 {
@@ -146,7 +137,7 @@ input {
       top: 1046px;
       width: 164px;
       height: 460px;
-      background-image: url("../images/event/obj-03.png");
+      background-image: url("../images/choonsik_hi.png");
     }
 
     &.obj-04 {
@@ -661,6 +652,105 @@ input {
   &.btn_primary {
     background: #F04923;
     margin-bottom: 94px;
+  }
+}
+
+.motion-visual {    
+  .top-visual {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    padding: 60px 0;
+    background: linear-gradient(90deg, #FFA3A0 0%, #FFABBC 24%, #FFB0F5 72.99%, #FBA8FF 87.49%);
+    .vi-image-box {
+      position: relative;
+      width: 190px;
+      height: 190px;
+      margin: 0 auto;              
+      transition: all 0.3s ease-in-out;
+      > span {
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        left: 0;
+        top: 0;          
+        width: 100%;
+        height: 100%;        
+        background-image: url("../images/choonsik_face.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        transition: all 0.3s ease-in-out;
+        &.image-a {            
+          background-position: -660px 0;            
+        }
+        &.image-b {
+          background-position: 0 0;
+        }
+        &.viActive {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+    }
+    .vi-text-box {
+      overflow: hidden;
+      height: 30px;
+      font-size: 30px;
+      font-family: "CookieRun Bold";
+      font-weight: bold;
+      text-align: center;
+      transition: transform 0.3s linear;
+      .text-inner {
+        transform: translateY(-31px);
+        transition: transform 0.3s linear;
+      }
+      > p {
+        height: 30px;
+        transition: transform 0.3s linear;
+      }
+      .text-a {          
+        color: #F04923;          
+      }
+      .text-b {         
+        color: #092A53;           
+      }
+      &.textRolling {
+        .text-inner {
+          transform: translateY(0);
+        }          
+      }
+    }
+  }
+
+  .vertical-scroll-area {
+    overflow-y: auto;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    transition: all 0.3s linear;
+    .cont-box {      
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: sticky;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      opacity: 1;
+      transition: all 0.3s ease-in-out;
+      img {
+        width: 40%;
+        transition: all 0.3s ease-in-out;
+      }
+      &::-webkit-scrollbar {display: none;}
+      &.op {
+        opacity: 0;
+      }
+    }
   }
 }
 
@@ -1247,94 +1337,5 @@ $mobile-size: 360;
     &.btn_primary {
       margin-bottom: 10.83333vw;
     }
-  }
-
-  .motion-visual {    
-    .top-visual {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      height: 100vh;
-      padding: vw(60) 0;
-      background: linear-gradient(90deg, #FFA3A0 0%, #FFABBC 24%, #FFB0F5 72.99%, #FBA8FF 87.49%);
-      .vi-image-box {
-        position: relative;
-        width: 190px;
-        height: 190px;
-        margin: 0 auto;              
-        transition: all 0.3s ease-in-out;
-        > span {
-          visibility: hidden;
-          opacity: 0;
-          position: absolute;
-          left: 0;
-          top: 0;          
-          width: 100%;
-          height: 100%;        
-          background-image: url("../images/choonsik_face.png");
-          background-repeat: no-repeat;
-          background-size: cover;
-          transition: all 0.3s ease-in-out;
-          &.image-a {            
-            background-position: -660px 0;            
-          }
-          &.image-b {
-            background-position: 0 0;
-          }
-          &.viActive {
-            visibility: visible;
-            opacity: 1;
-          }
-        }
-      }
-      .vi-text-box {
-        overflow: hidden;
-        height: 30px;
-        font-size: 30px;
-        font-family: "CookieRun Bold";
-        font-weight: bold;
-        text-align: center;
-        transition: transform 0.3s linear;
-        .text-inner {
-          transform: translateY(-31px);
-          transition: transform 0.3s linear;
-        }
-        > p {
-          height: 30px;
-          transition: transform 0.3s linear;
-        }
-        .text-a {          
-          color: #F04923;          
-        }
-        .text-b {         
-          color: #092A53;           
-        }
-        &.textRolling {
-          .text-inner {
-            transform: translateY(0);
-          }          
-        }
-      }
-    }  
-    
-    .vertical-contents {
-      position: relative;
-      width: 100%;
-      .vertical-fixed-wrap {
-        position: relative;
-        width: 100%;
-        .vertical-fixed-box {
-          position: sticky;
-          top: 0;
-          transition: all 0.3s linear;
-          .vertical-scroll-area {
-
-          }
-        }
-      }
-      .eventSlide {
-  
-      }
-    }
-  }  
+  }    
 }
