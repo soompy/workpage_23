@@ -730,13 +730,12 @@ input {
       overflow: hidden;
       position: sticky;
       left: 0;
-      top: calc(50%);
-      transform: translateY(-50%);
+      top: 30%;
       display: flex;
       align-items: center;            
       flex-direction: row;
       flex-wrap: nowrap;
-      .cont-box {          
+      .cont-box {
         display: flex;
         align-items: center;
         justify-content: center;        
@@ -750,7 +749,111 @@ input {
           transition: all 0.3s ease-in-out;
         }            
       }
+    }
+  }
+
+  .card-cont-area {
+    position: relative;
+    width: 100%;
+    background: linear-gradient(0deg, #FFFFFF 0%, #FDF2F2 26%, #FBD0D2 75%, #FAC4C6 91%);
+    padding: 40px 20px;
+    .eventSlide {
+      position: relative;
+      .swiper-slide {
+        width: 100% !important;
+        height: 100%;
+        padding: 20px;
+        background: #333333;
+        border-radius: 15px;
+        .card-img {
+          position: relative;
+          width: 100%;
+          margin: auto;       
+          background: #ffffff;
+          padding-top: 20px;
+          img {
+            width: 30%;
+            margin: auto;
+          }
+          .singingBg {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            transition: all 0.4s linear;
+            span {
+              visibility: hidden;
+              position: absolute;
+              display: block;
+              width: 20px;
+              height: 20px;
+              background: url("https://thumb.silhouette-ac.com/t/96/9629eae865b0d9e1725335c9985216a7_t.jpeg") transparent center center no-repeat;
+              background-size: cover;
+              left: 50%;
+              top: 50%;              
+              transition: all 0.4s linear;
+            }
+            &.on {
+              span {
+                visibility: visible;
+                &:nth-child(1) {
+                  left: 15%;
+                  top: 20%;
+                }
+                &:nth-child(2) {
+                  left: 25%;
+                  top: 40%;
+                }
+                &:nth-child(3) {
+                  left: initial;
+                  right: 30%;
+                  top: 5%;
+                }
+                &:nth-child(4) {
+                  left: initial;
+                  right: 15%;
+                  top: 50%;
+                }
+              }
+            }
+          }
+        }
+        .card-text {
+          font-size: 11px;
+          font-weight: 500;
+          text-align: center;
+          color: #ffffff;
+          padding: 20px 20px 0 20px;          
+        }
+      }
     }    
+    .slide-navi {
+      display: flex;
+      align-items: center;      
+      position: absolute;
+      left: 50%;
+      bottom: 0;      
+      width: 50%;
+      height: 20px;
+      transform: translateX(-50%);
+      .swiper-button-prev, .swiper-button-next {    
+        height: 20px;  
+        font-size: 12px !important;
+        font-weight: normal;
+        color: #333;
+        &:after {
+          font-size: 12px;
+        }
+      }
+      .swiper-pagination {
+        display: inline-block;
+        align-items: center;
+        height: 20px;
+        font-size: 14px;
+        text-align: center;
+      }
+    }
   }
 }
 

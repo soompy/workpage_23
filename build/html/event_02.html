@@ -19,7 +19,7 @@
     <script src="../js/jquery-3.6.1.min.js"></script>
 </head>
 
-<body>
+<body>    
     <div class="eventWrapper m-360 motion-visual">
         <section class="top-visual">
             <div class="vi-image-box">
@@ -41,39 +41,64 @@
                 </div>
                 <div class="cont-box vertical-02">
                     <img src="../images/choonsik_mic.png" alt="마이크춘식">
-                </div>            
+                </div>
             </div>            
         </section>
 
-        <section class="">
+        <section class="card-cont-area">
              <div class="swiper eventSlide">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">Slide 1</div>
-                    <div class="swiper-slide">Slide 2</div>
-                    <div class="swiper-slide">Slide 3</div>
-                </div>
-
-                <div class="swiper-pagination"></div>
-
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-
-                <div class="swiper-scrollbar"></div>
+                    <div class="swiper-slide event-slide">
+                        <div class="card-img">
+                            <img src="../images/choonsik_mic.png" alt="마이크춘식">
+                            <div class="singingBg">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                        <p class="card-text">춘식이가 노래를 해요</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card-img">
+                            <img src="../images/choonsik_hi.png" alt="인사춘식">
+                        </div>
+                        <p class="card-text">춘식이가 인사를 해요</p>
+                    </div>
+                </div>                                
             </div>
+
+            <div class="slide-navi">
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>                
+                <div class="swiper-pagination"></div>
+            </div>            
         </section>    
 
-        <section class="next-contents">다음콘텐츠</section>
+        <section class="next-contents">
+
+        </section>
     </div>
 
+    <script src="../js/page.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script>
-        window.addEventListener("scroll", visualScroll);
+        window.addEventListener("scroll", scrollEffect);
 
-        function visualScroll() {
+        function scrollEffect() {
+            // 비주얼 효과
             const viBg = document.querySelector(".top-visual");
             const imageA = document.querySelector(".image-a");
             const imageB = document.querySelector(".image-b");
             const viTextBox = document.querySelector(".vi-text-box");
+
+            // 가로스코롤 효과
+            const scrollElement = document.querySelector('body');
+            const horizontalScrollTarget = document.querySelector(".horizontal-scroll-area");
+            const horizontalFixed = document.querySelector(".horizontal-fixed");            
+            const horizontalScrollTargetH = horizontalScrollTarget.offsetTop
+            const horizontalFixedH = horizontalScrollTarget.nextElementSibling.offsetTop
 
             if (window.scrollY >= 5) {
                 imageA.classList.remove("viActive");
@@ -87,50 +112,44 @@
                 viTextBox.classList.add("textRolling");
                 viBg.style.background = "linear-gradient(90deg, #FFA3A0 0%, #FFABBC 24%, #FFB0F5 72.99%, #FBA8FF 87.49%)";
             }
+
+            if (window.scrollY >= horizontalScrollTargetH && window.scrollY <= horizontalFixedH) {                
+                horizontalFixed.scrollTop = window.scrollY - horizontalScrollTargetH
+            }
         }
 
         // swiper
         const swiper = new Swiper('.eventSlide', {
-            // direction: 'vertical',
-            loop: true,        
-            pagination: {
-                el: '.swiper-pagination',
-            },
-            
+            loop: true,
+            centeredSlides: true,
+            slidesPerView: 1,             
+			pagination: {
+				el: ".swiper-pagination",
+                type: "fraction",
+				clickable: true,    
+			},            
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
-            },
-            
-            scrollbar: {
-                el: '.swiper-scrollbar',
-            },
-        });
-    
-        const scrollElement = document.querySelector('body');
-        const horizontalScrollTarget = document.querySelector(".horizontal-scroll-area");
-        const horizontalFixed = document.querySelector(".horizontal-fixed");   
-        
-        const horizontalScrollTargetH = horizontalScrollTarget.offsetTop
-        const horizontalFixedH = horizontalFixed.offsetTop              
+            },                                 
+        }); 
 
-        scrollElement.addEventListener('scroll', e => {            
-            if (e.target.scrollTop >= horizontalScrollTargetH && e.target.scrollTop <= horizontalFixedH) {
-                console.log('on >>', e.target.scrollTop)
-                // 밑에 값이 일치 하는것을 볼수 있다. 
-                console.log('on >>', e.target.scrollTop - horizontalScrollTargetH, horizontalScrollTarget.clientHeight)                          
-                horizontalFixed.scrollTop = e.target.scrollTop - horizontalScrollTargetH
-            }
-        }, false)
+        var swiperSing = document.querySelector(".swiper-slide.event-slide");
+        var singingBg = document.querySelector(".singingBg");
+        var activeSing = swiperSing.classList.contains("swiper-slide-active");
 
-    </script>
-    <style>
-        body {
-            overflow: auto;
-            width: 100%;
-            height: 100%;
+
+        console.log(swiperSing)
+        console.log(singingBg)
+        console.log(activeSing)
+
+        singingBg.classList.remove('on');
+        if (activeSing) {
+            singingBg.classList.add('on');
+        } else {
+            singingBg.classList.remove('on');
         }
-    </style>
+    </script>   
 </body>
 
 </html>
