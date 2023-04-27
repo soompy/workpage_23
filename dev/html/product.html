@@ -48,11 +48,21 @@
                 </div>
                 <div id="scrollParallaxEnd"></div>
             </section>
-
+            
             <section class="area-common section-02">
-                <div class="inner">
-
+                <div id="confettiOffsetTrigger"></div>
+                <div class="confetti-wrapper">
+                    <div class="confetti-box">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <strong>ONE</strong>
                 </div>
+                <div id="confettiOffsetEnd"></div>
             </section>
 
             <section class="area-common section-03">
@@ -63,35 +73,34 @@
         </div>
 
         @@include('./_include/footer.html')
-    </div>ㄴ
+    </div>
 
     <script src="../js/index.js"></script>
     <script src="../js/detector.js"></script>
+
     <script>
         var sd = new ScrollDetector();
         var scrollParallaxTriggerTop = $('#scrollParallaxTrigger').offset().top
         var scrollParallaxTriggerEndTop = $('#scrollParallaxEnd').offset().top + 200
         var scrollParallaxStart = scrollParallaxTriggerTop - window.innerHeight
-
         var maxRatio = scrollParallaxTriggerEndTop - scrollParallaxStart;
 
+        // 두번째 영역 효과
+        var confettiOffsetTriggerTop = $('#confettiOffsetTrigger').offset().top
+        var confettiOffsetTriggerEndTop = $('#confettiOffsetEnd').offset().top + 200
+        var scrollConfettiStart = confettiOffsetTriggerTop - window.innerHeight
+        var maxRatio2 = confettiOffsetTriggerEndTop - scrollConfettiStart;
+    
         sd.add(document.getElementById('scrollParallaxTrigger'), function () {
             $("#scrollArea").addClass("ani_active")
+        }, { actionType: "in" })               
+
+
+        sd.add(document.getElementById('confettiOffsetTrigger'), function () {
+            $(".confetti-wrapper").addClass("pop_active")
         }, { actionType: "in" })
-        
-        sd.add(document.body, function (scrollTop) {
-            if (
-                (scrollTop + window.innerHeight > scrollParallaxTriggerTop) &&
-                (scrollTop < scrollParallaxTriggerEndTop)
-            ) {
-
-                var duration = (scrollTop - scrollParallaxStart) / maxRatio;
-                var accelamount = duration * 320;
-                           
-            }
-
-        }, { actionType: 'custom' })
-    </script>
+                    
+    </script>       
 </body>
 
 </html>

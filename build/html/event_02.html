@@ -39,9 +39,9 @@
                 <div class="cont-box vertical-01">
                     <img src="../images/choonsik_hi.png" alt="인사춘식">
                 </div>
-                <div class="cont-box vertical-02">
+                <!-- <div class="cont-box vertical-02">
                     <img src="../images/choonsik_mic.png" alt="마이크춘식">
-                </div>
+                </div> -->
             </div>            
         </section>
 
@@ -82,7 +82,8 @@
     </div>
 
     <script src="../js/page.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>    
+
     <script>
         window.addEventListener("scroll", scrollEffect);
 
@@ -137,11 +138,6 @@
         var swiperSing = document.querySelector(".swiper-slide.event-slide");
         var singingBg = document.querySelector(".singingBg");
         var activeSing = swiperSing.classList.contains("swiper-slide-active");
-
-
-        console.log(swiperSing)
-        console.log(singingBg)
-        console.log(activeSing)
 
         singingBg.classList.remove('on');
         if (activeSing) {
