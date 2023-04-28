@@ -52,14 +52,7 @@
             <section class="area-common section-02">
                 <div id="confettiOffsetTrigger"></div>
                 <div class="confetti-wrapper">
-                    <div class="confetti-box">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
+                    <div class="confetti-box confetti"></div>
 
                     <div class="textcontainer">
                         <span class="particletext hearts">Zero</span>
@@ -69,9 +62,14 @@
             </section>
 
             <section class="area-common section-03">
-                <div class="inner">
-
+                <div id="scrollParallaxTrigger3"></div>
+                <div class="line-wrapper">
+                    <div class="aniLine">text1text1text1text1</div>
+                    <div class="aniLine">text2text2text2text2</div>
+                    <div class="aniLine">text3text3text1text3</div>
+                    <div class="aniLine">text4text4text4text4</div>
                 </div>
+                <div id="scrollParallaxEnd3"></div>
             </section>
         </div>
 
@@ -82,22 +80,23 @@
     <script src="../js/detector.js"></script>
 
     <script>
+        // 첫번째 영역 효과
         var sd = new ScrollDetector();
         var scrollParallaxTriggerTop = $('#scrollParallaxTrigger').offset().top
         var scrollParallaxTriggerEndTop = $('#scrollParallaxEnd').offset().top + 200
         var scrollParallaxStart = scrollParallaxTriggerTop - window.innerHeight
-        var maxRatio = scrollParallaxTriggerEndTop - scrollParallaxStart;
+        var maxRatio = scrollParallaxTriggerEndTop - scrollParallaxStart;    
+    
+        sd.add(document.getElementById('scrollParallaxTrigger'), function () {
+            $("#scrollArea").addClass("ani_active")
+        }, { actionType: "in" })               
+
 
         // 두번째 영역 효과
         var confettiOffsetTriggerTop = $('#confettiOffsetTrigger').offset().top
         var confettiOffsetTriggerEndTop = $('#confettiOffsetEnd').offset().top + 200
         var scrollConfettiStart = confettiOffsetTriggerTop - window.innerHeight
         var maxRatio2 = confettiOffsetTriggerEndTop - scrollConfettiStart;
-    
-        sd.add(document.getElementById('scrollParallaxTrigger'), function () {
-            $("#scrollArea").addClass("ani_active")
-        }, { actionType: "in" })               
-
 
         sd.add(document.getElementById('confettiOffsetTrigger'), function () {
             $(".confetti-wrapper").addClass("pop_active")
@@ -105,8 +104,18 @@
         
         // 하트효과
         function initparticles() {
-            hearts()
+            confetti();
+            hearts();            
         }
+
+        function confetti() {
+            $.each($(".confetti-box.confetti"), function(){
+            var confetticount = ($(this).width()/50)*10;
+            for(var i = 0; i <= confetticount; i++) {
+                $(this).append('<span class="particle c' + $.rnd(1,2) + '" style="top:' + $.rnd(10,50) + '%; left:' + $.rnd(0,100) + '%;width:' + $.rnd(6,8) + 'px; height:' + $.rnd(3,4) + 'px;animation-delay: ' + ($.rnd(0,30)/10) + 's;"></span>');
+            }
+            });
+        }        
 
         function hearts() {
             $.each($(".particletext.hearts"), function(){
@@ -125,6 +134,16 @@
         }         
 
         initparticles();
+        
+        // 세번째 영역 효과
+        var scrollParallaxTriggerTop3 = $('#scrollParallaxTrigger3').offset().top
+        var scrollParallaxTriggerEndTop3 = $('#scrollParallaxEnd3').offset().top + 200
+        var scrollParallaxStart3 = scrollParallaxTriggerTop3 - window.innerHeight
+        var maxRatio3 = scrollParallaxTriggerEndTop3 - scrollParallaxStart3;
+    
+        sd.add(document.getElementById('scrollParallaxTrigger3'), function () {
+            $(".line-wrapper").addClass("ani_visible")
+        }, { actionType: "in" })   
     </script>       
 </body>
 
