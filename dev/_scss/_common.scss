@@ -11,75 +11,57 @@
 /* 공통으로 사용될 코드 */
 button,
 button:focus,
-button:active{padding: 0; cursor:pointer; outline:none;}
+button:active {
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+}
 
 button span,
-button i{position:relative;}	
+button i {
+  position: relative;
+}
 
-.hide{display:none !important;}
-.disabled{cursor:default !important;}
+.hide {
+  display: none !important;
+}
+
+.disabled {
+  cursor: default !important;
+}
 
 .swiper-button-prev:focus,
 .swiper-button-prev:active,
 .swiper-button-next:focus,
 .swiper-button-next:active {
   outline: none !important;
-  -webkit-tap-highlight-color:transparent;
+  -webkit-tap-highlight-color: transparent;
 }
 
-html,body,#wrap{
-    width:100%; height:100%;
+input[type="text"]::-webkit-input-placeholder {
+  color: #aaa;
 }
 
-input[type="text"]::-webkit-input-placeholder {color:#aaa;}
-input[type="text"]:-moz-placeholder {color:#aaa;}
-input[type="text"]:-ms-input-placeholder {color:#aaa;}
-input[type="text"]:-webkit-input-placeholder {color:#aaa;}
-input[type="text"]::-moz-placeholder {color:#aaa;}
+input[type="text"]:-moz-placeholder {
+  color: #aaa;
+}
 
-#wrap{
-  display:flex;
+input[type="text"]:-ms-input-placeholder {
+  color: #aaa;
+}
+
+input[type="text"]:-webkit-input-placeholder {
+  color: #aaa;
+}
+
+input[type="text"]::-moz-placeholder {
+  color: #aaa;
+}
+
+#wrap {
+  display: flex;
   flex-direction: column;
   font-family: $noto;
   letter-spacing: -0.5px;
-}
-
-// header common css 
-header{
-  height: 56px;
-  line-height: 56px;
-  .inner{
-    position: relative;
-    display: flex;
-    align-items: center;
-    height: 100%;
-    justify-content: center;
-    > a{
-      position: absolute;
-      width: 24px;
-      height: 56px;
-      line-height: 56px;
-    }
-    .btn_back{
-      left: 18px;
-      background: url('../images/common/titlebar_back.png') no-repeat center;
-      background-size: 24px;
-    }
-    .btn_close{
-      right: 18px;
-      background: url('../images/common/icon_title_close.png') no-repeat center;
-      background-size: 24px;
-    }
-    .btn_info{
-      right: 18px;
-      background: url('../images/common/ic_info.png') no-repeat center;
-      background-size: 24px;
-    }
-    .head_title{
-      h2{
-        font-size: 18px;
-        font-weight: 500;
-      }
-    }
-  }
+  width: 100%;
 }

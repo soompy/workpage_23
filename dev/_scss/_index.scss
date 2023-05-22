@@ -1,46 +1,9 @@
 .content {
     position: relative;
     width: 100%;
+    height: 100%;
 }
 
-.swiper-container {
-    width: 100%;
-}
-
-.swiper-slide {
-    padding: 20px 0;
-    width: 20vw !important;
-}
-
-.swiper-container {    
-    a {
-        display: block;
-        color: var(--clr-black);
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        width: 100%;
-        height: 100%;
-        &.swiper-slide-active2 {
-            background: var(--clr-primary);
-            color: var(--clr-white);
-            border-radius: 25px;
-        }
-    }
-}
-
-.sticky {
-    position: sticky;
-    top: 0;
-}
-
-.horizontal-area {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-}
 
 // locomotive scroll style
 /*! locomotive-scroll v4.1.3 | MIT License | https://github.com/locomotivemtl/locomotive-scroll */
@@ -134,94 +97,158 @@ html.has-scroll-dragging {
 }
 
 .main {
+    position: relative;
+    z-index: 1;
     .area-common {
+        position: relative;
+            
         &.section-01 {
-            background: #e0e0e0;  
-            // background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrz-yhKecW4sVT7_KcmV3sP6gvXXk9KaPsuxJnwWSNwQ&s') center center no-repeat;
-            background-attachment: fixed; 
-            background-size: cover;
-            transition: margin 1s ease-in-out;
-            .photo-gallery {                
+            display: flex;
+            width: 100%;
+            height: 100vh;
+            background: #1a1a1a;            
+            .photo-gallery {
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
                 grid-gap: 10px;            
                 width: 100%;
-                transform-style: preserve-3d;
+                height: 100%;                
                 .gallery-item {
-                    height: 40vh;
-                    border: 1px solid #ccc;    
-                    cursor: pointer;            
-                    transition: margin 1s ease-in-out;             
-                    &:nth-child(odd) {
-                        margin-bottom: 50px;                        
-                    }   
-                    &:nth-child(even) {
-                        margin-top: 50px;
-                    }                    
-                }
-            }
-            &.ani_active {
-                .photo-gallery {                
-                    .gallery-item {                        
-                        &:nth-child(odd) {
-                            margin-bottom: 0;
-                        }   
-                        &:nth-child(even) {
-                            margin-top: 0;
-                        }                    
-                    }
-                }
-            }
-        }
-    
-        &.section-02 {
-            overflow-y: auto;
-            height: 100vh;    
-            &::-webkit-scrollbar {
-                display: none;
-            }
-        }
-    
-        &.section-03 {
-            .achievement-box {
-                display: grid;
-                grid-template-columns: repeat(4, 1fr);
-                grid-gap: 0;
-                .achievement-item {
+                    position: relative;
                     display: flex;
                     align-items: center;
-                    transition: all 0.7s ease-in-out;
-                    .achievement-image {
-                        position: relative;
+                    justify-content: center;
+                    min-height: 30vh;
+                    cursor: pointer;
+                    transition: margin 1s ease-in-out;   
+                    perspective: 1000px;                    
+                    .card-front, .card-back {
+                        position: absolute;
                         width: 100%;
-                        transition: all 0.7s ease-in-out;
+                        height: 100%;
+                        backface-visibility: hidden;
+                        transition: transform 0.6s ease;
+                    }
+                    .card-front {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
                         img {
+                            width: 100%;
                             object-fit: cover;
                         }
                     }
-                    .hidden-text {
-                        display: none;
-                        visibility: hidden;
-                        font-size: 20px;
+                    .card-back {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;                        
+                        flex-direction: column;
+                        text-align: center;
+                        transform: rotateY(180deg);
+                        background: #ffffff;
+                        border-radius: 30px;
+                        
+                        strong {
+                            font-size: 14px;
+                            margin-bottom: 8px;
+                        }
+
+                        em {
+                            font-size: 20px;
+                            font-weight: bold;
+                        }
                     }
                     &:hover {
-                        .achievement-image {
-                            width: 0;
+                        .card-front {
+                            transform: rotateY(180deg);
                         }
-                        .hidden-text {
-                            display: block;
-                            visibility: visible;                     
-                        }   
+                          
+                        .card-back {
+                            transform: rotateY(0deg);
+                        }
                     }
                 }
+            }            
+        }
+    
+        &.section-02 {                  
+            overflow-y: auto;
+            height: 100vh;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+            .inner {        
+                position: relative;
+                top: 0;        
+                width: 100vw;     
+                max-width: inherit;
+            }
+
+            .sticky-tab {
+                position: sticky;
+                top: 120px;
+                max-width: 1400px;
+                margin: auto;
+
+                .swiper-container {
+                    width: 100%;
+                    .swiper-wrapper {
+                        a {
+                            display: block;
+                            color: var(--clr-black);
+                            text-align: center;
+                            text-decoration: none;
+                            display: inline-block;
+                            width: 100%;
+                            width: calc((100% / 6) - 50px) !important;
+                            height: 100%;
+                            padding: 20px 0;
+                            &.swiper-slide-active2 {
+                                background: var(--clr-primary);
+                                color: var(--clr-white);
+                                border-radius: 25px;
+                            }   
+                            &:last-child {
+                                margin-right: 0 !important;
+                            }                         
+                        }
+                    }
+                }
+            }
+            
+            .horizontal-area {
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 20px;
             }
         }
     }
 }
 
 
-@media screen and (max-width: 1400px) {
 
+@media screen and (max-width: 1400px) {
+    .main {        
+        .area-common {
+            &.section-02 {
+                .sticky-tab {
+                    top: 100px;
+                }
+            }
+        }
+    }
 }
 
-@media screen and (max-width: 760px) {}
+@media screen and (max-width: 760px) {
+    .main {        
+        .area-common {
+            &.section-02 {
+                .sticky-tab {
+                    top: 70px;
+                }
+            }
+        }
+    }
+}

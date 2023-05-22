@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .scroll-test {
+            position: relative;
+            width: 100%;
+        }
+
+        .bb {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+        }
+
+        .parallax-container {
+            height: 100vh;
+            /* 뷰포트의 높이만큼 설정합니다 */
+            overflow: hidden;
+            /* 이미지가 넘치는 부분을 숨깁니다 */
+        }
+
+        .parallax-images {
+            height: 100%;
+            /* 부모 요소의 높이와 동일하게 설정합니다 */
+            position: relative;
+            /* 이미지들을 상대적으로 배치하기 위해 설정합니다 */
+        }
+
+        .parallax-images img {
+            position: absolute;
+            /* 이미지들을 절대 위치로 설정합니다 */
+            top: 0;
+            left: 0;
+            width: 100%;
+            /* 이미지의 너비를 100%로 설정합니다 */
+            opacity: 0;
+            /* 초기에 모든 이미지를 투명하게 설정합니다 */
+            transition: opacity 0.5s;
+            /* 페이드 인/아웃 효과를 위한 트랜지션 설정입니다 */
+        }
+
+        .parallax-images img.visible {
+            opacity: 1;
+            /* 보이는 이미지에 대해 투명도를 1로 설정하여 페이드 인 효과를 줍니다 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="scroll-test">
+        <div class="bb" style="height: 100vh;background: skyblue"></div>
+
+        <!-- 스크롤 시 이미지가 순차적으로 굴러가는 효과 -->
+        <div class="parallax-container">
+            <div class="parallax-images">
+                <!-- 100장의 이미지를 추가합니다 -->
+                <img src="../images/gv1.png" alt="Image 1">
+                <img src="../images/gv2.png" alt="Image 2">
+                <img src="../images/gv3.png" alt="Image 3">
+                <img src="../images/gv1.png" alt="Image 1">
+                <img src="../images/gv2.png" alt="Image 2">
+                <img src="../images/gv3.png" alt="Image 3">
+                <img src="../images/gv1.png" alt="Image 1">
+                <img src="../images/gv2.png" alt="Image 2">
+                <img src="../images/gv3.png" alt="Image 3">
+                <img src="../images/gv1.png" alt="Image 1">
+                <img src="../images/gv2.png" alt="Image 2">
+                <img src="../images/gv3.png" alt="Image 3">
+                <img src="../images/gv1.png" alt="Image 1">
+                <img src="../images/gv2.png" alt="Image 2">
+                <img src="../images/gv3.png" alt="Image 3">
+                <img src="../images/gv1.png" alt="Image 1">
+                <img src="../images/gv2.png" alt="Image 2">
+                <img src="../images/gv3.png" alt="Image 3">
+            </div>
+        </div>
+
+        <div class="bb" style="height: 100vh;background: pink"></div>
+    </div>
+
+
+    <script>
+        var parallaxImages = document.querySelectorAll('.parallax-images img');
+        var windowHeight = window.innerHeight;
+
+        function checkVisibility() {
+            var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            var element = document.querySelector('.element');
+            var elementTop = element.getBoundingClientRect().top + scrollTop;
+            var elementBottom = element.getBoundingClientRect().bottom + scrollTop;
+
+
+            for (var i = 0; i < parallaxImages.length; i++) {
+                var image = parallaxImages[i];
+                var imageTop = image.getBoundingClientRect().top;
+
+                if (imageTop - windowHeight <= 0) {
+                    image.classList.add('visible'); /* 이미지가 뷰포트 안에 들어오면 클래스를 추가하여 표시합니다 */
+                } else {
+                    image.classList.remove('visible'); /* 이미지가 뷰포트를 벗어나면 클래스를 제거하여 숨깁니다 */
+                }
+            }
+        }
+
+        /* 스크롤 이벤트에 대한 리스너를 등록합니다 */
+        window.addEventListener('scroll', checkVisibility);
+
+        /* 초기에 이미지들의 가시성을 체크합니다 */
+        checkVisibility();
+
+
+
+    </script>
+</body>
+
+</html>

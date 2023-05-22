@@ -19,10 +19,14 @@ img {
 }
 
 #header {
-    position: relative;
+    position: sticky;
+    left: 0;
+    top: 0;
+    z-index: 20;
     width: 100%;
     height: 100px;
     box-shadow: 2px 2px 2px 1px #eee;
+    flex-shrink: 0;
     .inner {
         display: flex;
         align-items: center;
@@ -166,56 +170,28 @@ img {
 }
 
 .visual {
-    position: relative;
-    height: 300vh;
-    .vi-section {        
-        width: 100%;            
-        height: 100vh;
-        .inner {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            max-width: 1400px;
+    overflow: hidden;
+    position: sticky;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100vh;
+    .scroll-effect-text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        h2 {
             width: 100%;
-            height: 100%;
-            margin: auto;
-        }
-        .vi-text {
-            position: relative;            
-            z-index: 1;
-            width: 100%;
-            font-size: 70px;
-            font-weight: 900;
-            text-align: center;            
-            // margin-bottom: 40px;
-            .vi-text-sub {
-                position: absolute;
-                left: 0;
-                top: -4px; 
-                z-index: -1;               
-                width: 100%;
-                font-size: 60px;
-                color: orangered;
-                transform: scale(1.1);
-                letter-spacing: -0.4rem;
-            }
-        }
-        .vi-img {
-            display: block;
-            width: 10%;
-        }
-        &.vi-01 {
-            background: #B3FFDA;
-        }
-        &.vi-02 {
-            background: #FFF5A8;
-        }
-        &.vi-03 {
-            background: #C7C2FF;
+            font-size: 24px;            
+            font-weight: bold;
+            text-align: center;
+            opacity: 1;
+            transition: font-size 0.5s, opacity 0.5s;
         }
     }
 }
+
 
 .sub-visual {
     position: relative;
@@ -301,5 +277,5 @@ img {
                 display: block;
             }
         }
-    }
+    }    
 }
