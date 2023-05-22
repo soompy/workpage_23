@@ -154,7 +154,9 @@
       </section>
 
 
-    
+      <section class="area-common section-03">
+
+      </section>
 
       <!-- 여러장의 이미지가 순차적으로 굴러가는 효과 -->
       <!-- <section class="area-common section-04">
@@ -162,6 +164,16 @@
           <img id="image" src="../images/gv1.png" alt="Image">
         </div>
       </section> -->
+
+      <div class="car-wrap">
+        <div class="image-container">
+          <img class="car" src="../images/gv1.png" alt="Image 1">
+          <img class="car" src="../images/gv2.png" alt="Image 2">
+          <img class="car" src="../images/gv3.png" alt="Image 3">          
+        </div>
+      </div>
+
+
     </div>
 
     <!-- footer -->
@@ -208,27 +220,37 @@
   </script>
 
   <script>
-/*
-    window.addEventListener('scroll', function () {
-      var scrollPosition = window.scrollY;
-      var fontSize = 8 - (scrollPosition * 0.01);
-      var fontOpacity = 1 - (scrollPosition * 0.01);
-
-      if (fontSize >= 1) {
-        document.querySelector('.scroll-effect-text h2').style.fontSize = fontSize + 'rem';
-        document.querySelector('.scroll-effect-text h2').style.fontOpacity = opacity + 'rem';
-      }
-    });    
-*/
     
     window.addEventListener('scroll', function() {
+    // 상단 비주얼 효과
       var scrollPosition = window.pageYOffset;
       var fontSize = 24 + scrollPosition / 2;
       var opacity = 1 - scrollPosition / 500;
     
       document.querySelector('.scroll-effect-text h2').style.fontSize = fontSize + 'px';
       document.querySelector('.scroll-effect-text h2').style.opacity = opacity;
-    });           
+    
+
+
+      // 스크롤 이미지 효과
+      var scrollPosition = window.pageYOffset;
+      var imageContainer = document.querySelector('.car-wrap .image-container');
+      var images = imageContainer.getElementsByTagName('img');
+    
+      var windowHeight = window.innerHeight;
+      var containerOffsetTop = imageContainer.offsetTop;
+      var containerHeight = imageContainer.offsetHeight;
+    
+      var visibleImages = Math.floor((scrollPosition - containerOffsetTop + windowHeight) / containerHeight);
+    
+      for (var i = 0; i < images.length; i++) {
+        images[i].classList.remove('active');
+      }
+    
+      if (visibleImages >= 0 && visibleImages < images.length) {
+        images[visibleImages].classList.add('active');
+      }
+    });    
   </script>
 </body>
 
