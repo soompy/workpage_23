@@ -150,26 +150,38 @@
         </div>
       </section>
 
-      <section class="area-common section-03">
-
+      <section class="area-common section-02" style="display: none;">
+        <div class="car-wrap">
+          <div class="image-container">
+            <img class="car" src="../images/gv1.png" alt="Image 1">
+            <img class="car" src="../images/gv2.png" alt="Image 2">
+            <img class="car" src="../images/gv3.png" alt="Image 3">          
+          </div>
+        </div>
       </section>
+
+
+      <div class="scroll-container">
+        <div class="scroll-content">
+          <div class="section section1">
+            <!-- Content for section 1 -->
+          </div>
+          <div class="section section2">
+            <!-- Content for section 2 -->
+          </div>
+          <div class="section section3">
+            <!-- Content for section 3 -->
+          </div>
+        </div>
+      </div>
+      
 
       <!-- 여러장의 이미지가 순차적으로 굴러가는 효과 -->
       <!-- <section class="area-common section-04">
         <div class="animation">
           <img id="image" src="../images/gv1.png" alt="Image">
         </div>
-      </section> -->
-
-      <div class="car-wrap">
-        <div class="image-container">
-          <img class="car" src="../images/gv1.png" alt="Image 1">
-          <img class="car" src="../images/gv2.png" alt="Image 2">
-          <img class="car" src="../images/gv3.png" alt="Image 3">          
-        </div>
-      </div>
-
-
+      </section> -->    
     </div>
 
     <!-- footer -->
@@ -189,6 +201,7 @@
 
 
 
+  <script src="../js/horizontal.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
   <script nomodule src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.6.0/polyfill.min.js"
     crossorigin="anonymous"></script>
@@ -196,8 +209,7 @@
     src="https://polyfill.io/v3/polyfill.min.js?features=Object.assign%2CElement.prototype.append%2CNodeList.prototype.forEach%2CCustomEvent%2Csmoothscroll"
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
-  <script src="../js/index.js"></script>
-  <script src="../js/horizontal.js"></script>
+  <script src="../js/index.js"></script>  
   <script>
     (function () {
       var scroll = new LocomotiveScroll();
@@ -222,8 +234,9 @@
     }
 
     setInterval(animateImages, 100); // 0.1초마다 이미지 변경
-    */
+    */    
   </script>
+
 
   <script>
     window.addEventListener('scroll', function() {
@@ -254,6 +267,46 @@
       if (visibleImages >= 0 && visibleImages < images.length) {
         images[visibleImages].classList.add('active');
       }
+
+
+      // 가로 스크롤 효과
+    var scrollContainer = document.querySelector('.scroll-container');
+    var scrollContent = document.querySelector('.scroll-content');
+    var sections = document.querySelectorAll('.section');
+
+    var sectionWidth = sections[0].offsetWidth;
+    var sectionIndex = 0;
+    var isScrolling = false;
+
+    function handleScroll(event) {
+      if (!isScrolling) {
+        isScrolling = true;
+        
+        var scrollTop = scrollContainer.scrollTop;
+        var scrollDirection = event.deltaY > 0 ? 1 : -1;
+        
+        if (scrollDirection === 1 && sectionIndex < sections.length - 1) {
+          sectionIndex++;
+        } else if (scrollDirection === -1 && sectionIndex > 0) {
+          sectionIndex--;
+        }
+        
+        var targetX = -sectionIndex * sectionWidth;
+        
+        scrollContent.style.transform = `translateX(${targetX}px)`;
+        
+        setTimeout(function() {
+          isScrolling = false;
+        }, 500); // Add a delay to prevent rapid scrolling
+        
+        event.preventDefault();
+      }
+    }
+
+    scrollContainer.addEventListener('wheel', handleScroll);
+
+
+
     });    
   </script>
 </body>

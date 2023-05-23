@@ -1269,7 +1269,7 @@ html.has-scroll-dragging {
 	transform: rotateY(0deg);
 }
 
-.car-wrap {
+.main .area-common.section-02 .car-wrap {
 	overflow-y: auto;
 	position: sticky;
 	top: 0;
@@ -1278,7 +1278,7 @@ html.has-scroll-dragging {
 	height: 100vh;
 }
 
-.car-wrap .image-container {
+.main .area-common.section-02 .car-wrap .image-container {
 	position: relative;
 	width: 100%;
 	height: 300vh;
@@ -1289,15 +1289,71 @@ html.has-scroll-dragging {
 	transform: translate(-50%, -50%);
 }
 
-.car-wrap .image-container img.car {
+.main .area-common.section-02 .car-wrap .image-container img.car {
 	position: absolute;
 	left: 0;
 	top: 0;
 	display: none;
 }
 
-.car-wrap .image-container img.car.active {
+.main .area-common.section-02 .car-wrap .image-container img.car.active {
 	display: block;
+}
+
+.main .area-common.section-03 .scroll-container {
+	height: 100vh;
+ /* Set the container height to the viewport height */
+	overflow: hidden;
+ /* Hide vertical scrollbar */
+	position: relative;
+}
+
+.main .area-common.section-03 .scroll-container .scroll-content {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+ /* Arrange content horizontally */
+	width: 300%;
+ /* Set the width to accommodate all sections */
+	-webkit-transition: -webkit-transform 0.3s ease;
+	transition: -webkit-transform 0.3s ease;
+	-moz-transition: transform 0.3s ease, -moz-transform 0.3s ease;
+	transition: transform 0.3s ease;
+	transition: transform 0.3s ease, -webkit-transform 0.3s ease, -moz-transform 0.3s ease;
+ /* Transition for smooth movement */;
+}
+
+.main .area-common.section-03 .scroll-container .section {
+	width: 33.33%;
+ /* Set the width for each section */
+	height: 100%;
+ /* Set the height to fill the container */
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-moz-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-moz-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	font-size: 24px;
+}
+
+.main .area-common.section-03 .scroll-container .section1 {
+	background-color: #ffcccc;
+}
+
+.main .area-common.section-03 .scroll-container .section2 {
+	background-color: #ccffcc;
+}
+
+.main .area-common.section-03 .scroll-container .section3 {
+	background-color: #ccccff;
 }
 
 input::-webkit-input-placeholder, input:-ms-input-placeholder {
