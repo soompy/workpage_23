@@ -20,7 +20,7 @@
 </head>
 
 <body>    
-    <div class="eventWrapper m-360 motion-visual">
+    <div class="eventWrapper motion-visual">
         <section class="top-visual">
             <div class="vi-image-box">
                 <span class="image-a viActive"></span>
@@ -33,18 +33,7 @@
                 </div>
             </div>
         </section>
-        
-        <section class="horizontal-scroll-area">
-            <div class="horizontal-fixed">
-                <div class="cont-box vertical-01">
-                    <img src="../images/choonsik_hi.png" alt="인사춘식">
-                </div>
-                <!-- <div class="cont-box vertical-02">
-                    <img src="../images/choonsik_mic.png" alt="마이크춘식">
-                </div> -->
-            </div>            
-        </section>
-
+    
         <section class="card-cont-area">
              <div class="swiper eventSlide">
                 <div class="swiper-wrapper">
@@ -76,14 +65,59 @@
             </div>            
         </section>    
 
-        <section class="next-contents">
-
-        </section>
+        <section class="sticky-tab-content">
+            <div class="inner">
+              <div class="sticky-tab">
+                <div class="swiper-container" id="scroll-tags">
+                  <div class="swiper-wrapper">
+                    <a alt="0" class="swiper-slide FirstNavItem" href="#firstID">First</a>
+                    <a alt="1" class="swiper-slide SecondNavItem" href="#secondID">Second</a>
+                    <a alt="2" class="swiper-slide ThirdNavItem" href="#thirdID">Third</a>
+                    <a alt="3" class="swiper-slide FourthNavItem" href="#fourthID">Fourth</a>
+                    <a alt="4" class="swiper-slide FifthNavItem" href="#fifthID">Fifth</a>
+                    <a alt="5" class="swiper-slide SixtNavItem" href="#sixtID">Sixth</a>
+                  </div>
+                </div>
+              </div>
+              <div style="height: 600vh">
+                <section class="horizontal-area firstClass" id="firstID">
+                  <h1>
+                    First
+                  </h1>
+                </section>
+                <section class="horizontal-area secondClass" id="secondID">
+                  <h1>
+                    Second
+                  </h1>
+                </section>
+                <section class="horizontal-area thirdClass" id="thirdID">
+                  <h1>
+                    Third
+                  </h1>
+                </section>
+                <section class="horizontal-area fourthClass" id="fourthID">
+                  <h1>
+                    Fourth
+                  </h1>
+                </section>
+                <section class="horizontal-area fifthClass" id="fifthID">
+                  <h1>
+                    Fifth
+                  </h1>
+                </section>
+                <section class="horizontal-area sixtClass" id="sixtID">
+                  <h1>
+                    Sixth
+                  </h1>
+                </section>
+              </div>
+          </section>
     </div>
 
     <script src="../js/page.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>    
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+    <script src="../js/horizontal.js"></script>
     <script>
         window.addEventListener("scroll", scrollEffect);
 
@@ -95,11 +129,7 @@
             const viTextBox = document.querySelector(".vi-text-box");
 
             // 가로스코롤 효과
-            const scrollElement = document.querySelector('body');
-            const horizontalScrollTarget = document.querySelector(".horizontal-scroll-area");
-            const horizontalFixed = document.querySelector(".horizontal-fixed");            
-            const horizontalScrollTargetH = horizontalScrollTarget.offsetTop
-            const horizontalFixedH = horizontalScrollTarget.nextElementSibling.offsetTop
+            const scrollElement = document.querySelector('body');                      
 
             if (window.scrollY >= 5) {
                 imageA.classList.remove("viActive");
@@ -113,14 +143,10 @@
                 viTextBox.classList.add("textRolling");
                 viBg.style.background = "linear-gradient(90deg, #FFA3A0 0%, #FFABBC 24%, #FFB0F5 72.99%, #FBA8FF 87.49%)";
             }
-
-            if (window.scrollY >= horizontalScrollTargetH && window.scrollY <= horizontalFixedH) {                
-                horizontalFixed.scrollTop = window.scrollY - horizontalScrollTargetH
-            }
         }
 
         // swiper
-        const swiper = new Swiper('.eventSlide', {
+        const swiperChoonsik = new Swiper('.eventSlide', {
             loop: true,
             centeredSlides: true,
             slidesPerView: 1,             
