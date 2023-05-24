@@ -199,40 +199,38 @@ html.has-scroll-dragging {
             }
         }
         
-        &.section-03 {
-            .scroll-container {
-                height: 100vh; /* Set the container height to the viewport height */
-                overflow: hidden; /* Hide vertical scrollbar */
-                position: relative;
-                .scroll-content {
-                    display: flex; /* Arrange content horizontally */
-                    width: 300%; /* Set the width to accommodate all sections */
-                    transition: transform 0.3s ease; /* Transition for smooth movement */
-                  }
-                  
-                  .section {
-                    width: 33.33%; /* Set the width for each section */
-                    height: 100%; /* Set the height to fill the container */
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    font-size: 24px;
-                  }
-                  
-                  .section1 {
-                    background-color: #ffcccc;
-                  }
-                  
-                  .section2 {
-                    background-color: #ccffcc;
-                  }
-                  
-                  .section3 {
-                    background-color: #ccccff;
-                  }
+        &.section-03 {  
+            height: 100vh;          
+            .horizontal-section {
+                position: absolute;
+                left: 200px;
+                top: 300px;
+                display: flex;
+                div {
+                    flex-shrink: 0;
+                    width: 200px;
+                    height: 200px;
+                    border: 1px solid #ccc;
+                    margin: 0 10px;
+                }
+            }  
+        }
+
+        &.section-04 {
+            #scroll-area {
+                height: 500px;
+                overflow-y: scroll;
               }
-                            
-                                      
+              
+              #changing-images-container {
+                height: 2000px; 
+              }
+              
+              .changing-image {
+                width: 100%;
+                transition: opacity 0.5s;
+              }
+              
         }
     }
 }

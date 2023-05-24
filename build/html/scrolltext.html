@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #scroll-area {
+            height: 500px;
+            overflow-y: scroll;
+        }
+
+        #changing-image-container {
+            height: 2000px;
+            /* 이미지 컨테이너의 높이 */
+        }
+
+        img {
+            position: absolute;
+            width: 100%;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        .active {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="scroll-area">
+        <div id="changing-image-container">
+            <img src="../images/gv1.png">
+            <img src="../images/gv2.png">
+            <img src="../images/gv3.png">            
+            <!-- 추가적인 이미지 엘리먼트를 여기에 추가합니다 -->
+        </div>
+    </div>
+
+    <script>
+        var scrollArea = document.getElementById("scroll-area");
+        var changingImages = document.querySelectorAll("#changing-image-container img");
+
+        scrollArea.addEventListener("scroll", function () {
+            var areaHeight = scrollArea.offsetHeight;
+            var scrollTop = scrollArea.scrollTop;
+
+            changingImages.forEach(function (image, index) {
+                var imageOffset = image.offsetTop;
+                var imageHeight = image.offsetHeight;
+                var scrollPosition = scrollTop + (areaHeight / 2);
+
+                if (scrollPosition >= imageOffset && scrollPosition < (imageOffset + imageHeight)) {
+                    image.classList.add("active");
+                } else {
+                    image.classList.remove("active");
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>

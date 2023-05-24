@@ -1300,60 +1300,43 @@ html.has-scroll-dragging {
 	display: block;
 }
 
-.main .area-common.section-03 .scroll-container {
+.main .area-common.section-03 {
 	height: 100vh;
- /* Set the container height to the viewport height */
-	overflow: hidden;
- /* Hide vertical scrollbar */
-	position: relative;
 }
 
-.main .area-common.section-03 .scroll-container .scroll-content {
+.main .area-common.section-03 .horizontal-section {
+	position: absolute;
+	left: 200px;
+	top: 300px;
 	display: -webkit-box;
 	display: -moz-box;
 	display: -ms-flexbox;
 	display: flex;
- /* Arrange content horizontally */
-	width: 300%;
- /* Set the width to accommodate all sections */
-	-webkit-transition: -webkit-transform 0.3s ease;
-	transition: -webkit-transform 0.3s ease;
-	-moz-transition: transform 0.3s ease, -moz-transform 0.3s ease;
-	transition: transform 0.3s ease;
-	transition: transform 0.3s ease, -webkit-transform 0.3s ease, -moz-transform 0.3s ease;
- /* Transition for smooth movement */;
 }
 
-.main .area-common.section-03 .scroll-container .section {
-	width: 33.33%;
- /* Set the width for each section */
-	height: 100%;
- /* Set the height to fill the container */
-	display: -webkit-box;
-	display: -moz-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-pack: center;
-	-moz-box-pack: center;
-	-ms-flex-pack: center;
-	justify-content: center;
-	-webkit-box-align: center;
-	-moz-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
-	font-size: 24px;
+.main .area-common.section-03 .horizontal-section div {
+	-ms-flex-negative: 0;
+	flex-shrink: 0;
+	width: 200px;
+	height: 200px;
+	border: 1px solid #ccc;
+	margin: 0 10px;
 }
 
-.main .area-common.section-03 .scroll-container .section1 {
-	background-color: #ffcccc;
+.main .area-common.section-04 #scroll-area {
+	height: 500px;
+	overflow-y: scroll;
 }
 
-.main .area-common.section-03 .scroll-container .section2 {
-	background-color: #ccffcc;
+.main .area-common.section-04 #changing-images-container {
+	height: 2000px;
 }
 
-.main .area-common.section-03 .scroll-container .section3 {
-	background-color: #ccccff;
+.main .area-common.section-04 .changing-image {
+	width: 100%;
+	-webkit-transition: opacity 0.5s;
+	-moz-transition: opacity 0.5s;
+	transition: opacity 0.5s;
 }
 
 input::-webkit-input-placeholder, input:-ms-input-placeholder {
@@ -2944,35 +2927,57 @@ input::-webkit-input-placeholder, input:-ms-input-placeholder {
 }
 
 .content.product .area-common.section-01 {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-moz-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-moz-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
 	position: relative;
 	width: 100%;
-	height: 100vh;
+	height: -moz-calc(100vh - 100px);
+	height: calc(100vh - 100px);
 }
 
-.content.product .area-common.section-01 .sample-box {
+.content.product .area-common.section-01 .inner {
+	width: 45%;
+	height: auto;
+	margin: auto;
+}
+
+.content.product .area-common.section-01 .sample-wrapper {
+	position: relative;
+	font-family: "CookieRun Bold";
+	height: 100%;
 	-webkit-box-flex: 1;
 	-moz-box-flex: 1;
 	-ms-flex: 1;
 	flex: 1;
-	width: 35.7142857143vw;
 	-webkit-transition: all 1.7s linear;
 	-moz-transition: all 1.7s linear;
 	transition: all 1.7s linear;
 }
 
-.content.product .area-common.section-01 .sample-box .sample-wrapper {
-	position: relative;
-	font-family: "CookieRun Bold";
-}
-
-.content.product .area-common.section-01 .sample-box .sample-wrapper .mobile {
+.content.product .area-common.section-01 .sample-wrapper .mobile {
 	position: relative;
 	display: block;
-	width: 70%;
+	width: 100%;
+	height: 100%;
 	margin-left: auto;
 }
 
-.content.product .area-common.section-01 .sample-box .sample-wrapper .mobile .value-wrapper {
+.content.product .area-common.section-01 .sample-wrapper .mobile .mobile-bg {
+	width: 100%;
+	height: 100%;
+}
+
+.content.product .area-common.section-01 .sample-wrapper .mobile .value-wrapper {
 	display: -webkit-box;
 	display: -moz-box;
 	display: -ms-flexbox;
@@ -2986,24 +2991,24 @@ input::-webkit-input-placeholder, input:-ms-input-placeholder {
 	-ms-flex-pack: center;
 	justify-content: center;
 	position: absolute;
-	bottom: 1.1428571429vw;
-	left: 2vw;
-	width: -moz-calc(100% - 4.25vw);
-	width: calc(100% - 4.25vw);
-	height: 30%;
+	bottom: 1vw;
+	left: 1.2857142857vw;
+	width: -moz-calc(100% - 2.7vw);
+	width: calc(100% - 2.7vw);
+	height: 0;
 	font-size: 1.7142857143vw;
 	background: var(--clr-sub);
-	-moz-border-radius-bottomleft: 2.7142857143vw;
-	border-bottom-left-radius: 2.7142857143vw;
-	-moz-border-radius-bottomright: 2.7142857143vw;
-	border-bottom-right-radius: 2.7142857143vw;
-	-webkit-transition: height 1.7s linear;
-	-moz-transition: height 1.7s linear;
-	transition: height 1.7s linear;
-	padding-bottom: 3.5714285714vw;
+	-moz-border-radius-bottomleft: 2.1428571429vw;
+	border-bottom-left-radius: 2.1428571429vw;
+	-moz-border-radius-bottomright: 2.1428571429vw;
+	border-bottom-right-radius: 2.1428571429vw;
+	-webkit-transition: all 1.7s linear;
+	-moz-transition: all 1.7s linear;
+	transition: all 1.7s linear;
+	padding-bottom: 0;
 }
 
-.content.product .area-common.section-01 .sample-box .sample-wrapper .mobile .value-wrapper .value-box {
+.content.product .area-common.section-01 .sample-wrapper .mobile .value-wrapper .value-box {
 	display: block;
 	font-size: 2.8571428571vw;
 	font-family: "CookieRun Bold";
@@ -3011,7 +3016,7 @@ input::-webkit-input-placeholder, input:-ms-input-placeholder {
 	padding-right: 0.2857142857vw;
 }
 
-.content.product .area-common.section-01 .sample-box .sample-wrapper .mobile:after {
+.content.product .area-common.section-01 .sample-wrapper .mobile:after {
 	display: block;
 	clear: both;
 	content: "";
@@ -3025,7 +3030,7 @@ input::-webkit-input-placeholder, input:-ms-input-placeholder {
 	background: linear-gradient(0deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 100%);
 }
 
-.content.product .area-common.section-01 .sample-box .sample-wrapper .range-bar {
+.content.product .area-common.section-01 .sample-wrapper .range-bar {
 	position: absolute;
 	right: 3.5714285714vw;
 	top: 50%;
@@ -3039,10 +3044,10 @@ input::-webkit-input-placeholder, input:-ms-input-placeholder {
 	border-radius: 0.2857142857vw;
 }
 
-.content.product .area-common.section-01 .sample-box .sample-wrapper .range-bar .range-step {
+.content.product .area-common.section-01 .sample-wrapper .range-bar .range-step {
 	position: absolute;
 	left: 50%;
-	bottom: 24%;
+	bottom: 0;
 	z-index: 1;
 	width: 1.4285714286vw;
 	height: 2.8571428571vw;
@@ -3057,12 +3062,12 @@ input::-webkit-input-placeholder, input:-ms-input-placeholder {
 	transition: bottom 1.7s linear;
 }
 
-.content.product .area-common.section-01 .sample-box .sample-wrapper .range-bar .progress-bar {
+.content.product .area-common.section-01 .sample-wrapper .range-bar .progress-bar {
 	position: absolute;
 	left: 31%;
 	bottom: 0;
 	width: 0.5vw;
-	height: 30%;
+	height: 0;
 	-moz-border-radius: 1.4285714286vw;
 	border-radius: 1.4285714286vw;
 	background: var(--clr-primary);
@@ -3072,19 +3077,6 @@ input::-webkit-input-placeholder, input:-ms-input-placeholder {
 	-webkit-transition: height 1.7s linear;
 	-moz-transition: height 1.7s linear;
 	transition: height 1.7s linear;
-}
-
-.content.product .area-common.section-01 .sample-box.ani_active .sample-wrapper .mobile .value-wrapper {
-	height: 50%;
-	padding-bottom: 21.4285714286vw;
-}
-
-.content.product .area-common.section-01 .sample-box.ani_active .sample-wrapper .range-bar .range-step {
-	bottom: 49%;
-}
-
-.content.product .area-common.section-01 .sample-box.ani_active .sample-wrapper .range-bar .progress-bar {
-	height: 50%;
 }
 
 .content.product .area-common.section-01 .text-box {
@@ -3101,6 +3093,19 @@ input::-webkit-input-placeholder, input:-ms-input-placeholder {
 
 .content.product .area-common.section-01 .text-box p {
 	font-size: 1.1428571429vw;
+}
+
+.content.product .area-common.section-01.ani_active .sample-wrapper .mobile .value-wrapper {
+	height: 50%;
+	padding-bottom: 21.4285714286vw;
+}
+
+.content.product .area-common.section-01.ani_active .sample-wrapper .range-bar .range-step {
+	bottom: 49%;
+}
+
+.content.product .area-common.section-01.ani_active .sample-wrapper .range-bar .progress-bar {
+	height: 50%;
 }
 
 .content.product .area-common.section-02 {
@@ -3210,6 +3215,7 @@ input::-webkit-input-placeholder, input:-ms-input-placeholder {
 }
 
 .content.product .area-common.section-03 {
+	overflow: hidden;
 	position: relative;
 	width: 100%;
 	height: 100vh;
@@ -3237,8 +3243,7 @@ input::-webkit-input-placeholder, input:-ms-input-placeholder {
 	width: 0;
 	height: 50px;
 	font-size: 30px;
-	background: #000000;
-	color: #ffffff;
+	background: var(--clr-sub);
 	-webkit-transition: width 1s linear;
 	-moz-transition: width 1s linear;
 	transition: width 1s linear;
@@ -3248,23 +3253,23 @@ input::-webkit-input-placeholder, input:-ms-input-placeholder {
 }
 
 .content.product .area-common.section-03 .line-wrapper .aniLine:nth-child(1) {
-	left: 0;
-	top: 0;
-	-webkit-transform: rotate(-35deg);
-	-moz-transform: rotate(-35deg);
-	transform: rotate(-35deg);
+	left: -3%;
+	top: 30%;
+	-webkit-transform: rotate(-15deg);
+	-moz-transform: rotate(-15deg);
+	transform: rotate(-15deg);
 }
 
 .content.product .area-common.section-03 .line-wrapper .aniLine:nth-child(2) {
-	right: 0;
-	top: 0;
-	-webkit-transform: rotate(35deg);
-	-moz-transform: rotate(35deg);
-	transform: rotate(35deg);
+	right: -3%;
+	top: 30%;
+	-webkit-transform: rotate(15deg);
+	-moz-transform: rotate(15deg);
+	transform: rotate(15deg);
 }
 
 .content.product .area-common.section-03 .line-wrapper .aniLine:nth-child(3) {
-	left: 0;
+	left: -3%;
 	bottom: 0;
 	-webkit-transform: rotate(-15deg);
 	-moz-transform: rotate(-15deg);
@@ -3272,15 +3277,15 @@ input::-webkit-input-placeholder, input:-ms-input-placeholder {
 }
 
 .content.product .area-common.section-03 .line-wrapper .aniLine:nth-child(4) {
-	right: 0;
-	bottom: 0;
+	right: -3%;
+	bottom: 40%;
 	-webkit-transform: rotate(15deg);
 	-moz-transform: rotate(15deg);
 	transform: rotate(15deg);
 }
 
 .content.product .area-common.section-03 .line-wrapper.ani_visible .aniLine {
-	width: 60vw;
+	width: 120vw;
 }
 
 .content.product .area-common .inner {
@@ -3476,6 +3481,20 @@ input::-webkit-input-placeholder, input:-ms-input-placeholder {
 		-webkit-transform: translate(0, -1000%) rotate(45deg);
 		-moz-transform: translate(0, -1000%) rotate(45deg);
 		transform: translate(0, -1000%) rotate(45deg);
+	}
+}
+
+@media screen and (max-width: 1400px) {
+	.content.product .area-common.section-01 {
+		height: -moz-calc(100vh - 80px);
+		height: calc(100vh - 80px);
+	}
+}
+
+@media screen and (max-width: 760px) {
+	.content.product .area-common.section-01 {
+		height: -moz-calc(100vh - 60px);
+		height: calc(100vh - 60px);
 	}
 }
 

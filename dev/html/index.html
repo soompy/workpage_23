@@ -115,19 +115,30 @@
       </section>
 
 
-      <div class="scroll-container">
-        <div class="scroll-content">
-          <div class="section section1">
-            <!-- Content for section 1 -->
-          </div>
-          <div class="section section2">
-            <!-- Content for section 2 -->
-          </div>
-          <div class="section section3">
-            <!-- Content for section 3 -->
+      <section class="area-common section-03">
+        <div class="horizontal-section">
+          <div>1</div>
+          <div>1</div>
+          <div>1</div>
+          <div>1</div>
+          <div>1</div>
+          <div>1</div>
+          <div>1</div>
+          <div>1</div>
+        </div>      
+      </section>      
+
+
+      <section class="area-common section-04">
+        <div id="scroll-area">
+          <div id="changing-images-container">
+            <img class="changing-image" src="../images/gv1.png">
+            <img class="changing-image" src="../images/gv2.png">
+            <img class="changing-image" src="../images/gv3.png">            
           </div>
         </div>
-      </div>
+      </section>
+
       
 
       <!-- 여러장의 이미지가 순차적으로 굴러가는 효과 -->
@@ -144,8 +155,6 @@
   </div>
 
 
-
-  <script src="../js/horizontal.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
   <script nomodule src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.6.0/polyfill.min.js"
     crossorigin="anonymous"></script>
@@ -193,7 +202,7 @@
       document.querySelector('.scroll-effect-text h2').style.opacity = opacity;
 
 
-      // 스크롤 이미지 효과
+      // 스크롤 이미지 회전 효과
       var scrollPosition = window.pageYOffset;
       var imageContainer = document.querySelector('.car-wrap .image-container');
       var images = imageContainer.getElementsByTagName('img');
@@ -213,43 +222,53 @@
       }
 
 
-      // 가로 스크롤 효과
-    var scrollContainer = document.querySelector('.scroll-container');
-    var scrollContent = document.querySelector('.scroll-content');
-    var sections = document.querySelectorAll('.section');
+      // 스크롤 이미지 회전 효과2
+      var images = ["image1.jpg", "image2.jpg", "image3.jpg", /* Add more image URLs here */ "image20.jpg"]; // Array of image URLs
+      var numImages = images.length;
+      var imagesPerScroll = 20; // Number of images to change per scroll
 
-    var sectionWidth = sections[0].offsetWidth;
-    var sectionIndex = 0;
-    var isScrolling = false;
+      var scrollArea = document.getElementById("scroll-area");
+      var changingImages = document.getElementsByClassName("changing-image");
 
-    function handleScroll(event) {
-      if (!isScrolling) {
-        isScrolling = true;
-        
-        var scrollTop = scrollContainer.scrollTop;
-        var scrollDirection = event.deltaY > 0 ? 1 : -1;
-        
-        if (scrollDirection === 1 && sectionIndex < sections.length - 1) {
-          sectionIndex++;
-        } else if (scrollDirection === -1 && sectionIndex > 0) {
-          sectionIndex--;
+      scrollArea.addEventListener("scroll", function() {
+        var areaHeight = scrollArea.offsetHeight;
+        var scrollTop = scrollArea.scrollTop;
+        var scrollPosition = scrollTop / (areaHeight - scrollArea.clientHeight);
+
+        var startIndex = Math.floor(scrollPosition * (numImages - imagesPerScroll));
+        var endIndex = startIndex + imagesPerScroll;
+
+        for (var i = 0; i < numImages; i++) {
+          if (i >= startIndex && i < endIndex) {
+            changingImages[i].style.opacity = 1;
+          } else {
+            changingImages[i].style.opacity = 0;
+          }
         }
-        
-        var targetX = -sectionIndex * sectionWidth;
-        
-        scrollContent.style.transform = `translateX(${targetX}px)`;
-        
-        setTimeout(function() {
-          isScrolling = false;
-        }, 500); // Add a delay to prevent rapid scrolling
-        
-        event.preventDefault();
+      });
+
+
+
+
+      // 가로 스크롤 효과
+      var scrollPosition = window.pageYOffset; // Get the scroll position
+      var horizontalSection = document.querySelector('.horizontal-section');
+      var verticalSection = document.querySelector('.section-04');
+      const contWrapper = document.getElementById("wrap");
+    
+      var sectionOffsetTop = verticalSection.offsetTop;
+      var sectionHeight = verticalSection.offsetHeight;
+    
+      if (scrollPosition >= sectionOffsetTop && scrollPosition < sectionOffsetTop + sectionHeight) {
+        horizontalSection.style.transform = 'translateX(' + ( - (scrollPosition - sectionOffsetTop)) + 'px)';
+        contWrapper.style.overflow = 'hidden';
+      } else {
+        horizontalSection.style.transform = 'none';
+        contWrapper.style.overflow = 'auto';
       }
-    }
 
-    scrollContainer.addEventListener('wheel', handleScroll);
-
-
+      
+      
 
     });    
   </script>

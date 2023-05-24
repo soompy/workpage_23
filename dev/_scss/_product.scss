@@ -30,120 +30,112 @@ $pc-size: 1400;
     &.product {
         .area-common {
             &.section-01 {
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 position: relative;
                 width: 100%;
-                height: 100vh;
+                height: calc(100vh - 100px);
 
-                .sample-box {
+                .inner {        
+                    width: 45%;
+                    height: auto;
+                    margin: auto;                                  
+                }
+
+                .sample-wrapper {
+                    position: relative;
+                    font-family: "CookieRun Bold";
+                    height: 100%;
                     flex: 1;
-                    width: vw(500);
-                    transition: all 1.7s linear;
+                    transition: all 1.7s linear;  
 
-                    .sample-wrapper {
+                    .mobile {
                         position: relative;
-                        font-family: "CookieRun Bold";
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        margin-left: auto;
 
-                        .mobile {
-                            position: relative;
-                            display: block;
-                            width: 70%;
-                            margin-left: auto;
+                        .mobile-bg {
+                            width: 100%;
+                            height: 100%;
+                        }
 
-                            .mobile-bg {}
+                        .value-wrapper {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            position: absolute;
+                            bottom: vw(14);
+                            left: vw(18);
+                            width: calc(100% - 2.7vw);
+                            height: 0;
+                            font-size: vw(24);
+                            background: var(--clr-sub);
+                            border-bottom-left-radius: vw(30);
+                            border-bottom-right-radius: vw(30);
+                            transition: all 1.7s linear;
+                            padding-bottom: 0;
 
-                            .value-wrapper {
-                                display: flex;
-                                align-items: center;
-                                justify-content: center;
-                                position: absolute;
-                                bottom: vw(16);
-                                left: vw(28);
-                                width: calc(100% - 4.25vw);
-                                height: 30%;
-                                font-size: vw(24);
-                                background: var(--clr-sub);
-                                border-bottom-left-radius: vw(38);
-                                border-bottom-right-radius: vw(38);
-                                transition: height 1.7s linear;
-                                padding-bottom: vw(50);
-
-                                .value-box {
-                                    display: block;
-                                    font-size: vw(40);
-                                    font-family: "CookieRun Bold";
-                                    text-align: center;
-                                    padding-right: vw(4);
-                                }
-                            }
-
-                            &:after {
+                            .value-box {
                                 display: block;
-                                clear: both;
-                                content: '';
-                                position: absolute;
-                                left: 0;
-                                bottom: 0;
-                                width: 100%;
-                                height: vw(30);
-                                background: linear-gradient(0deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 100%);
+                                font-size: vw(40);
+                                font-family: "CookieRun Bold";
+                                text-align: center;
+                                padding-right: vw(4);
+                                .count-up {
+                                    
+                                }
                             }
                         }
 
-                        .range-bar {
+                        &:after {
+                            display: block;
+                            clear: both;
+                            content: '';
                             position: absolute;
-                            right: vw(50);
-                            top: 50%;
-                            width: vw(6);
-                            height: 80%;
-                            background: var(--clr-light-grey);
-                            transform: translateY(-50%);
-                            border-radius: vw(4);
-
-                            .range-step {
-                                position: absolute;
-                                left: 50%;
-                                bottom: 24%;
-                                z-index: 1;
-                                width: vw(20);
-                                height: vw(40);
-                                border-radius: vw(20);
-                                background: var(--clr-secondary);
-                                transform: translateX(-50%);
-                                transition: bottom 1.7s linear;
-                            }
-
-                            .progress-bar {
-                                position: absolute;
-                                left: 31%;
-                                bottom: 0;
-                                width: vw(7);
-                                height: 30%;
-                                border-radius: vw(20);
-                                background: var(--clr-primary);
-                                transform: translateX(-50%);
-                                transition: height 1.7s linear;
-                            }
+                            left: 0;
+                            bottom: 0;
+                            width: 100%;
+                            height: vw(30);
+                            background: linear-gradient(0deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 100%);
                         }
                     }
 
-                    &.ani_active {
-                        .sample-wrapper {
-                            .mobile {
-                                .value-wrapper {
-                                    height: 50%;
-                                    padding-bottom: vw(300);
-                                }
-                            }
+                    .range-bar {
+                        position: absolute;
+                        right: vw(50);
+                        top: 50%;
+                        width: vw(6);
+                        height: 80%;
+                        background: var(--clr-light-grey);
+                        transform: translateY(-50%);
+                        border-radius: vw(4);
 
-                            .range-bar {
-                                .range-step {
-                                    bottom: 49%;
-                                }
+                        .range-step {
+                            position: absolute;
+                            left: 50%;
+                            bottom: 0;
+                            z-index: 1;
+                            width: vw(20);
+                            height: vw(40);
+                            border-radius: vw(20);
+                            background: var(--clr-secondary);
+                            transform: translateX(-50%);
+                            transition: bottom 1.7s linear;
+                        }
 
-                                .progress-bar {
-                                    height: 50%;
-                                }
-                            }
+                        .progress-bar {
+                            position: absolute;
+                            left: 31%;
+                            bottom: 0;
+                            width: vw(7);
+                            height: 0;
+                            border-radius: vw(20);
+                            background: var(--clr-primary);
+                            transform: translateX(-50%);
+                            transition: height 1.7s linear;
                         }
                     }
                 }
@@ -158,6 +150,27 @@ $pc-size: 1400;
 
                     p {
                         font-size: vw(16);
+                    }
+                }
+
+                &.ani_active {
+                    .sample-wrapper {
+                        .mobile {
+                            .value-wrapper {
+                                height: 50%;
+                                padding-bottom: vw(300);
+                            }
+                        }
+
+                        .range-bar {
+                            .range-step {
+                                bottom: 49%;
+                            }
+
+                            .progress-bar {
+                                height: 50%;
+                            }
+                        }
                     }
                 }
             }
@@ -249,6 +262,7 @@ $pc-size: 1400;
             }
 
             &.section-03 {
+                overflow: hidden;
                 position: relative;
                 width: 100%;
                 height: 100vh;
@@ -264,35 +278,34 @@ $pc-size: 1400;
                         width: 0;
                         height: 50px;
                         font-size: 30px;
-                        background: #000000;
-                        color: #ffffff;
+                        background: var(--clr-sub);                        
                         transition: width 1s linear;
                         transform-origin: center;
                         &:nth-child(1) {
-                            left: 0;
-                            top: 0;                            
-                            transform: rotate(-35deg);
+                            left: -3%;
+                            top: 30%;                            
+                            transform: rotate(-15deg);
                         }
                         &:nth-child(2) {
-                            right: 0;
-                            top: 0;
-                            transform: rotate(35deg);
+                            right: -3%;
+                            top: 30%;
+                            transform: rotate(15deg);
                         }
                         &:nth-child(3) {
-                            left: 0;
+                            left: -3%;
                             bottom: 0;
                             transform: rotate(-15deg);
                         }
                         &:nth-child(4) {
-                            right: 0;
-                            bottom: 0;
+                            right: -3%;
+                            bottom: 40%;
                             transform: rotate(15deg);
                         }
                     }
 
                     &.ani_visible {
                         .aniLine {
-                            width: 60vw;                          
+                            width: 120vw;                          
                         }
                     }
                 }                
@@ -379,4 +392,31 @@ $pc-size: 1400;
         opacity: 0;
         transform: translate(0, -1000%) rotate(45deg); //Big hearts move faster
     }
+}
+
+
+
+
+@media screen and (max-width: 1400px) {    
+    .content {
+        &.product {
+            .area-common {
+                &.section-01 {
+                    height: calc(100vh - 80px);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 760px) {  
+    .content {
+        &.product {
+            .area-common {
+                &.section-01 {
+                    height: calc(100vh - 60px);
+                }
+            }
+        }
+    }  
 }
