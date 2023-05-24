@@ -2926,6 +2926,12 @@ input::-webkit-input-placeholder, input:-ms-input-placeholder {
 	display: block;
 }
 
+.content.product .area-common {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+}
+
 .content.product .area-common.section-01 {
 	display: -webkit-box;
 	display: -moz-box;
@@ -2939,8 +2945,6 @@ input::-webkit-input-placeholder, input:-ms-input-placeholder {
 	-moz-box-pack: center;
 	-ms-flex-pack: center;
 	justify-content: center;
-	position: relative;
-	width: 100%;
 	height: -moz-calc(100vh - 100px);
 	height: calc(100vh - 100px);
 }
@@ -3010,7 +3014,7 @@ input::-webkit-input-placeholder, input:-ms-input-placeholder {
 
 .content.product .area-common.section-01 .sample-wrapper .mobile .value-wrapper .value-box {
 	display: block;
-	font-size: 2.8571428571vw;
+	font-size: 2.4285714286vw;
 	font-family: "CookieRun Bold";
 	text-align: center;
 	padding-right: 0.2857142857vw;
@@ -3108,12 +3112,6 @@ input::-webkit-input-placeholder, input:-ms-input-placeholder {
 	height: 50%;
 }
 
-.content.product .area-common.section-02 {
-	position: relative;
-	width: 100%;
-	height: 100vh;
-}
-
 .content.product .area-common.section-02 .confetti-wrapper {
 	position: absolute;
 	left: 0;
@@ -3172,8 +3170,8 @@ input::-webkit-input-placeholder, input:-ms-input-placeholder {
 	-moz-box-pack: center;
 	-ms-flex-pack: center;
 	justify-content: center;
-	width: 260px !important;
-	height: 400px !important;
+	width: 200px !important;
+	height: 380px !important;
 	position: absolute;
 	left: 50%;
 	top: 50%;
@@ -3194,8 +3192,8 @@ input::-webkit-input-placeholder, input:-ms-input-placeholder {
 	-moz-transition: all 2s linear;
 	transition: all 2s linear;
 	border: 3px solid #ccc;
-	-moz-border-radius: 50px;
-	border-radius: 50px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
 }
 
 .content.product .area-common.section-02 .confetti-wrapper.pop_active .confetti-box span {
@@ -3216,9 +3214,29 @@ input::-webkit-input-placeholder, input:-ms-input-placeholder {
 
 .content.product .area-common.section-03 {
 	overflow: hidden;
-	position: relative;
-	width: 100%;
-	height: 100vh;
+}
+
+.content.product .area-common.section-03 .choonsik-image {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	z-index: 1;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	height: auto;
+	-webkit-transition: all 2s ease-in-out;
+	-moz-transition: all 2s ease-in-out;
+	transition: all 2s ease-in-out;
+}
+
+.content.product .area-common.section-03 .choonsik-image.center-image {
+	width: 200px;
+}
+
+.content.product .area-common.section-03 .choonsik-image.image-pop {
+	display: none;
+	width: 400px;
 }
 
 .content.product .area-common.section-03 .line-wrapper {
@@ -3231,6 +3249,7 @@ input::-webkit-input-placeholder, input:-ms-input-placeholder {
 }
 
 .content.product .area-common.section-03 .line-wrapper .aniLine {
+	overflow: hidden;
 	position: absolute;
 	display: -webkit-box;
 	display: -moz-box;
@@ -3250,6 +3269,29 @@ input::-webkit-input-placeholder, input:-ms-input-placeholder {
 	-webkit-transform-origin: center;
 	-moz-transform-origin: center;
 	transform-origin: center;
+}
+
+.content.product .area-common.section-03 .line-wrapper .aniLine .line-inner {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: nowrap;
+	flex-wrap: nowrap;
+	-webkit-animation: rollText 20s infinite linear;
+	-moz-animation: rollText 20s infinite linear;
+	animation: rollText 20s infinite linear;
+}
+
+.content.product .area-common.section-03 .line-wrapper .aniLine .line-inner p {
+	-ms-flex-negative: 0;
+	flex-shrink: 0;
+	display: inline-block;
+	font-size: 1.1428571429vw;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin: 0 0.5714285714vw;
+	white-space: nowrap;
 }
 
 .content.product .area-common.section-03 .line-wrapper .aniLine:nth-child(1) {
@@ -3284,8 +3326,22 @@ input::-webkit-input-placeholder, input:-ms-input-placeholder {
 	transform: rotate(15deg);
 }
 
-.content.product .area-common.section-03 .line-wrapper.ani_visible .aniLine {
+.content.product .area-common.section-03.ani_visible .aniLine {
 	width: 120vw;
+}
+
+.content.product .area-common.section-03.ani_visible .choonsik-image.center-image {
+	display: none;
+	-webkit-transform: scale(0);
+	-moz-transform: scale(0);
+	transform: scale(0);
+}
+
+.content.product .area-common.section-03.ani_visible .choonsik-image.image-pop {
+	display: block;
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	transform: scale(1);
 }
 
 .content.product .area-common .inner {
@@ -3297,6 +3353,44 @@ input::-webkit-input-placeholder, input:-ms-input-placeholder {
 	-moz-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
+}
+
+@-webkit-keyframes rollText {
+	0% {
+		-webkit-transform: translateX(0);
+		transform: translateX(0);
+	}
+
+	100% {
+		-webkit-transform: translateX(-100%);
+		transform: translateX(-100%);
+	}
+}
+
+@-moz-keyframes rollText {
+	0% {
+		-moz-transform: translateX(0);
+		transform: translateX(0);
+	}
+
+	100% {
+		-moz-transform: translateX(-100%);
+		transform: translateX(-100%);
+	}
+}
+
+@keyframes rollText {
+	0% {
+		-webkit-transform: translateX(0);
+		-moz-transform: translateX(0);
+		transform: translateX(0);
+	}
+
+	100% {
+		-webkit-transform: translateX(-100%);
+		-moz-transform: translateX(-100%);
+		transform: translateX(-100%);
+	}
 }
 
 .particletext {

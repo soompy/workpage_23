@@ -29,12 +29,14 @@ $pc-size: 1400;
 .content {
     &.product {
         .area-common {
+            position: relative;   
+            width: 100%;
+            height: 100vh;
+
             &.section-01 {
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                position: relative;
-                width: 100%;
                 height: calc(100vh - 100px);
 
                 .inner {        
@@ -80,12 +82,12 @@ $pc-size: 1400;
 
                             .value-box {
                                 display: block;
-                                font-size: vw(40);
+                                font-size: vw(34);
                                 font-family: "CookieRun Bold";
                                 text-align: center;
                                 padding-right: vw(4);
                                 .count-up {
-                                    
+
                                 }
                             }
                         }
@@ -175,11 +177,7 @@ $pc-size: 1400;
                 }
             }
 
-            &.section-02 {
-                position: relative;
-                width: 100%;
-                height: 100vh;
-
+            &.section-02 {              
                 .confetti-wrapper {
                     position: absolute;
                     left: 0;
@@ -220,8 +218,8 @@ $pc-size: 1400;
                         display: flex;
                         align-items: center;
                         justify-content: center;
-                        width: 260px !important;
-                        height: 400px !important;
+                        width: 200px !important;
+                        height: 380px !important;
                         position: absolute;
                         left: 50%;
                         top: 50%;
@@ -236,7 +234,7 @@ $pc-size: 1400;
                         transform: rotate(-180deg);
                         transition: all 2s linear;
                         border: 3px solid #ccc;
-                        border-radius: 50px;
+                        border-radius: 20px;
                     }
 
                     &.pop_active {
@@ -263,15 +261,32 @@ $pc-size: 1400;
 
             &.section-03 {
                 overflow: hidden;
-                position: relative;
-                width: 100%;
-                height: 100vh;
+
+                .choonsik-image {
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    z-index: 1;
+                    transform: translate(-50%, -50%);                
+                    height: auto;
+                    transition: all 2s ease-in-out;
+
+                    &.center-image {                        
+                        width: 200px;                                                
+                    }
+                    &.image-pop {
+                        display: none;                        
+                        width: 400px;                                  
+                    }
+                }                
+
                 .line-wrapper {
                     position: relative;
                     width: 100%;
                     height: 100%;
                     transition: width 1s linear;
                     .aniLine {
+                        overflow: hidden;
                         position: absolute;
                         display: flex;
                         align-items: center;
@@ -280,7 +295,22 @@ $pc-size: 1400;
                         font-size: 30px;
                         background: var(--clr-sub);                        
                         transition: width 1s linear;
-                        transform-origin: center;
+                        transform-origin: center;   
+                                             
+                        .line-inner {
+                            display: flex;
+                            flex-wrap: nowrap;
+                            animation: rollText 20s infinite linear;
+                            p {
+                                flex-shrink: 0;
+                                display: inline-block;
+                                font-size: vw(16);
+                                font-weight: bold;
+                                text-transform: uppercase;
+                                margin: 0 vw(8);
+                                white-space: nowrap;                                
+                            }
+                        }                        
                         &:nth-child(1) {
                             left: -3%;
                             top: 30%;                            
@@ -301,14 +331,25 @@ $pc-size: 1400;
                             bottom: 40%;
                             transform: rotate(15deg);
                         }
+                    }                    
+                }  
+              
+                &.ani_visible {
+                    .aniLine {
+                        width: 120vw;                          
                     }
 
-                    &.ani_visible {
-                        .aniLine {
-                            width: 120vw;                          
+                    .choonsik-image {
+                        &.center-image {
+                            display: none;
+                            transform: scale(0);
                         }
-                    }
-                }                
+                        &.image-pop {                        
+                            display: block;
+                            transform: scale(1);
+                        }
+                    }                    
+                }
             }
 
             .inner {
@@ -318,6 +359,12 @@ $pc-size: 1400;
         }
     }
 }
+
+@keyframes rollText {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
 
 .particletext {
     position: relative;

@@ -63,12 +63,24 @@
 
             <section class="area-common section-03">
                 <div id="scrollParallaxTrigger3"></div>
+
+                <img class="choonsik-image center-image" src="../images/choonsik_mic.png" alt="춘식mic">
+                <img class="choonsik-image image-pop" src="../images/choonsik_hi.png" alt="춘식hi">
+                
                 <div class="line-wrapper">
-                    <div class="aniLine"></div>
-                    <div class="aniLine"></div>
-                    <div class="aniLine"></div>
-                    <div class="aniLine"></div>
-                </div>
+                    <div class="aniLine">
+                        <div class="line-inner"></div>                        
+                    </div>                    
+                    <div class="aniLine">
+                        <div class="line-inner"></div>                        
+                    </div>                    
+                    <div class="aniLine">
+                        <div class="line-inner"></div>                        
+                    </div>                    
+                    <div class="aniLine">
+                        <div class="line-inner"></div>                        
+                    </div>                                        
+                </div>                
                 <div id="scrollParallaxEnd3"></div>
             </section>
         </div>
@@ -93,9 +105,9 @@
         
         // 잔고 올라가는 효과
         var countUpNumber = document.querySelector(".count-up");
-        var targetNumber = 1000000;
+        var targetNumber = 9200000;
         var duration = 2000;
-        var interval = 20;
+        var interval = 60;
         var step = Math.ceil(targetNumber / (duration / interval));
 
         function countUp() {
@@ -158,8 +170,21 @@
         var maxRatio3 = scrollParallaxTriggerEndTop3 - scrollParallaxStart3;
     
         sd.add(document.getElementById('scrollParallaxTrigger3'), function () {
-            $(".line-wrapper").addClass("ani_visible")
+            $(".section-03").addClass("ani_visible")
         }, { actionType: "in" })   
+
+
+
+        var lineInners = document.getElementsByClassName("line-inner");
+        var numberOfParagraphs = 20;
+
+        for (var i = 0; i < lineInners.length; i++) {
+            for (var j = 0; j < numberOfParagraphs; j++) {
+                var paragraph = document.createElement("p");
+                paragraph.textContent = "choonsik " + (j + 1);
+                lineInners[i].appendChild(paragraph);                
+            }
+        }        
     </script>       
 </body>
 
