@@ -3170,8 +3170,8 @@ input::-webkit-input-placeholder, input:-ms-input-placeholder {
 	-moz-box-pack: center;
 	-ms-flex-pack: center;
 	justify-content: center;
-	width: 200px !important;
-	height: 380px !important;
+	width: 330px !important;
+	height: 580px !important;
 	position: absolute;
 	left: 50%;
 	top: 50%;
