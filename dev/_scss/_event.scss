@@ -36,15 +36,7 @@ input {
   }
 }
 
-@-webkit-keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
 
-  100% {
-    opacity: 1;
-  }
-}
 
 @keyframes fadeIn {
   0% {
@@ -703,7 +695,7 @@ input {
               left: 50%;
               top: 50%;              
               transition: all 0.4s linear;
-              animation: updown 0.6s ease-in-out infinite;
+              animation: updown 0.6s ease-in-out infinite, ;
             }            
           }
         }

@@ -3778,48 +3778,6 @@ img {
 	flex-shrink: 0;
 }
 
-#header .inner .rightBtn button {
-	display: -webkit-box;
-	display: -moz-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-align: center;
-	-moz-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
-	-webkit-box-pack: center;
-	-moz-box-pack: center;
-	-ms-flex-pack: center;
-	justify-content: center;
-	position: relative;
-	-ms-flex-negative: 0;
-	flex-shrink: 0;
-	width: 24px;
-	height: 24px;
-	margin-left: 12px;
-	-moz-border-radius: 50%;
-	border-radius: 50%;
-	-webkit-box-shadow: 1px 1px 2px #eeeeee, -0.8px -0.8px -2px #FFFFFF;
-	-moz-box-shadow: 1px 1px 2px #eeeeee, -0.8px -0.8px -2px #FFFFFF;
-	box-shadow: 1px 1px 2px #eeeeee, -0.8px -0.8px -2px #FFFFFF;
-	-webkit-box-shadow: 10px 11px 24px -10px rgba(64, 59, 59, 0.75);
-	-moz-box-shadow: 10px 11px 24px -10px rgba(64, 59, 59, 0.75);
-	box-shadow: 10px 11px 24px -10px rgba(64, 59, 59, 0.75);
-	background: #FFFFFF;
-}
-
-#header .inner .rightBtn button.btn-search {
-	width: 30px;
-	height: 30px;
-	-moz-border-radius: 10px;
-	border-radius: 10px;
-}
-
-#header .inner .rightBtn button.btn-search .icon {
-	width: 70%;
-	height: 70%;
-}
-
 #header .inner .m-menu {
 	display: none;
 	position: relative;
@@ -3896,13 +3854,13 @@ img {
 	width: 100%;
 }
 
-#header .inner .m-menu .m-menu-container .rightBtn .search-box {
+#header .inner .m-menu .m-menu-container .rightBtn .m-search-box {
 	position: relative;
 	width: 100%;
 	height: 40px;
 }
 
-#header .inner .m-menu .m-menu-container .rightBtn .search-box input[type=search] {
+#header .inner .m-menu .m-menu-container .rightBtn .m-search-box input[type=search] {
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -3977,6 +3935,116 @@ img {
 	position: relative;
 	width: 100%;
 	height: 50vh;
+}
+
+.pc-search {
+	position: relative;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-moz-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
+.pc-search .btn-search {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-moz-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-moz-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	position: relative;
+	-ms-flex-negative: 0;
+	flex-shrink: 0;
+	width: 24px;
+	height: 24px;
+	margin-left: 12px;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	-webkit-box-shadow: 1px 1px 2px #eeeeee, -0.8px -0.8px -2px #FFFFFF;
+	-moz-box-shadow: 1px 1px 2px #eeeeee, -0.8px -0.8px -2px #FFFFFF;
+	box-shadow: 1px 1px 2px #eeeeee, -0.8px -0.8px -2px #FFFFFF;
+	-webkit-box-shadow: 10px 11px 24px -10px rgba(64, 59, 59, 0.75);
+	-moz-box-shadow: 10px 11px 24px -10px rgba(64, 59, 59, 0.75);
+	box-shadow: 10px 11px 24px -10px rgba(64, 59, 59, 0.75);
+	background: #FFFFFF;
+	width: 30px;
+	height: 30px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+
+.pc-search .btn-search .icon {
+	width: 70%;
+	height: 70%;
+}
+
+.pc-search .search-box {
+	visibility: hidden;
+	position: relative;
+	width: 0;
+	height: 40px;
+	-webkit-transition: all 0.7s linear;
+	-moz-transition: all 0.7s linear;
+	transition: all 0.7s linear;
+	background: var(--clr-white);
+	color: var(--clr-black);
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	padding: 12px;
+}
+
+.pc-search .search-box input[type=search] {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 70%;
+	height: 100%;
+	padding: 8px;
+}
+
+.pc-search .search-box input[type=search]::-webkit-search-decoration, .pc-search .search-box input[type=search]::-webkit-search-cancel-button, .pc-search .search-box input[type=search]::-webkit-search-results-button, .pc-search .search-box input[type=search]::-webkit-search-results-decoration {
+	-webkit-appearance: none;
+	width: 24px;
+	height: 24px;
+	background: url("../images/common/btn_close.svg") center center no-repeat;
+	cursor: pointer;
+}
+
+.pc-search .search-box button {
+	display: none;
+	position: absolute;
+	left: 138px;
+	top: 2px;
+	width: 60px;
+	height: 36px;
+	font-size: 14px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	background: var(--clr-black);
+	color: var(--clr-white);
+}
+
+.pc-search.on .btn-search {
+	display: none;
+}
+
+.pc-search.on .search-box {
+	visibility: visible;
+	width: 200px;
+}
+
+.pc-search.on .search-box button {
+	display: block;
 }
 
 .change-theme .theme-mode {

@@ -39,7 +39,7 @@ const noticeItem = document.querySelectorAll(".notice-item");
 const noticeContents = document.querySelectorAll(".notice-contents");
 
 noticeItem.forEach((tabs, idx) => {
-  tabs.addEventListener("click", function () {
+  tabs.addEventListener("click", () => {
     noticeItem.forEach((item) => {
       item.classList.remove("active");
     });
@@ -58,7 +58,15 @@ const accHead = document.querySelectorAll(".accordion-head");
 const accBody = document.querySelectorAll(".accordion-body");
 
 accHead.forEach((acc, index) => {
-  acc.addEventListener("click", function () {
+  acc.addEventListener("click", () => {
     accHead[index].parentElement.classList.toggle("active");
   });
 });
+
+// 검색
+const pcSearch = document.querySelector(".pc-search");
+const btnSearch = document.querySelector(".btn-search");
+
+btnSearch.addEventListener("click", () => {
+  pcSearch.classList.add("on");
+})
