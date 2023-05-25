@@ -14,20 +14,20 @@ mobileCloseMenu.addEventListener("click", () => {
 
 //   테마
 const themeSwitcher = () => {
-    let modeText = document.querySelector(".mode-text");
+    let modeText = document.querySelector(".mode-icon");
 
     window.addEventListener('load', function () {
         document.documentElement.setAttribute('data-theme', 'light');
-        modeText.innerHTML = "라이트 <br> 모드"
+        modeText.style.backgroundImage = "url('../images/icon/ic_light.svg')";
     });
 
-    document.querySelector('#setMode').addEventListener('change', function (event) {
-        if (event.target.checked) {
+    document.querySelector('#setMode').addEventListener('change', function (event) {      
+      if (event.target.checked) {
             document.documentElement.setAttribute('data-theme', 'dark');
-            modeText.innerHTML = "다크 <br> 모드"
+            modeText.style.backgroundImage = "url('../images/icon/ic_moon.svg')";            
         } else {
-            document.documentElement.setAttribute('data-theme', 'light');
-            modeText.innerHTML = "라이트 <br> 모드"
+            document.documentElement.setAttribute('data-theme', 'light');            
+            modeText.style.backgroundImage = "url('../images/icon/ic_light.svg')";
         }
     })
 }
@@ -35,8 +35,8 @@ const themeSwitcher = () => {
 themeSwitcher();
 
 // 탭
-const noticeItem = document.querySelectorAll(".notice_item");
-const noticeContents = document.querySelectorAll(".notice_contents");
+const noticeItem = document.querySelectorAll(".notice-item");
+const noticeContents = document.querySelectorAll(".notice-contents");
 
 noticeItem.forEach((tabs, idx) => {
   tabs.addEventListener("click", function () {
@@ -54,8 +54,8 @@ noticeItem.forEach((tabs, idx) => {
 });
 
 // 아코디언
-const accHead = document.querySelectorAll(".accordion_head");
-const accBody = document.querySelectorAll(".accordion_body");
+const accHead = document.querySelectorAll(".accordion-head");
+const accBody = document.querySelectorAll(".accordion-body");
 
 accHead.forEach((acc, index) => {
   acc.addEventListener("click", function () {

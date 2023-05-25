@@ -1,15 +1,15 @@
-.notice_wrapper {
+.notice-wrapper {
     position: relative;
     width: 100%;
     border-top: 1px solid #000000;
     border-bottom: 1px solid #000000;
 
-    .notice_head {
+    .notice-head {
         position: relative;
         width: 100%;
         padding: 23px 0;
 
-        .notice_title {
+        .notice-title {
             position: relative;
             width: 100%;
             display: flex;
@@ -66,19 +66,19 @@
         }
     }
 
-    .notice_container {
+    .notice-container {
         position: relative;
         width: 100%;
 
-        .notice_contents {
+        .notice-contents {
             display: none;
 
-            .accordion_container {
+            .accordion-container {
                 position: relative;
                 width: 100%;
                 border-bottom: 1px solid #DDDDDD;
 
-                .accordion_head {
+                .accordion-head {
                     display: flex;
                     align-items: center;
                     padding: 28px 20px;
@@ -90,13 +90,13 @@
                         font-size: 16px;
                         line-height: 24px;
 
-                        .faq_title {
+                        .faq-title {
                             display: block;
                             width: 120px;
                             color: #999999;
                         }
 
-                        .question_text {
+                        .question-text {
                             color: #424242;
                         }
                     }
@@ -111,7 +111,7 @@
                     }
                 }
 
-                .accordion_body {
+                .accordion-body {
                     display: none;
                     width: 100%;
                     height: 0;
@@ -119,7 +119,7 @@
                     border-top: 1px solid #DDDDDD;
                     padding: 30px 20px 30px 140px;
 
-                    .answer_text {
+                    .answer-text {
                         font-size: 16px;
                         line-height: 24px;
                     }
@@ -130,8 +130,8 @@
                 }
 
                 &.active {
-                    .accordion_head {
-                        .question_text {
+                    .accordion-head {
+                        .question-text {
                             font-weight: bold;
                         }
 
@@ -140,7 +140,7 @@
                         }
                     }
 
-                    .accordion_body {
+                    .accordion-body {
                         display: block;
                         height: 100%;
                     }
@@ -151,5 +151,20 @@
                 display: block;
             }
         }
+    }
+}
+
+.page-link {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #f2f2f2;
+    color: #333333;
+    text-decoration: none;
+    margin-right: 5px;
+    cursor: pointer;
+
+    &.active {
+        background-color: #999999;
+        color: #ffffff;
     }
 }
