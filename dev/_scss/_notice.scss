@@ -1,8 +1,9 @@
 .notice-wrapper {
     position: relative;
-    width: 100%;
-    border-top: 1px solid #000000;
-    border-bottom: 1px solid #000000;
+    max-width: 1400px;
+    width: 100%;    
+    margin: auto;
+    padding: 0 50px;
 
     .notice-head {
         position: relative;
